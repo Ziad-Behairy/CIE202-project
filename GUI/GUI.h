@@ -41,7 +41,19 @@ class GUI
 		ICON_CIRC,		//Circle icon in menu
 
 		//TODO: Add more icons names here
-
+		ICON_SQU,		//Square icon in menu
+		ICON_OVAL,		//Oval icon in menu
+		ICON_LINE,		//Line icon in menu
+		ICON_REGPOL,	//Regular polygon icon in menu
+		ICON_IRREGPOL,	//Irregular polygon icon in menu
+		ICON_FILL,		//Fill icon in menu
+		ICON_COLORPAL,	//Color palette polygon icon in menu
+		ICON_PEN,		//Pen  icon in menu
+		ICON_SELECT,	//Select polygon icon in menu
+		ICON_SAVE,	    //Save  icon in menu
+		ICON_LOAD,	    //Load  icon in menu
+		ICON_DELETE,	//Delete  icon in menu
+		ICON_PLAYMODE,	//Play mode  icon in menu
 		ICON_EXIT,		//Exit icon
 
 		DRAW_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum

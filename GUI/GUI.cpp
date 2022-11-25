@@ -12,7 +12,7 @@ GUI::GUI()
 
 
 	StatusBarHeight = 50;
-	ToolBarHeight = 50;
+	ToolBarHeight = 60;
 	MenuIconWidth = 80;
 
 	DrawColor = BLUE;	//default Drawing color
@@ -158,6 +158,19 @@ void GUI::CreateDrawToolBar()
 	string MenuIconImages[DRAW_ICON_COUNT];
 	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
+	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Squ.jpg";
+	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
+	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
+	MenuIconImages[ICON_REGPOL] = "images\\MenuIcons\\Menu_Regpol.jpg";
+	MenuIconImages[ICON_IRREGPOL] = "images\\MenuIcons\\Menu_IRRegpol.jpg";
+	MenuIconImages[ICON_FILL] = "images\\MenuIcons\\Menu_Fill.jpg";
+	MenuIconImages[ICON_COLORPAL] = "images\\MenuIcons\\Menu_ColorPal.jpg";
+	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_Pen.jpg";
+	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
+	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
+	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
+	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
+	MenuIconImages[ICON_PLAYMODE] = "images\\MenuIcons\\Menu_PlayMode.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
