@@ -15,7 +15,7 @@ GUI::GUI()
 	ToolBarHeight = 60;
 	MenuIconWidth = 80;
 
-	DrawColor = BLUE;	//default Drawing color
+	DrawColor = RED;	//default Drawing color
 	FillColor = GREEN;	//default Filling color
 	MsgColor = BLACK;		//Messages color
 	BkGrndColor = WHITE;	//Background color
@@ -27,7 +27,7 @@ GUI::GUI()
 	//Create the output window
 	pWind = CreateWind(width, height, wx, wy);
 	//Change the title
-	pWind->ChangeTitle("- - - - - - - - - - PAINT ^ ^ PLAY - - - - - - - - - -");
+	pWind->ChangeTitle("- - - - - - - - - - PAINT ^&^ PLAY - - - - - - - - - -");
 
 	CreateDrawToolBar();
 	CreateStatusBar();
@@ -89,7 +89,18 @@ operationType GUI::GetUseroperation() const
 			{
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
+			case ICON_SQU: return DRAW_SQU;
+			case ICON_LINE: return DRAW_LINE;
+			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_REGPOL: return DRAW_REGPOL;
+			case ICON_IRREGPOL: return DRAW_IRREGPOL;
 			case ICON_EXIT: return EXIT;
+			case ICON_COLORPAL: return CHNG_DRAW_CLR;
+			case ICON_FILL: return CHNG_FILL_CLR;
+
+
+
+
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -255,6 +266,28 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+
+}
+void GUI::DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const
+{
+	color DrawingClr;
+	if (LineGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = LineGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, LineGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (LineGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(LineGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 
 }
 
