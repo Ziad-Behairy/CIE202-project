@@ -39,7 +39,7 @@ class GUI
 		//If you want to change the menu icons order, change the order here
 		ICON_RECT,		//Recangle icon in menu
 		ICON_CIRC,		//Circle icon in menu
-
+		
 		//TODO: Add more icons names here
 		ICON_SQU,		//Square icon in menu
 		ICON_OVAL,		//Oval icon in menu
@@ -115,7 +115,7 @@ public:
 
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
-
+	void DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const; //Draw a line 
 	///Make similar functions for drawing all other shapes.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar

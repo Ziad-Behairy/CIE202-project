@@ -7,9 +7,13 @@ enum operationType //The operations supported (you can add more if needed)
 {
 	DRAW_LINE,		//Draw Line
 	DRAW_RECT,		//Draw Rectangle
-	DRAW_TRI,		//Draw Triangle
+	DRAW_TRI,		///Draw Triangle
 	DRAW_CIRC,		//Draw Circle
-	CHNG_DRAW_CLR,	//Change the drawing color
+	DRAW_OVAL,		//Draw Oval
+	DRAW_SQU,		//Draw Square
+	DRAW_REGPOL,	//Draw Regular polygon
+	DRAW_IRREGPOL,	//Draw Irregular polygon
+	CHNG_DRAW_CLR,	///Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color
 	DEL,			//Delete a shape(s)
