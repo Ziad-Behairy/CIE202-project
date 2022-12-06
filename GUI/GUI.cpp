@@ -290,6 +290,28 @@ void GUI::DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 
 }
+void GUI::DrawCir(Point P1, Point P2, GfxInfo CirGfxInfo) const
+{
+	color DrawingClr;
+	if (CirGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = CirGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, CirGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (CirGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(CirGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	const int iRadius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+	pWind->DrawCircle(P1.x, P1.y, iRadius, style);
+
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
