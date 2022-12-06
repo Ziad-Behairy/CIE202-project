@@ -170,10 +170,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opAddcir.cpp" />
     <ClCompile Include="opAddLine.cpp" />
+    <ClCompile Include="opAddTri.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
@@ -203,12 +205,14 @@
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddcir.h" />
     <ClInclude Include="opAddLine.h" />
+    <ClInclude Include="opAddTri.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
+    <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CIE202-project.rc" />
