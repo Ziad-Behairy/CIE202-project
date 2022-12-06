@@ -118,6 +118,7 @@ public:
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
 	void DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const; //Draw a line 
 	void DrawCir(Point P1, Point P2, GfxInfo CirGfxInfo) const; //Draw a Circle 
+	void DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const; //Draw a triangle 
 	
 	///Make similar functions for drawing all other shapes.
 

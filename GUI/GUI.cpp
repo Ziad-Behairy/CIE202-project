@@ -314,6 +314,28 @@ void GUI::DrawCir(Point P1, Point P2, GfxInfo CirGfxInfo) const
 	pWind->DrawCircle(P1.x, P1.y, iRadius, style);
 
 }
+void GUI::DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const
+{
+	color DrawingClr;
+	if (TriGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = TriGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (TriGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TriGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
