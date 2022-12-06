@@ -91,7 +91,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_SQU: return DRAW_SQU;
 			case ICON_LINE: return DRAW_LINE;
-			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_TRI: return DRAW_TRI;
+			//case ICON_OVAL: return DRAW_OVAL;
 			case ICON_REGPOL: return DRAW_REGPOL;
 			case ICON_IRREGPOL: return DRAW_IRREGPOL;
 			case ICON_EXIT: return EXIT;
@@ -170,7 +171,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Squ.jpg";
-	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
+	MenuIconImages[ICON_TRI] = "images\\MenuIcons\\Menu_Tri.jpg";
+	//MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
 	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_REGPOL] = "images\\MenuIcons\\Menu_Regpol.jpg";
 	MenuIconImages[ICON_IRREGPOL] = "images\\MenuIcons\\Menu_IRRegpol.jpg";

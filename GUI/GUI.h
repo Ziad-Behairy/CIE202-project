@@ -42,8 +42,9 @@ class GUI
 		
 		//TODO: Add more icons names here
 		ICON_SQU,		//Square icon in menu
-		ICON_OVAL,		//Oval icon in menu
+		//ICON_OVAL,		//Oval icon in menu
 		ICON_LINE,		//Line icon in menu
+		ICON_TRI,		//Line icon in menu
 		ICON_REGPOL,	//Regular polygon icon in menu
 		ICON_IRREGPOL,	//Irregular polygon icon in menu
 		ICON_FILL,		//Fill icon in menu
