@@ -12,5 +12,5 @@ Circle::~Circle()
 void Circle::Draw(GUI* pUI) const
 {
 	//Call Output::DrawCir to draw a Circle on the screen	
-	//pUI->DrawCir(center, radius, ShpGfxInfo);//wait drawing function 
+	pUI->DrawCir(center, radius, ShpGfxInfo);//wait drawing function 
 }
