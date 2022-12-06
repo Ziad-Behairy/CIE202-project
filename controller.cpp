@@ -1,9 +1,8 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
 #include  "opAddLine.h"
+#include "Circle.h"
 #include"opAddcir.h"
-#include"opAddTri.h"
-
 
 
 
@@ -40,9 +39,6 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case DRAW_CIRC:
 			pOp = new opAddCir(this);
-			break;
-		case DRAW_TRI:
-			pOp = new opAddTri(this);
 			break;
 
 		case EXIT:
