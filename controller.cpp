@@ -3,6 +3,7 @@
 #include  "opAddLine.h"
 #include"opAddcir.h"
 #include"opAddTri.h"
+#include "opAddSqu.h"
 
 
 
@@ -34,7 +35,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_RECT:
 			pOp = new opAddRect(this);
 			break;
-
+		case DRAW_SQU:
+			pOp = new opAddSqu(this);
+			break;
 		case DRAW_LINE:
 			pOp = new opAddLine(this);
 			break;
