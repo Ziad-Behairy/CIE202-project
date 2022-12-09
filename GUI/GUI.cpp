@@ -336,7 +336,28 @@ void GUI::DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
 
 }
+void GUI::DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const
+{
+	color DrawingClr;
+	if (SquGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = SquGfxInfo.DrawClr;
 
+	pWind->SetPen(DrawingClr, SquGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (SquGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(SquGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	const int Squ_length= sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+	pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P2.x-P1.x), style);
+
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()

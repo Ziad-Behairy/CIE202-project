@@ -27,6 +27,9 @@ void opAddRect::Execute()
 	pUI->PrintMessage(msg);
 	//Read 2nd corner and store in point P2
 	pUI->GetPointClicked(P2.x, P2.y);
+	 msg = "Second corner is at (" + to_string(P2.x) + ", " + to_string(P2.y) + " )";
+	pUI->PrintMessage(msg);
+
 	pUI->ClearStatusBar();
 
 	//Preapre all rectangle parameters

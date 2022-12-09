@@ -12,5 +12,5 @@ Square::~Square()
 
 void Square::Draw(GUI* pUI) const
 {
-	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
+	pUI->DrawSqu(Corner1, Corner2, ShpGfxInfo);
 }
