@@ -1,4 +1,7 @@
 #pragma once
+#include <fstream>
+#include <ostream>
+#include <iostream>
 
 #include "Shapes/Shape.h"
 
@@ -11,4 +14,7 @@ public:
 	Circle(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
+	void SaveDataForShapes(ofstream &SaveFile, int ID);
+
+
 };

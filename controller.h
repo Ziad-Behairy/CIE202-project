@@ -12,6 +12,7 @@ class controller
 
 	Graph* pGraph;	//pointe to the grapg
 	GUI* pGUI;		//Pointer to UI class
+	int NumOfDrawnShapes;
 	
 
 public:	
@@ -29,6 +30,7 @@ public:
 	// -- Interface Management Functions
 	GUI *GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	
+	string ConvertCoulourToString(color anycolour);
 
 };
 

@@ -4,6 +4,7 @@
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
+#include "OperationSave.h"
 
 
 
@@ -47,6 +48,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_TRI:
 			pOp = new opAddTri(this);
 			break;
+		case SAVE:
+			pOp = new OperationSave(this, NumOfDrawnShapes);
+			break;
 
 		case EXIT:
 			///create Exitoperation here
@@ -65,9 +69,32 @@ operation* controller::createOperation(operationType OpType)
 //==================================================================================//
 
 //Draw all shapes on the user interface
+bool operator==(color c1, color c2)
+{
+
+	if (c1.ucBlue == c2.ucBlue &&
+		c1.ucGreen == c2.ucGreen &&
+		c1.ucRed == c2.ucRed)
+		return true;
+
+	else return false;
+
+}
 void controller::UpdateInterface() const
 {	
 	pGraph->Draw(pGUI);
+}
+string controller::ConvertCoulourToString(color anycolour)
+{
+	if (anycolour == BLACK) return "BLACK";
+	else if (anycolour == WHITE) return "WHITE";
+	else if (anycolour == BLUE) return "BLUE";
+	else if (anycolour == RED) return "RED";
+	else if (anycolour == YELLOW) return "YELLOW";
+	else if (anycolour == GREEN) return "GREEN";
+	else if (anycolour == GREY) return "GREY";
+	else if (anycolour == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
+	return "COLOR";
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the UI

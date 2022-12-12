@@ -172,6 +172,7 @@
     <ClCompile Include="opAddLine.cpp" />
     <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="opAddTri.cpp" />
+    <ClCompile Include="OperationSave.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
@@ -209,6 +210,7 @@
     <ClInclude Include="opAddLine.h" />
     <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="opAddTri.h" />
+    <ClInclude Include="OperationSave.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="resource.h" />

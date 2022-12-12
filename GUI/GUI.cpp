@@ -96,6 +96,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_REGPOL: return DRAW_REGPOL;
 			case ICON_IRREGPOL: return DRAW_IRREGPOL;
 			case ICON_EXIT: return EXIT;
+			case ICON_SAVE: return SAVE;
 			case ICON_COLORPAL: return CHNG_DRAW_CLR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 
@@ -242,6 +243,11 @@ color GUI::getCrntFillColor() const	//get current filling color
 int GUI::getCrntPenWidth() const		//get current pen width
 {
 	return PenWidth;
+}
+
+color GUI::getBkGrndColor() const
+{
+	return BkGrndColor;
 }
 
 //======================================================================================//
