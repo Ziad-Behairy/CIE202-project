@@ -60,5 +60,5 @@ void OperationSave::Execute()
 	SaveFile.close(); //close the file 
 	//Print Action Message'
 	pUI->PrintMessage("Drawing SAVED");  //Done
-
+	pControl->savethis = true;
 }

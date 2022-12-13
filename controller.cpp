@@ -5,10 +5,8 @@
 #include"opAddTri.h"
 #include "opAddSqu.h"
 #include "OperationSave.h"
-
-
-
-
+#include"GUI/GUI.h"
+#include"opExit.h"
 //Constructor
 controller::controller()
 {
@@ -29,40 +27,60 @@ operationType controller::GetUseroperation() const
 operation* controller::createOperation(operationType OpType)
 {
 	operation* pOp = nullptr;
-	
 	//According to operation Type, create the corresponding operation object
 	switch (OpType)
 	{
-		case DRAW_RECT:
-			pOp = new opAddRect(this);
-			break;
-		case DRAW_SQU:
-			pOp = new opAddSqu(this);
-			break;
-		case DRAW_LINE:
-			pOp = new opAddLine(this);
-			break;
-		case DRAW_CIRC:
-			pOp = new opAddCir(this);
-			break;
-		case DRAW_TRI:
-			pOp = new opAddTri(this);
-			break;
-		case SAVE:
-			pOp = new OperationSave(this, NumOfDrawnShapes);
-			break;
+	case DRAW_RECT:
+		pOp = new opAddRect(this);
+		break;
+	case DRAW_SQU:
+		pOp = new opAddSqu(this);
+		break;
+	case DRAW_LINE:
+		pOp = new opAddLine(this);
+		break;
+	case DRAW_CIRC:
+		pOp = new opAddCir(this);
+		break;
+	case DRAW_TRI:
+		pOp = new opAddTri(this);
+		break;
+	case SAVE:
+		pOp = new OperationSave(this, NumOfDrawnShapes);
+		break;
 
-		case EXIT:
-			///create Exitoperation here
+	case EXIT:
+		//create Exitoperation here
+		if (savethis==true)
+		{
+			pOp = new opExit(this);
+		break;
+		}
+		else {
+			string userdesire;
+			GUI* pUI = GetUI();
+			pUI->PrintMessage("Do you want to save? (y or n)     ");
+			userdesire = pUI->GetSrting();  //read the file name
+			if (userdesire == "y")
+			{
+				pOp = new OperationSave(this, NumOfDrawnShapes);
 			
-			break;
-		
-		case STATUS:	//a click on the status bar ==> no operation
-			break;
-	}
+			}
+			else {
 
-	return pOp;
-	
+				break;
+			}
+		}
+
+		break;
+
+	case STATUS:	//a click on the status bar ==> no operation
+		break;
+
+
+
+		return pOp;
+	}
 }
 //==================================================================================//
 //							Interface Management Functions							//
