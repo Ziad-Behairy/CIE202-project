@@ -28,7 +28,7 @@ GUI::GUI()
 	pWind = CreateWind(width, height, wx, wy);
 	//Change the title
 	pWind->ChangeTitle("- - - - - - - - - - PAINT ^&^ PLAY - - - - - - - - - -");
-
+	//CreatePlayToolBar();
 	CreateDrawToolBar();
 	CreateStatusBar();
 }
@@ -98,6 +98,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_EXIT: return EXIT;
 			case ICON_COLORPAL: return CHNG_DRAW_CLR;
 			case ICON_FILL: return CHNG_FILL_CLR;
+			case ICON_PLAYMODE: return TO_PLAY;
 
 
 
@@ -118,13 +119,49 @@ operationType GUI::GetUseroperation() const
 	}
 	else	//GUI is in PLAY mode
 	{
+		//InterfaceMode == MODE_PLAY;
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding operation
+		//[1] If user clicks on the Toolbar
+		if (y >= 0 && y < ToolBarHeight)
+		{
+			//Check whick Menu icon was clicked
+			//==> This assumes that menu icons are lined up horizontally <==
+			int ClickedIconOrder = (x / MenuIconWidth);
+			//Divide x coord of the point clicked by the menu icon width (int division)
+			//if division result is 0 ==> first icon is clicked, if 1 ==> 2nd icon and so on
+
+			switch (ClickedIconOrder)
+			{
+			case ICON_START: return START_PLAY;
+			case ICON_RESTART: return RESTART_PLAY;
+			
+			
+
+
+
+
+
+			default: return EMPTY;	//A click on empty place in desgin toolbar
+			}
+		}
+
+		//[2] User clicks on the drawing area
+		/*if (y >= ToolBarHeight && y < height - StatusBarHeight)
+		{
+			return DRAWING_AREA;
+		}*/
+
+		//[3] User clicks on the status bar
+		return STATUS;
+	}
+		
+		
 		return TO_PLAY;	//just for now. This should be updated
 	}
 
-}
+
 ////////////////////////////////////////////////////
 
 
@@ -142,6 +179,16 @@ window* GUI::CreateWind(int w, int h, int x, int y) const
 	return pW;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+void GUI::ClearWind() const
+{
+	//Clear window by drawing a filled white rectangle
+	pWind->SetPen(WHITE, 0);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, width, height);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 void GUI::CreateStatusBar() const
 {
 	pWind->SetPen(StatusBarColor, 1);
@@ -192,10 +239,8 @@ void GUI::CreateDrawToolBar()
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
 
-
-
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(LIGHTSEAGREEN, 4);
 	pWind->DrawLine(0, ToolBarHeight, width, ToolBarHeight);
 
 }
@@ -203,8 +248,20 @@ void GUI::CreateDrawToolBar()
 
 void GUI::CreatePlayToolBar() 
 {
+	pWind->ChangeTitle("- - - - - - - - - - PLAY MODE - - - - - - - - - -");
+
 	InterfaceMode = MODE_PLAY;
+	string MenuIconImages[PLAY_ICON_COUNT];
+	MenuIconImages[ICON_START] = "images\\MenuIcons\\ICON_START.jpg";
+	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\ICON_RESTART.jpg";
+	//MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	///TODO: write code to create Play mode menu
+	for (int i = 0; i < PLAY_ICON_COUNT; i++)
+		pWind->DrawImage(MenuIconImages[i], i * 90, 0, 90, ToolBarHeight);
+
+	//Draw a line under the toolbar
+	pWind->SetPen(LIGHTSEAGREEN, 4);
+	pWind->DrawLine(0, ToolBarHeight, width, ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -242,6 +299,11 @@ color GUI::getCrntFillColor() const	//get current filling color
 int GUI::getCrntPenWidth() const		//get current pen width
 {
 	return PenWidth;
+}
+
+int GUI::Get_Mode() const
+{
+	return InterfaceMode;
 }
 
 //======================================================================================//

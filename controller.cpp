@@ -4,6 +4,7 @@
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
+#include "opAddPlay_Mode.h"
 
 
 
@@ -50,6 +51,10 @@ operation* controller::createOperation(operationType OpType)
 
 		case EXIT:
 			///create Exitoperation here
+			
+			break;
+		case TO_PLAY:
+			pOp = new opAddPlay_Mode(this);
 			
 			break;
 		
@@ -114,8 +119,10 @@ void controller::Run()
 			pOpr = nullptr;
 		}
 
-		//Update the interface
-		UpdateInterface();
+		
+		
+		if(!(pGUI->Get_Mode())) //check if in play mode then it will not update the interface 
+		UpdateInterface(); 
 
 	} while (OpType != EXIT);
 
