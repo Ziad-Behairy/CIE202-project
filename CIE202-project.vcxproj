@@ -170,6 +170,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opAddcir.cpp" />
     <ClCompile Include="opAddLine.cpp" />
+    <ClCompile Include="opAddPlay_Mode.cpp" />
     <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="opAddTri.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
@@ -207,6 +208,7 @@
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddcir.h" />
     <ClInclude Include="opAddLine.h" />
+    <ClInclude Include="opAddPlay_Mode.h" />
     <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="opAddTri.h" />
     <ClInclude Include="operations\opAddRect.h" />
