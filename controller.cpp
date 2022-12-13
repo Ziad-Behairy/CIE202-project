@@ -96,6 +96,34 @@ string controller::ConvertCoulourToString(color anycolour)
 	else if (anycolour == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
 	return "COLOR";
 }
+void controller::CreateTempData()
+{
+	Temp_NumOfDrawnShapes = NumOfDrawnShapes;
+	GetDrawnShapelist(Temp_DrawnShapelist);
+}
+void controller::AddAnotherShape(shape* pdraw)
+{
+	DrawnShapelist[NumOfDrawnShapes++] = pdraw;
+}
+void controller::GetDrawnShapelist(shape* shapeListNew[])
+{
+	for (int i = 0; i < MaxDrawnShapes; i++) {
+		shapeListNew[i] = DrawnShapelist[i];
+	}
+}
+void controller::GetTempDrawnShapelist(shape* newshapeListNew[])
+{
+	for (int i = 0; i < MaxDrawnShapes; i++) {
+		newshapeListNew[i] = Temp_DrawnShapelist[i];
+	}
+}
+int controller::GetNumOfDrawnShapesCount()
+{
+	return NumOfDrawnShapes;
+}
+
+	
+
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the UI
 GUI *controller::GetUI() const

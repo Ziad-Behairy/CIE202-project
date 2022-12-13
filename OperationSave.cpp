@@ -15,40 +15,13 @@ OperationSave::~OperationSave()
 OperationSave::OperationSave(controller* pcont, int num) :operation(pcont)
 {
 	FileName = "DrawnShapes";
-	NumOfDrawnShapes = num;
+	pControl->GetDrawnShapelist(DrawnShapelist);
+	NumOfDrawnShapes = pControl->GetNumOfDrawnShapesCount();
 }
 
 string OperationSave::GetFileName()
 {
 	return FileName;
-}
-
-shape* OperationSave::GetDrawnshapelist()
-{
-	return DrawnShapelist[MaxDrawnShapes];
-}
-
-int OperationSave::GetNumOfDrawnShapes()
-{
-	return NumOfDrawnShapes;
-}
-
-void OperationSave::SetDrawnShapelist(shape* newDrawnShapelist[MaxDrawnShapes])
-{
-	for (int i = 0; i < MaxDrawnShapes; i++)
-	{
-		DrawnShapelist[i] = newDrawnShapelist[i];
-	}
-}
-
-void OperationSave::SetNumOfDrawnShapes(int newNumOfDrawnShapes)
-{
-	NumOfDrawnShapes = newNumOfDrawnShapes;
-}
-
-void OperationSave::SetFileName(string newFileName)
-{
-	FileName = newFileName;
 }
 
 void OperationSave::Execute()
