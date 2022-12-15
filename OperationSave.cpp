@@ -8,6 +8,7 @@
 #include <string>
 #include"Shapes/Shape.h"
 #include <fstream>
+#include "..\CIE202-project\Shapes\Graph.h"
 OperationSave::~OperationSave()
 {
 }
