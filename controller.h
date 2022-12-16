@@ -12,8 +12,10 @@ class controller
 
 	Graph* pGraph;	//pointe to the grapg
 	GUI* pGUI;		//Pointer to UI class
-	
-
+	int NumOfDrawnShapes;//Actual number of drawing shapes
+	shape* DrawnShapelist[MaxDrawnShapes];
+	shape* Temp_DrawnShapelist[MaxDrawnShapes];
+	int Temp_NumOfDrawnShapes;
 public:	
 	controller(); 
 	~controller();
@@ -29,6 +31,15 @@ public:
 	// -- Interface Management Functions
 	GUI *GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	
+	string ConvertCoulourToString(color anycolour);
+	void CreateTempData(); // create temp data of current app 
+	void AddAnotherShape(shape* pdraw);
+	void GetDrawnShapelist(shape* shapeListNew[]);
+	void GetTempDrawnShapelist(shape* newshapeListNew[]);
+	int GetNumOfDrawnShapesCount();
+	bool savethis;
+	
+
 
 };
 

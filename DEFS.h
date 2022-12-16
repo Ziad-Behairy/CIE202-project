@@ -37,4 +37,6 @@ enum operationType //The operations supported (you can add more if needed)
 	///TODO: Add more operation types (if needed)
 };
 
+#define MaxDrawnShapes 150
+
 #endif

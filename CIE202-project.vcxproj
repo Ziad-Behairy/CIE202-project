@@ -173,7 +173,9 @@
     <ClCompile Include="opAddPlay_Mode.cpp" />
     <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="opAddTri.cpp" />
+    <ClCompile Include="OperationSave.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opExit.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
@@ -211,8 +213,10 @@
     <ClInclude Include="opAddPlay_Mode.h" />
     <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="opAddTri.h" />
+    <ClInclude Include="OperationSave.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opExit.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />

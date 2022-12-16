@@ -145,6 +145,9 @@
     <ClCompile Include="Square.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
+
+    <ClCompile Include="OperationSave.cpp" />
+    <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opAddPlay_Mode.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +254,9 @@
     <ClInclude Include="Square.h">
       <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
+
+    <ClInclude Include="OperationSave.h" />
+    <ClInclude Include="opExit.h" />
     <ClInclude Include="opAddPlay_Mode.h" />
   </ItemGroup>
   <ItemGroup>
