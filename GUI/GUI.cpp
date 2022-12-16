@@ -306,7 +306,7 @@ int GUI::getCrntPenWidth() const		//get current pen width
 color GUI::getBkGrndColor() const
 {
 	return BkGrndColor;
-
+}
 int GUI::Get_Mode() const
 {
 	return InterfaceMode;
