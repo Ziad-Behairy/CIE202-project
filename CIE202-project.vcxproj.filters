@@ -146,6 +146,7 @@
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
     <ClCompile Include="OperationSave.cpp" />
+    <ClCompile Include="opExit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -252,6 +253,7 @@
       <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
     <ClInclude Include="OperationSave.h" />
+    <ClInclude Include="opExit.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

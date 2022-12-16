@@ -9,6 +9,7 @@
 #include"Shapes/Shape.h"
 #include <fstream>
 #include "..\CIE202-project\Shapes\Graph.h"
+#include"opExit.h"
 OperationSave::~OperationSave()
 {
 }
@@ -53,13 +54,10 @@ void OperationSave::Execute()
 	SaveFile << "\t" << FillCol;
 	SaveFile << "\t" << pControl->ConvertCoulourToString(pUI->getBkGrndColor());
 	SaveFile << "\n";  //Write the Current Draw Color 
-	SaveFile << NumOfDrawnShapes << "\n";  //and Current Fill Color and in the second line write the number of figures 
-
-	for (int i = 0; i < NumOfDrawnShapes; i++) {
-		DrawnShapelist[i]-> SaveDataForShapes(SaveFile,(i + 1));
-	}
+	Graph* pGraph = pControl->getGraph();
+	pGraph->Save(SaveFile);
 	SaveFile.close(); //close the file 
 	//Print Action Message'
 	pUI->PrintMessage("Drawing SAVED");  //Done
-
+	pControl->savethis = true;
 }

@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
 
+
 Graph::Graph()
 {
 	selectedShape = nullptr;
@@ -39,4 +40,12 @@ shape* Graph::Getshape(int x, int y) const
 	///Add your code here to search for a shape given a point x,y	
 
 	return nullptr;
+}
+
+void Graph::Save(ofstream& SaveFile)
+{
+	SaveFile << shapesList.size() << "\n";  //and Current Fill Color and in the second line write the number of figures 
+	for (int i = 0; i < shapesList.size(); i++) {
+		shapesList[i]->SaveDataForShapes(SaveFile, (i + 1));
+	}
 }

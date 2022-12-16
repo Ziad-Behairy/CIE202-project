@@ -1,10 +1,12 @@
-#include "controller.h"
+#include"controller.h"
 #include "operations\opAddRect.h"
 #include  "opAddLine.h"
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
 #include "OperationSave.h"
+#include"opExit.h"
+#include"GUI/GUI.h"
 
 
 
@@ -29,40 +31,60 @@ operationType controller::GetUseroperation() const
 operation* controller::createOperation(operationType OpType)
 {
 	operation* pOp = nullptr;
-	
+
 	//According to operation Type, create the corresponding operation object
 	switch (OpType)
 	{
-		case DRAW_RECT:
-			pOp = new opAddRect(this);
-			break;
-		case DRAW_SQU:
-			pOp = new opAddSqu(this);
-			break;
-		case DRAW_LINE:
-			pOp = new opAddLine(this);
-			break;
-		case DRAW_CIRC:
-			pOp = new opAddCir(this);
-			break;
-		case DRAW_TRI:
-			pOp = new opAddTri(this);
-			break;
-		case SAVE:
-			pOp = new OperationSave(this, NumOfDrawnShapes);
-			break;
+	case DRAW_RECT:
+		pOp = new opAddRect(this);
+		break;
+	case DRAW_SQU:
+		pOp = new opAddSqu(this);
+		break;
+	case DRAW_LINE:
+		pOp = new opAddLine(this);
+		break;
+	case DRAW_CIRC:
+		pOp = new opAddCir(this);
+		break;
+	case DRAW_TRI:
+		pOp = new opAddTri(this);
+		break;
+	case SAVE:
+		pOp = new OperationSave(this, NumOfDrawnShapes);
+		break;
 
-		case EXIT:
-			///create Exitoperation here
-			
-			break;
+	case EXIT:
+		//GUI* pUI =pControl->GetUI()
+			//GUI* pUI = pControl->GetUI();
+		if (savethis == true)
+		{
+			pGUI->PrintMessage("the drawing is saved ");
+			pOp = new opExit(this);
 		
-		case STATUS:	//a click on the status bar ==> no operation
-			break;
+			//need here to do operation save 
+		}
+		else
+		{
+			string userreply;
+			pGUI->PrintMessage("do you want to save the drwaings? y or n ");
+			userreply = pGUI->GetSrting();
+			if (userreply == "y" || "Y")
+			{
+				pGUI->PrintMessage("new operation save ");
+				pOp = new OperationSave(this, NumOfDrawnShapes);
+				//pOp = new opExit(this);
+			}
+			
+		}
+		
+		break;
+
+	case STATUS:	//a click on the status bar ==> no operation
+		break;
 	}
 
 	return pOp;
-	
 }
 //==================================================================================//
 //							Interface Management Functions							//
