@@ -29,10 +29,11 @@ enum operationType //The operations supported (you can add more if needed)
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
-
+	SELECT,
 	TO_DRAW,		//Switch interface to Draw mode
-	TO_PLAY			//Switch interface to Play mode
-
+	TO_PLAY	,		//Switch interface to Play mode
+	START_PLAY,
+	RESTART_PLAY,
 	///TODO: Add more operation types (if needed)
 };
 

@@ -4,9 +4,12 @@
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
+
 #include "OperationSave.h"
 #include"opExit.h"
 #include"GUI/GUI.h"
+#include "opAddPlay_Mode.h"
+
 
 
 
@@ -76,7 +79,15 @@ operation* controller::createOperation(operationType OpType)
 				//pOp = new opExit(this);
 			}
 			
+
 		}
+
+			break;
+		case TO_PLAY:
+			pOp = new opAddPlay_Mode(this);
+			
+			break;
+
 		
 		break;
 
@@ -191,8 +202,10 @@ void controller::Run()
 			pOpr = nullptr;
 		}
 
-		//Update the interface
-		UpdateInterface();
+		
+		
+		if(!(pGUI->Get_Mode())) //check if in play mode then it will not update the interface 
+		UpdateInterface(); 
 
 	} while (OpType != EXIT);
 

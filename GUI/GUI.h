@@ -30,7 +30,8 @@ class GUI
 	enum GUI_MODE	//Graphical user interface mode
 	{
 		MODE_DRAW,	//Drawing mode (startup mode)
-		MODE_PLAY	//Playing mode
+		MODE_PLAY//Playing mode
+
 	};
 
 	enum DrawMenuIcon //The icons of the Draw menu (you should add more icons)
@@ -67,6 +68,10 @@ class GUI
 		//If you want to change the menu icons order, change the order here
 
 		//TODO: Add more icons names here
+		ICON_START,
+		ICON_RESTART,
+
+
 
 		PLAY_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
@@ -110,8 +115,8 @@ public:
 	void CreateDrawToolBar();	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar();	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
-
-	void ClearStatusBar() const;	//Clears the status bar
+	void ClearWind() const; //clear whole  window to move to pla
+	void ClearStatusBar() const;	//Clears the status play_mode
 	void ClearDrawArea() const;	//Clears the drawing area
 
 	// -- shapes Drawing functions
@@ -123,7 +128,7 @@ public:
 	///Make similar functions for drawing all other shapes.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar
-
+	int Get_Mode() const;
 	color getCrntDrawColor() const;	//get current drwawing color
 	color getCrntFillColor() const;	//get current filling color
 	int getCrntPenWidth() const;		//get current pen width
