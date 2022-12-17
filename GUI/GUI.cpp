@@ -96,6 +96,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_REGPOL: return DRAW_REGPOL;
 			case ICON_IRREGPOL: return DRAW_IRREGPOL;
 			case ICON_EXIT: return EXIT;
+			case ICON_SAVE: return SAVE;
+			case ICON_LOAD: return LOAD;
 			case ICON_COLORPAL: return CHNG_DRAW_CLR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_PLAYMODE: return TO_PLAY;
@@ -139,7 +141,7 @@ operationType GUI::GetUseroperation() const
 			{
 			case ICON_START: return START_PLAY;
 			case ICON_RESTART: return RESTART_PLAY;
-			
+			case ICON_STICK_IMAGE: return STICK_IMAGE;
 			
 
 
@@ -262,6 +264,7 @@ void GUI::CreatePlayToolBar()
 	string MenuIconImages[PLAY_ICON_COUNT];
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\ICON_START.jpg";
 	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\ICON_RESTART.jpg";
+	MenuIconImages[ICON_STICK_IMAGE] = "images\\MenuIcons\\ICON_STICK_IMAGE.jpg";
 	//MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	///TODO: write code to create Play mode menu
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
@@ -312,10 +315,15 @@ int GUI::getCrntPenWidth() const		//get current pen width
 
 
 
+color GUI::getBkGrndColor() const
+{
+	return BkGrndColor;
+}
 
 int GUI::Get_Mode() const
 {
 	return InterfaceMode;
+
 }
 
 //======================================================================================//
@@ -430,6 +438,56 @@ void GUI::DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const
 		style = FRAME;
 	const int Squ_length= sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P2.x-P1.x), style);
+
+}
+void GUI::DrawIrrPoly(int* x, int* y, int vertices_num, GfxInfo IrrpolyGfxInfo) const
+{
+	color DrawingClr;
+	if (IrrpolyGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = IrrpolyGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, IrrpolyGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (IrrpolyGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(IrrpolyGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(x, y, vertices_num, style);
+
+}
+void GUI::DrawPoly(int* x, int* y, int vertices_num, GfxInfo PolyGfxInfo) const
+{
+	color DrawingClr;
+	if (PolyGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = PolyGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, PolyGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (PolyGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(PolyGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(x, y, vertices_num, style);
+
+}
+
+void GUI::StickImage(string photo, int x, int y, int width, int hight) const
+{
+	pWind->DrawImage(photo, x, y, width, hight);
 
 }
 

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -166,18 +166,29 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="controller.cpp" />
+    <ClCompile Include="Irrpoly.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opAddcir.cpp" />
+    <ClCompile Include="opAddIrrpoly.cpp" />
     <ClCompile Include="opAddLine.cpp" />
     <ClCompile Include="opAddPlay_Mode.cpp" />
+    <ClCompile Include="opAddpoly.cpp" />
     <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="opAddTri.cpp" />
+
     <ClCompile Include="opborder.cpp" />
     <ClCompile Include="opDelete.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opFill.cpp" />
     <ClCompile Include="opSelect.cpp" />
+
+    <ClCompile Include="OperationLoad.cpp" />
+    <ClCompile Include="OperationSave.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opExit.cpp" />
+    <ClCompile Include="opStickImage.cpp" />
+    <ClCompile Include="Poly.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
@@ -209,18 +220,29 @@
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
+    <ClInclude Include="Irrpoly.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddcir.h" />
+    <ClInclude Include="opAddIrrpoly.h" />
     <ClInclude Include="opAddLine.h" />
     <ClInclude Include="opAddPlay_Mode.h" />
+    <ClInclude Include="opAddpoly.h" />
     <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="opAddTri.h" />
+
     <ClInclude Include="opborder.h" />
     <ClInclude Include="opDelete.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opFill.h" />
     <ClInclude Include="opSelect.h" />
+    <ClInclude Include="OperationLoad.h" />
+    <ClInclude Include="OperationSave.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opExit.h" />
+    <ClInclude Include="opStickImage.h" />
+    <ClInclude Include="Poly.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />

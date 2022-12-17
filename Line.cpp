@@ -15,6 +15,7 @@ void Line::Draw(GUI* pUI) const
 	pUI->DrawLin(Corner1, Corner2, ShpGfxInfo);
 }
 
+
 bool Line::isinshape(int x, int y) const
 {
 	// y = mx + c
@@ -29,3 +30,34 @@ bool Line::isinshape(int x, int y) const
 	else
 		return false;
 }
+
+void Line::SaveDataForShapes(ofstream &SaveFile, int ID)
+{
+	SaveFile<< "LINE " + to_string(ID) + "  " +
+		to_string(Corner1.x) + "  " +
+		to_string(Corner1.y) + "  " +
+		to_string(Corner2.x) + "  " +
+		to_string(Corner2.y) + "  ";
+	SaveFile << ConvertCoulourToString2(ShpGfxInfo.DrawClr) + " ";
+	if (ShpGfxInfo.isFilled)
+	{
+		SaveFile << ConvertCoulourToString2(ShpGfxInfo.FillClr);
+	}
+	else
+	{
+		SaveFile << "NO_FILL";
+	}
+	SaveFile << "\n";
+}
+
+int* Line::getshapeparamters()
+{
+	int list[4];
+	list[0] = Corner1.x;// get x
+	list[1] = Corner2.y;//get y
+	list[2] =  sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));//get width
+	list[3] =  sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));// get height
+	return list;
+}
+
+

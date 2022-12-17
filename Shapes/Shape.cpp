@@ -20,8 +20,23 @@ void shape::ChngFillClr(color Fclr)
 	ShpGfxInfo.FillClr = Fclr; 
 }
 
+
 void shape::setisfilled()
 {
 	ShpGfxInfo.isFilled = true;
+
+
+string shape::ConvertCoulourToString2(color anycolor)
+{
+	if (anycolor == BLACK) return "BLACK";
+	else if (anycolor == WHITE) return "WHITE";
+	else if (anycolor == BLUE) return "BLUE";
+	else if (anycolor == RED) return "RED";
+	else if (anycolor == YELLOW) return "YELLOW";
+	else if (anycolor == GREEN) return "GREEN";
+	else if (anycolor == GREY) return "GREY";
+	else if (anycolor == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
+	return "COLOR";
+
 }
 
