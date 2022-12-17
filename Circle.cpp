@@ -16,6 +16,17 @@ void Circle::Draw(GUI* pUI) const
 	pUI->DrawCir(center, radius, ShpGfxInfo);//wait drawing function 
 }
 
+
+bool Circle::isinshape(int x, int y) const
+{
+	int Lradius = sqrt(pow((radius.x - center.x), 2) + pow((radius.y - center.y), 2));
+	int distance = sqrt(pow((x - center.x), 2) + pow((y - center.y), 2));
+	if (distance <= Lradius)
+
+		return true;
+
+	else
+		return false;
 void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 {
 	SaveFile<< "CIRC " + to_string(ID) + "  " +
@@ -43,4 +54,5 @@ int* Circle::getshapeparamters()
 	list[2] = 2 * sqrt(pow((radius.x - center.x), 2)+ (pow((radius.y - center.y), 2)));
 	list[3] =2*sqrt(pow((radius.x - center.x), 2) + (pow((radius.y - center.y), 2)));
 	return list;
+
 }

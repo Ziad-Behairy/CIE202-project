@@ -1,9 +1,16 @@
+
+#include "controller.h"
+#include"opFill.h"
+#include "opborder.h"
+
 #include"controller.h"
+
 #include "operations\opAddRect.h"
 #include  "opAddLine.h"
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
+
 #include "opAddIrrpoly.h"
 #include "opAddpoly.h"
 #include "OperationSave.h"
@@ -17,12 +24,18 @@
 
 
 
+
+#include "opAddPlay_Mode.h"
+#include "opSelect.h"
+#include"Shapes/Graph.h"
+#include"opDelete.h"
 //Constructor
 controller::controller()
 {
 	pGraph = new Graph;
 	pGUI = new GUI;	//Create GUI object
 }
+
 
 //==================================================================================//
 //								operations-Related Functions							//
@@ -80,6 +93,14 @@ operation* controller::createOperation(operationType OpType)
 			pGUI->PrintMessage("the drawing is saved ");
 			pOp = new opExit(this);
 			break;
+
+		case CHNG_FILL_CLR:
+			pOp = new opFill(this);
+			break;
+		case CHNG_DRAW_CLR:
+			pOp = new opborder(this);
+			break;
+
 		
 			//need here to do operation save 
 		}
@@ -103,6 +124,7 @@ operation* controller::createOperation(operationType OpType)
 
 		}
 
+
 			break;
 		case TO_PLAY:
 			pOp = new opAddPlay_Mode(this);
@@ -110,10 +132,22 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		
+
+		case STATUS:	//a click on the status bar ==> no operation
+			break;
+		case SELECT:
+			pOp = new opSelect(this);
+
+			break;
+		case DEL:
+			pOp = new opDelete(this);
+			break;
+
 		break;
 
 	case STATUS:	//a click on the status bar ==> no operation
 		break;
+
 	}
 
 	return pOp;
@@ -219,8 +253,6 @@ controller::~controller()
 	delete pGraph;
 	
 }
-
-
 
 //==================================================================================//
 //							Run function											//

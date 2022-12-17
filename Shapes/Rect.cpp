@@ -15,6 +15,18 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
+
+bool Rect::isinshape(int x, int y) const
+{
+	if (x >= min(Corner1.x, Corner2.x) && x <= max(Corner1.x, Corner2.x) && y >= min(Corner1.y, Corner2.y) && y <= max(Corner1.y, Corner2.y))
+		return true;
+	else
+		return false;
+}
+
+
+	
+
 void Rect::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
 	SaveFile << "RECT " + to_string(ID) + "  " +
@@ -43,5 +55,6 @@ int * Rect::getshapeparamters()
 	list[3] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
 	return list;
 }
+
 
 

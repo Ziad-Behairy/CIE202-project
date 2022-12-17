@@ -5,7 +5,7 @@ shape::shape(GfxInfo shapeGfxInfo)
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.
 }
  
-void shape::SetSelected(bool s)
+void shape::SetSelected(bool s) 
 {	ShpGfxInfo.isSelected = s; }
 
 bool shape::IsSelected() const
@@ -21,6 +21,11 @@ void shape::ChngFillClr(color Fclr)
 }
 
 
+void shape::setisfilled()
+{
+	ShpGfxInfo.isFilled = true;
+
+
 string shape::ConvertCoulourToString2(color anycolor)
 {
 	if (anycolor == BLACK) return "BLACK";
@@ -32,5 +37,6 @@ string shape::ConvertCoulourToString2(color anycolor)
 	else if (anycolor == GREY) return "GREY";
 	else if (anycolor == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
 	return "COLOR";
+
 }
 

@@ -15,6 +15,15 @@ void Square::Draw(GUI* pUI) const
 	pUI->DrawSqu(Corner1, Corner2, ShpGfxInfo);
 }
 
+
+bool Square::isinshape(int x, int y) const
+{
+	if (x >= min(Corner1.x, Corner2.x) && x <= max(Corner1.x, Corner2.x) && y >= min(Corner1.y, Corner2.y) && y <= max(Corner1.y, Corner2.y))
+		return true;
+	else
+		return false;
+}
+
 void Square::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
 	SaveFile << "SQUARE " + to_string(ID) + "  " +
@@ -43,4 +52,5 @@ int* Square::getshapeparamters()
 	list[3] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
 	return list;
 }
+
 

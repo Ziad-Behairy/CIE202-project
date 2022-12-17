@@ -22,9 +22,14 @@ public:
 	
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
+
+	virtual bool isinshape(int x, int y) const =0;
+	void setisfilled();
+
 	virtual void SaveDataForShapes(ofstream &SaveFile,int ID) = 0;
 	string ConvertCoulourToString2(color anycolor);
 	 virtual int* getshapeparamters() = 0;
+
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape
 

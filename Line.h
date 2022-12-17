@@ -14,7 +14,10 @@ public:
 	Line(Point , Point, GfxInfo shapeGfxInfo );
 	virtual ~Line();
 	virtual void Draw(GUI* pUI) const;
+
+	virtual bool isinshape(int x, int y) const;
 	void SaveDataForShapes(ofstream &FileName,int ID);
 	int* getshapeparamters();
+
 };
 

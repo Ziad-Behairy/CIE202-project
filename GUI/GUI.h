@@ -50,6 +50,7 @@ class GUI
 		ICON_IRREGPOL,	//Irregular polygon icon in menu
 		ICON_FILL,		//Fill icon in menu
 		ICON_COLORPAL,	//Color palette polygon icon in menu
+		//ICON_palette,
 		ICON_PEN,		//Pen  icon in menu
 		ICON_SELECT,	//Select polygon icon in menu
 		ICON_SAVE,	    //Save  icon in menu
@@ -95,9 +96,6 @@ class GUI
 	int PenWidth;			//width of the pen that draws shapes
 
 	/// Add more members if needed
-
-
-
 	window* pWind;
 
 public:
@@ -111,6 +109,7 @@ public:
 
 	// Output Functions  ---------------------------
 	window* CreateWind(int, int, int, int) const; //creates the application window
+	window* getwind();
 	void CreateDrawToolBar();	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar();	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
@@ -136,7 +135,9 @@ public:
 	color getCrntDrawColor() const;	//get current drwawing color
 	color getCrntFillColor() const;	//get current filling color
 	int getCrntPenWidth() const;		//get current pen width
+
 	color getBkGrndColor() const;
+
 
 	~GUI();
 };
