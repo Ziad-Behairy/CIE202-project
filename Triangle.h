@@ -12,6 +12,9 @@ public:
 	Triangle(Point, Point,Point, GfxInfo shapeGfxInfo);
 	virtual ~Triangle();
 	virtual void Draw(GUI* pUI) const;
+	virtual bool isinshape(int x, int y) const;
+
 };
+
 
 

@@ -173,7 +173,11 @@
     <ClCompile Include="opAddPlay_Mode.cpp" />
     <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="opAddTri.cpp" />
+    <ClCompile Include="opborder.cpp" />
+    <ClCompile Include="opDelete.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opFill.cpp" />
+    <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
@@ -211,8 +215,12 @@
     <ClInclude Include="opAddPlay_Mode.h" />
     <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="opAddTri.h" />
+    <ClInclude Include="opborder.h" />
+    <ClInclude Include="opDelete.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opFill.h" />
+    <ClInclude Include="opSelect.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />

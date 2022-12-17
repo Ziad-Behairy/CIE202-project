@@ -1,20 +1,23 @@
 #include "controller.h"
+#include"opFill.h"
+#include "opborder.h"
 #include "operations\opAddRect.h"
 #include  "opAddLine.h"
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
+
 #include "opAddPlay_Mode.h"
-
-
-
-
+#include "opSelect.h"
+#include"Shapes/Graph.h"
+#include"opDelete.h"
 //Constructor
 controller::controller()
 {
 	pGraph = new Graph;
 	pGUI = new GUI;	//Create GUI object
 }
+
 
 //==================================================================================//
 //								operations-Related Functions							//
@@ -48,6 +51,12 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_TRI:
 			pOp = new opAddTri(this);
 			break;
+		case CHNG_FILL_CLR:
+			pOp = new opFill(this);
+			break;
+		case CHNG_DRAW_CLR:
+			pOp = new opborder(this);
+			break;
 
 		case EXIT:
 			///create Exitoperation here
@@ -59,6 +68,13 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		
 		case STATUS:	//a click on the status bar ==> no operation
+			break;
+		case SELECT:
+			pOp = new opSelect(this);
+
+			break;
+		case DEL:
+			pOp = new opDelete(this);
 			break;
 	}
 
@@ -94,8 +110,6 @@ controller::~controller()
 	delete pGraph;
 	
 }
-
-
 
 //==================================================================================//
 //							Run function											//

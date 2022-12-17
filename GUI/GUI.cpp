@@ -16,7 +16,7 @@ GUI::GUI()
 	MenuIconWidth = 80;
 
 	DrawColor = RED;	//default Drawing color
-	FillColor = GREEN;	//default Filling color
+	FillColor = WHITE;	//default Filling color
 	MsgColor = BLACK;		//Messages color
 	BkGrndColor = WHITE;	//Background color
 	HighlightColor = MAGENTA;	//This color should NOT be used to draw shapes. use if for highlight only
@@ -99,6 +99,9 @@ operationType GUI::GetUseroperation() const
 			case ICON_COLORPAL: return CHNG_DRAW_CLR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_PLAYMODE: return TO_PLAY;
+			case ICON_SELECT: return SELECT;
+			case ICON_DELETE: return DEL;
+
 
 
 
@@ -170,7 +173,7 @@ operationType GUI::GetUseroperation() const
 //								Output Functions										//
 //======================================================================================//
 
-window* GUI::CreateWind(int w, int h, int x, int y) const
+	window* GUI::CreateWind(int w, int h, int x, int y) const
 {
 	window* pW = new window(w, h, x, y);
 	pW->SetBrush(BkGrndColor);
@@ -178,6 +181,7 @@ window* GUI::CreateWind(int w, int h, int x, int y) const
 	pW->DrawRectangle(0, ToolBarHeight, w, h);
 	return pW;
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::ClearWind() const
 {
@@ -185,6 +189,9 @@ void GUI::ClearWind() const
 	pWind->SetPen(WHITE, 0);
 	pWind->SetBrush(WHITE);
 	pWind->DrawRectangle(0, 0, width, height);
+}
+window* GUI::getwind() {
+	return pWind;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -230,6 +237,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
+	//MenuIconImages[ICON_palette] = "images\\MenuIcons\\palette.jpg";
 	MenuIconImages[ICON_PLAYMODE] = "images\\MenuIcons\\Menu_PlayMode.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
@@ -296,10 +304,14 @@ color GUI::getCrntFillColor() const	//get current filling color
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
+
 int GUI::getCrntPenWidth() const		//get current pen width
 {
 	return PenWidth;
 }
+
+
+
 
 int GUI::Get_Mode() const
 {
@@ -340,7 +352,7 @@ void GUI::DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	else
 		DrawingClr = LineGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, LineGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, 5);	//Set Drawing color & width
 
 	drawstyle style;
 	if (LineGfxInfo.isFilled)

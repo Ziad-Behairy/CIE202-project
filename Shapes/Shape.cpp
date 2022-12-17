@@ -5,7 +5,7 @@ shape::shape(GfxInfo shapeGfxInfo)
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.
 }
  
-void shape::SetSelected(bool s)
+void shape::SetSelected(bool s) 
 {	ShpGfxInfo.isSelected = s; }
 
 bool shape::IsSelected() const
@@ -18,5 +18,10 @@ void shape::ChngFillClr(color Fclr)
 {	
 	ShpGfxInfo.isFilled = true;
 	ShpGfxInfo.FillClr = Fclr; 
+}
+
+void shape::setisfilled()
+{
+	ShpGfxInfo.isFilled = true;
 }
 

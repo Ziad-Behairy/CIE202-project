@@ -29,14 +29,60 @@ void Graph::Draw(GUI* pUI) const
 		shapePointer->Draw(pUI);
 }
 
+void Graph::changefillcolor(shape* psh, color newcolor) {
+	psh->ChngFillClr(newcolor);
+	psh->setisfilled();
+}
+void Graph::bordercolor(shape* psh, color newcolor) {
+	psh->ChngDrawClr(newcolor);
+}
 
 shape* Graph::Getshape(int x, int y) const
 {
-	//If a shape is found return a pointer to it.
-	//if this point (x,y) does not belong to any shape return NULL
-
+	
+	for (auto& shapePointer:shapesList)
+		if (shapePointer->isinshape(x, y)) {
+			return shapePointer;
+		}
 
 	///Add your code here to search for a shape given a point x,y	
 
 	return nullptr;
 }
+
+shape* Graph::GetSelected()
+{
+	return selectedShape;
+}
+
+void Graph::setselected(shape* s)
+{ 
+	if (!selectedShape)
+		selectedShape = s;
+	else {
+		selectedShape->SetSelected(0);
+		selectedShape = s;
+	}
+}
+
+void Graph::setDelete()
+{
+	int c = -1;
+	for (auto shapepointer : shapesList)
+	{
+		c++;
+		if (shapepointer->IsSelected())
+		{
+			shapesList.erase(shapesList.begin() + c);
+				c--;
+		}
+	}
+}
+
+
+
+
+//void Graph::Delete(shape* psh)
+//{
+//	shapesList.erase(find(shapesList.begin(), shapesList.end(), psh));
+//}
