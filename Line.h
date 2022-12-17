@@ -15,5 +15,6 @@ public:
 	virtual ~Line();
 	virtual void Draw(GUI* pUI) const;
 	void SaveDataForShapes(ofstream &FileName,int ID);
+	int* getshapeparamters();
 };
 

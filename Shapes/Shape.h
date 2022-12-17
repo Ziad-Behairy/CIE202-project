@@ -24,7 +24,7 @@ public:
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	virtual void SaveDataForShapes(ofstream &SaveFile,int ID) = 0;
 	string ConvertCoulourToString2(color anycolor);
-
+	 virtual int* getshapeparamters() = 0;
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape
 

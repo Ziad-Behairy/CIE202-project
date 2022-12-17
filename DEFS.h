@@ -34,6 +34,7 @@ enum operationType //The operations supported (you can add more if needed)
 	TO_PLAY	,		//Switch interface to Play mode
 	START_PLAY,
 	RESTART_PLAY,
+	STICK_IMAGE
 	///TODO: Add more operation types (if needed)
 };
 

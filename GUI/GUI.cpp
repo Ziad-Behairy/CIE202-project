@@ -137,7 +137,7 @@ operationType GUI::GetUseroperation() const
 			{
 			case ICON_START: return START_PLAY;
 			case ICON_RESTART: return RESTART_PLAY;
-			
+			case ICON_STICK_IMAGE: return STICK_IMAGE;
 			
 
 
@@ -255,6 +255,7 @@ void GUI::CreatePlayToolBar()
 	string MenuIconImages[PLAY_ICON_COUNT];
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\ICON_START.jpg";
 	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\ICON_RESTART.jpg";
+	MenuIconImages[ICON_STICK_IMAGE] = "images\\MenuIcons\\ICON_STICK_IMAGE.jpg";
 	//MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	///TODO: write code to create Play mode menu
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
@@ -447,6 +448,12 @@ void GUI::DrawIrrPoly(int* x, int* y, int vertices_num, GfxInfo IrrpolyGfxInfo) 
 		style = FRAME;
 
 	pWind->DrawPolygon(x, y, vertices_num, style);
+
+}
+
+void GUI::StickImage(string photo, int x, int y, int width, int hight) const
+{
+	pWind->DrawImage(photo, x, y, width, hight);
 
 }
 
