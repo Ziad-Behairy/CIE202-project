@@ -126,6 +126,7 @@ public:
 	void DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const;//Draw a square
 
 	void DrawIrrPoly(int* x, int* y, int vertices_num,GfxInfo IrrpolyGfxInfo) const;//Draw a Irrpolygon
+	void DrawPoly(int* x, int* y, int vertices_num, GfxInfo PolyGfxInfo) const;//Draw a polygon
 	void StickImage(string photo, int x, int y,int width, int hight) const;//Draw a square
 
 	///Make similar functions for drawing all other shapes.

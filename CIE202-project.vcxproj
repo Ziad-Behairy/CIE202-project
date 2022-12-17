@@ -173,12 +173,14 @@
     <ClCompile Include="opAddIrrpoly.cpp" />
     <ClCompile Include="opAddLine.cpp" />
     <ClCompile Include="opAddPlay_Mode.cpp" />
+    <ClCompile Include="opAddpoly.cpp" />
     <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="opAddTri.cpp" />
     <ClCompile Include="OperationSave.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opStickImage.cpp" />
+    <ClCompile Include="Poly.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
@@ -216,6 +218,7 @@
     <ClInclude Include="opAddIrrpoly.h" />
     <ClInclude Include="opAddLine.h" />
     <ClInclude Include="opAddPlay_Mode.h" />
+    <ClInclude Include="opAddpoly.h" />
     <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="opAddTri.h" />
     <ClInclude Include="OperationSave.h" />
@@ -223,6 +226,7 @@
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opExit.h" />
     <ClInclude Include="opStickImage.h" />
+    <ClInclude Include="Poly.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />
