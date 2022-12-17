@@ -76,7 +76,7 @@ operation* controller::createOperation(operationType OpType)
 			string userreply;
 			pGUI->PrintMessage("do you want to save the drwaings? y or n ");
 			userreply = pGUI->GetSrting();
-			if (userreply == "y" || "Y")
+			if (userreply == "y" || userreply == "Y")
 			{
 				pGUI->PrintMessage("new operation save ");
 				pOp = new OperationSave(this, NumOfDrawnShapes);
