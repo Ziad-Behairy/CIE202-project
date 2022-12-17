@@ -34,9 +34,7 @@ void opAddLine::Execute()
 	LineGfxInfo.DrawClr = pUI->getCrntDrawColor();
 	LineGfxInfo.FillClr = pUI->getCrntFillColor();
 	LineGfxInfo.BorderWdth = pUI->getCrntPenWidth();
-
-
-	LineGfxInfo.isFilled = true;	//default is not filled
+	LineGfxInfo.isFilled = false;	//default is not filled
 	LineGfxInfo.isSelected = false;	//defualt is not selected
 
 
