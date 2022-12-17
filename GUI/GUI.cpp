@@ -428,6 +428,28 @@ void GUI::DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P2.x-P1.x), style);
 
 }
+void GUI::DrawIrrPoly(int* x, int* y, int vertices_num, GfxInfo IrrpolyGfxInfo) const
+{
+	color DrawingClr;
+	if (IrrpolyGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = IrrpolyGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, IrrpolyGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (IrrpolyGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(IrrpolyGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(x, y, vertices_num, style);
+
+}
 
 void GUI::StickImage(string photo, int x, int y, int width, int hight) const
 {
