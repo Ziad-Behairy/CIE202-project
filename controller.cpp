@@ -2,15 +2,12 @@
 #include "controller.h"
 #include"opFill.h"
 #include "opborder.h"
-
 #include"controller.h"
-
 #include "operations\opAddRect.h"
 #include  "opAddLine.h"
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
-
 #include "opAddIrrpoly.h"
 #include "opAddpoly.h"
 #include "OperationSave.h"
@@ -145,8 +142,7 @@ operation* controller::createOperation(operationType OpType)
 
 		break;
 
-	case STATUS:	//a click on the status bar ==> no operation
-		break;
+
 
 	}
 

@@ -28,7 +28,7 @@ public:
 	//void Delete(shape* psh);
 	//virtual bool isinshape(int x, int y)const ;
 
-	void Save(ofstream& outfile);	//Save all shapes to a file
+	void Save(ofstream& SaveFile);	//Save all shapes to a file
 	//void load(ifstream& inputfile);	//Load all shapes from a file
 	vector <shape*> getshapesList();
 	void drawstickimage(GUI* pUI);

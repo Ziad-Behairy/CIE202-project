@@ -8,6 +8,8 @@
 #include"..\Circle.h"
 #include"..\Triangle.h"
 #include"..\Square.h"
+#include"..\Poly.h"
+#include "..\Irrpoly.h"
 #include"..\Shapes\Rect.h"
 
 
@@ -85,12 +87,12 @@ void Graph::setDelete()
 		if (shapepointer->IsSelected())
 		{
 			shapesList.erase(shapesList.begin() + c);
-				c--;
+			c--;
 		}
 	}
 
 
-
+}
 void Graph::Save(ofstream& SaveFile)
 {
 	SaveFile << shapesList.size() << "\n";  //and Current Fill Color and in the second line write the number of figures 

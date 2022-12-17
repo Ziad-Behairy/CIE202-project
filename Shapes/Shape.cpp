@@ -25,7 +25,7 @@ void shape::setisfilled()
 {
 	ShpGfxInfo.isFilled = true;
 
-
+}
 string shape::ConvertCoulourToString2(color anycolor)
 {
 	if (anycolor == BLACK) return "BLACK";

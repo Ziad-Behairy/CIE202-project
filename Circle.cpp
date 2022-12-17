@@ -27,6 +27,7 @@ bool Circle::isinshape(int x, int y) const
 
 	else
 		return false;
+}
 void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 {
 	SaveFile<< "CIRC " + to_string(ID) + "  " +
