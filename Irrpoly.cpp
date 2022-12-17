@@ -40,3 +40,13 @@ void Irrpoly::SaveDataForShapes(ofstream& SaveFile, int ID)
 	}
 	SaveFile << "\n";
 }
+
+int* Irrpoly::getshapeparamters()
+{
+	int list[4];
+	list[0] = x[0];
+	list[1] = y[1];
+	list[2] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));
+	list[3] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));
+	return list;
+}

@@ -97,6 +97,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_IRREGPOL: return DRAW_IRREGPOL;
 			case ICON_EXIT: return EXIT;
 			case ICON_SAVE: return SAVE;
+			case ICON_LOAD: return LOAD;
 			case ICON_COLORPAL: return CHNG_DRAW_CLR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_PLAYMODE: return TO_PLAY;

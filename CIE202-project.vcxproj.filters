@@ -144,7 +144,6 @@
     <ClCompile Include="Square.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
-
     <ClCompile Include="Irrpoly.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
@@ -167,6 +166,7 @@
     <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opAddPlay_Mode.cpp" />
     <ClCompile Include="opStickImage.cpp" />
+    <ClCompile Include="OperationLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -271,7 +271,6 @@
     <ClInclude Include="Square.h">
       <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
-
     <ClInclude Include="Irrpoly.h">
       <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
@@ -294,6 +293,7 @@
     <ClInclude Include="opExit.h" />
     <ClInclude Include="opAddPlay_Mode.h" />
     <ClInclude Include="opStickImage.h" />
+    <ClInclude Include="OperationLoad.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

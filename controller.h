@@ -37,8 +37,9 @@ public:
 	void GetDrawnShapelist(shape* shapeListNew[]);
 	void GetTempDrawnShapelist(shape* newshapeListNew[]);
 	int GetNumOfDrawnShapesCount();
+	color ConvertStringToCoulour(string colorstring);
 	bool savethis;
-	
+
 
 
 };
