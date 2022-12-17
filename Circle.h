@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "Shapes/Shape.h"
+#include "math.h"
 
 class Circle : public shape
 {
@@ -15,6 +16,6 @@ public:
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
 	void SaveDataForShapes(ofstream &SaveFile, int ID);
-
+	int* getshapeparamters();
 
 };

@@ -4,11 +4,11 @@
 #include"opAddcir.h"
 #include"opAddTri.h"
 #include "opAddSqu.h"
-
 #include "OperationSave.h"
 #include"opExit.h"
 #include"GUI/GUI.h"
 #include "opAddPlay_Mode.h"
+#include"opStickImage.h"
 
 
 
@@ -56,6 +56,9 @@ operation* controller::createOperation(operationType OpType)
 	case SAVE:
 		pOp = new OperationSave(this, NumOfDrawnShapes);
 		break;
+	case STICK_IMAGE:
+		pOp = new opStickImage(this);
+		break;
 
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
@@ -64,6 +67,7 @@ operation* controller::createOperation(operationType OpType)
 		{
 			pGUI->PrintMessage("the drawing is saved ");
 			pOp = new opExit(this);
+			break;
 		
 			//need here to do operation save 
 		}
@@ -77,8 +81,13 @@ operation* controller::createOperation(operationType OpType)
 				pGUI->PrintMessage("new operation save ");
 				pOp = new OperationSave(this, NumOfDrawnShapes);
 				//pOp = new opExit(this);
+				break;
 			}
-			
+			else
+			{
+				pOp = new opExit(this);
+				break;
+			}
 
 		}
 
