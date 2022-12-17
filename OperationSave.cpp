@@ -51,9 +51,9 @@ void OperationSave::Execute()
 		FillCol = pControl->ConvertCoulourToString(pUI->getCrntFillColor());
 	}
 	SaveFile << pControl->ConvertCoulourToString(pUI->getCrntDrawColor());
-	SaveFile << "\t" << FillCol;
-	SaveFile << "\t" << pControl->ConvertCoulourToString(pUI->getBkGrndColor());
-	SaveFile << "\n";  //Write the Current Draw Color 
+	SaveFile << '\t' << FillCol;
+	SaveFile << '\t' << pControl->ConvertCoulourToString(pUI->getBkGrndColor());
+	SaveFile << '\t';  //Write the Current Draw Color 
 	Graph* pGraph = pControl->getGraph();
 	pGraph->Save(SaveFile);
 	SaveFile.close(); //close the file 

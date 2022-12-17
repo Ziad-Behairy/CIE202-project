@@ -16,7 +16,7 @@ void Line::Draw(GUI* pUI) const
 
 void Line::SaveDataForShapes(ofstream &SaveFile, int ID)
 {
-	SaveFile<< "LINE" + to_string(ID) + "  " +
+	SaveFile<< "LINE " + to_string(ID) + "  " +
 		to_string(Corner1.x) + "  " +
 		to_string(Corner1.y) + "  " +
 		to_string(Corner2.x) + "  " +

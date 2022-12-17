@@ -1,6 +1,14 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
 #include"../controller.h"
+#include<fstream>
+#include<iostream>
+#include"..\Shapes\Shape.h"
+#include"..\Line.h"
+#include"..\Circle.h"
+#include"..\Triangle.h"
+#include"..\Square.h"
+#include"..\Shapes\Rect.h"
 
 
 Graph::Graph()
@@ -53,6 +61,7 @@ void Graph::Save(ofstream& SaveFile)
 	}
 }
 
+
 vector<shape*> Graph::getshapesList()
 {
 	vector<shape*>newshapelist;
@@ -62,6 +71,8 @@ vector<shape*> Graph::getshapesList()
 	}
 	return newshapelist;
 }
+
+
 
 void Graph::drawstickimage(GUI*pUI)
 {

@@ -17,7 +17,7 @@ void Rect::Draw(GUI* pUI) const
 
 void Rect::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
-	SaveFile << "LINE" + to_string(ID) + "  " +
+	SaveFile << "RECT " + to_string(ID) + "  " +
 		to_string(Corner1.x) + "  " +
 		to_string(Corner1.y) + "  " +
 		to_string(Corner2.x) + "  " +

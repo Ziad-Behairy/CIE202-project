@@ -18,7 +18,7 @@ void Triangle::Draw(GUI* pUI) const
 
 void Triangle::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
-	SaveFile << "TRIANGLE" + to_string(ID) + "  " +
+	SaveFile << "TRIANGLE " + to_string(ID) + "  " +
 		to_string(Corner1.x) + "  " +
 		to_string(Corner1.y) + "  " +
 		to_string(Corner2.x) + "  " +

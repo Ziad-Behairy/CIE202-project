@@ -11,6 +11,7 @@
 #include"GUI/GUI.h"
 #include "opAddPlay_Mode.h"
 #include"opStickImage.h"
+#include"OperationLoad.h"
 
 
 
@@ -63,6 +64,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case SAVE:
 		pOp = new OperationSave(this, NumOfDrawnShapes);
+		break;
+	case LOAD:
+		pOp = new OperationLoad(this);
 		break;
 	case STICK_IMAGE:
 		pOp = new opStickImage(this);
@@ -171,6 +175,27 @@ int controller::GetNumOfDrawnShapesCount()
 {
 	return NumOfDrawnShapes;
 }
+
+color controller::ConvertStringToCoulour(string colorstring)
+{
+
+		if (colorstring == "BLACK")
+			return BLACK;
+		if (colorstring == "WHITE")
+			return WHITE;
+		if (colorstring == "BLUE")
+			return BLUE;
+		if (colorstring == "YELLOW")
+			return YELLOW;
+		if (colorstring == "RED")
+			return RED;
+		if (colorstring == "GREEN")
+			return GREEN;
+		if (colorstring == "LIGHTGOLDENRODYELLOW")
+			return LIGHTGOLDENRODYELLOW;
+		return RED;
+}
+
 
 	
 

@@ -165,6 +165,10 @@
     <ClCompile Include="OperationSave.cpp" />
     <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opAddPlay_Mode.cpp" />
+
+    <ClCompile Include="opStickImage.cpp" />
+    <ClCompile Include="OperationLoad.cpp" />
+
     <ClCompile Include="opStickImage.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
@@ -174,6 +178,7 @@
     <ClCompile Include="opAddpoly.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -299,6 +304,10 @@
     <ClInclude Include="OperationSave.h" />
     <ClInclude Include="opExit.h" />
     <ClInclude Include="opAddPlay_Mode.h" />
+
+    <ClInclude Include="opStickImage.h" />
+    <ClInclude Include="OperationLoad.h" />
+
     <ClInclude Include="opStickImage.h">
       <Filter>Operations</Filter>
     </ClInclude>
@@ -308,6 +317,7 @@
     <ClInclude Include="opAddpoly.h">
       <Filter>Operations</Filter>
     </ClInclude>
+
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">
