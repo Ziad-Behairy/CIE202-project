@@ -137,7 +137,7 @@ operationType GUI::GetUseroperation() const
 			{
 			case ICON_START: return START_PLAY;
 			case ICON_RESTART: return RESTART_PLAY;
-			
+			case ICON_STICK_IMAGE: return STICK_IMAGE;
 			
 
 
@@ -255,6 +255,7 @@ void GUI::CreatePlayToolBar()
 	string MenuIconImages[PLAY_ICON_COUNT];
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\ICON_START.jpg";
 	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\ICON_RESTART.jpg";
+	MenuIconImages[ICON_STICK_IMAGE] = "images\\MenuIcons\\ICON_STICK_IMAGE.jpg";
 	//MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	///TODO: write code to create Play mode menu
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
@@ -425,6 +426,12 @@ void GUI::DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const
 		style = FRAME;
 	const int Squ_length= sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P2.x-P1.x), style);
+
+}
+
+void GUI::StickImage(string photo, int x, int y, int width, int hight) const
+{
+	pWind->DrawImage(photo, x, y, width, hight);
 
 }
 

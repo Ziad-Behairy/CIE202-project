@@ -34,3 +34,13 @@ void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 	}
 	SaveFile <<"\n";
 }
+
+int* Circle::getshapeparamters()
+{
+	int list[4];
+	list[0] = center.x;
+	list[1] = center.y;
+	list[2] = 2 * sqrt(pow((radius.x - center.x), 2)+ (pow((radius.y - center.y), 2)));
+	list[3] =2*sqrt(pow((radius.x - center.x), 2) + (pow((radius.y - center.y), 2)));
+	return list;
+}

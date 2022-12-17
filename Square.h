@@ -13,5 +13,6 @@ public:
 	virtual ~Square();
 	virtual void Draw(GUI* pUI) const;
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
+	int* getshapeparamters();
 };
 

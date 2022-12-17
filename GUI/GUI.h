@@ -70,8 +70,7 @@ class GUI
 		//TODO: Add more icons names here
 		ICON_START,
 		ICON_RESTART,
-
-
+		ICON_STICK_IMAGE,
 
 		PLAY_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
@@ -125,6 +124,7 @@ public:
 	void DrawCir(Point P1, Point P2, GfxInfo CirGfxInfo) const; //Draw a Circle 
 	void DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const; //Draw a triangle 
 	void DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const;//Draw a square
+	void StickImage(string photo, int x, int y,int width, int hight) const;//Draw a square
 	///Make similar functions for drawing all other shapes.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar

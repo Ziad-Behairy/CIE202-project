@@ -1,5 +1,5 @@
 #pragma once
-
+#include"operations\operation.h"
 #include "DEFS.h"
 #include "Shapes\Graph.h"
 #include "GUI\GUI.h"
@@ -10,13 +10,13 @@ class operation; //forward declaration
 class controller
 {
 
+public:	
 	Graph* pGraph;	//pointe to the grapg
 	GUI* pGUI;		//Pointer to UI class
 	int NumOfDrawnShapes;//Actual number of drawing shapes
 	shape* DrawnShapelist[MaxDrawnShapes];
 	shape* Temp_DrawnShapelist[MaxDrawnShapes];
 	int Temp_NumOfDrawnShapes;
-public:	
 	controller(); 
 	~controller();
 	
