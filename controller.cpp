@@ -5,6 +5,7 @@
 #include"opAddTri.h"
 #include "opAddSqu.h"
 #include "opAddIrrpoly.h"
+#include "opAddpoly.h"
 #include "OperationSave.h"
 #include"opExit.h"
 #include"GUI/GUI.h"
@@ -57,6 +58,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case DRAW_IRREGPOL:
 		pOp = new opAddIrrpoly(this);
+		break;
+	case DRAW_REGPOL:
+		pOp = new opAddpoly(this);
 		break;
 	case SAVE:
 		pOp = new OperationSave(this, NumOfDrawnShapes);

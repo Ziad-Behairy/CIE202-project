@@ -1,28 +1,34 @@
-#include "Irrpoly.h"
-
-Irrpoly::Irrpoly(Point* arr, int vertices_num, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
+#include "Poly.h"
+#include<math.h>
+#include <corecrt_math_defines.h>
+Poly::Poly(Point p1, Point center,int vertices_num, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
-	points_arr = arr;
+	p = p1;
+	this->center = center;
 	this->vertices_num = vertices_num;
 	x = new int[vertices_num];
 	y = new int[vertices_num];
 }
 
-Irrpoly::~Irrpoly()
+Poly::~Poly()
 {
 }
 
-void Irrpoly::Draw(GUI* pUI) const
+void Poly::Draw(GUI* pUI) const
 {
 	// create arr for x-coordinats and another arr for y-coordinats to save them to use them later in drawing function
+	double distance = sqrt(pow(p.x - center.x, 2) + pow(p.y - center.y, 2));
+
 	for (int i = 0; i < vertices_num; i++) {
-		x[i] = points_arr[i].x;
-		y[i] = points_arr[i].y;
+		double p_x = center.x + distance * cos(i * 2 * M_PI / vertices_num);
+		double p_y = center.y + distance * sin(i * 2 * M_PI / vertices_num);
+		x[i] = p_x;
+		y[i] = p_y;
 	}
-	pUI->DrawIrrPoly(x, y, vertices_num, ShpGfxInfo);
+	pUI->DrawPoly(x, y, vertices_num, ShpGfxInfo);
 }
 
-void Irrpoly::SaveDataForShapes(ofstream& SaveFile, int ID)
+void Poly::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
 	SaveFile << "LINE" + to_string(ID) + "  " +
 		to_string(5) + "  " +
@@ -41,19 +47,12 @@ void Irrpoly::SaveDataForShapes(ofstream& SaveFile, int ID)
 	SaveFile << "\n";
 }
 
-int* Irrpoly::getshapeparamters()
+int* Poly::getshapeparamters()
 {
 	int list[4];
-
-	list[0] = x[0];
-	list[1] = y[1];
-	list[2] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));
-	list[3] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));
-
 	list[0] = x[0];// get x
 	list[1] = y[1];//get y
 	list[2] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));//get width
 	list[3] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));// get height
-
 	return list;
 }

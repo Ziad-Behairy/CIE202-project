@@ -451,6 +451,28 @@ void GUI::DrawIrrPoly(int* x, int* y, int vertices_num, GfxInfo IrrpolyGfxInfo) 
 	pWind->DrawPolygon(x, y, vertices_num, style);
 
 }
+void GUI::DrawPoly(int* x, int* y, int vertices_num, GfxInfo PolyGfxInfo) const
+{
+	color DrawingClr;
+	if (PolyGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = PolyGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, PolyGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (PolyGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(PolyGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(x, y, vertices_num, style);
+
+}
 
 void GUI::StickImage(string photo, int x, int y, int width, int hight) const
 {
