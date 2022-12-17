@@ -141,14 +141,27 @@
     <ClCompile Include="Triangle.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
-    <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="Square.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
-
-    <ClCompile Include="OperationSave.cpp" />
-    <ClCompile Include="opExit.cpp" />
-    <ClCompile Include="opAddPlay_Mode.cpp" />
+    <ClCompile Include="Irrpoly.cpp">
+      <Filter>Shapes&amp;Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="opAddIrrpoly.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="opAddPlay_Mode.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="opAddSqu.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="OperationSave.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="opExit.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -250,14 +263,27 @@
     <ClInclude Include="opAddTri.h">
       <Filter>Operations</Filter>
     </ClInclude>
-    <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="Square.h">
       <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
-
-    <ClInclude Include="OperationSave.h" />
-    <ClInclude Include="opExit.h" />
-    <ClInclude Include="opAddPlay_Mode.h" />
+    <ClInclude Include="Irrpoly.h">
+      <Filter>Shapes&amp;Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="opAddIrrpoly.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opAddPlay_Mode.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opAddSqu.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="OperationSave.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opExit.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

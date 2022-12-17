@@ -166,9 +166,11 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="controller.cpp" />
+    <ClCompile Include="Irrpoly.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opAddcir.cpp" />
+    <ClCompile Include="opAddIrrpoly.cpp" />
     <ClCompile Include="opAddLine.cpp" />
     <ClCompile Include="opAddPlay_Mode.cpp" />
     <ClCompile Include="opAddSqu.cpp" />
@@ -207,8 +209,10 @@
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
+    <ClInclude Include="Irrpoly.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddcir.h" />
+    <ClInclude Include="opAddIrrpoly.h" />
     <ClInclude Include="opAddLine.h" />
     <ClInclude Include="opAddPlay_Mode.h" />
     <ClInclude Include="opAddSqu.h" />
