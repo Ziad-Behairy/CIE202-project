@@ -36,7 +36,7 @@ void opAddLine::Execute()
 	LineGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	LineGfxInfo.isFilled = true;	//default is not filled
+	LineGfxInfo.isFilled = false;	//default is not filled
 	LineGfxInfo.isSelected = false;	//defualt is not selected
 
 
