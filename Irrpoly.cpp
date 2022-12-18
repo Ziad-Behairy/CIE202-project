@@ -57,3 +57,8 @@ int* Irrpoly::getshapeparamters()
 
 	return list;
 }
+
+bool Irrpoly::isinshape(int x, int y) const
+{
+	return false;
+}
