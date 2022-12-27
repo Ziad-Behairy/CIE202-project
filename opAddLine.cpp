@@ -15,7 +15,7 @@ void opAddLine::Execute()
 
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
-
+	pUI->ClearStatusBar();
 	pUI->PrintMessage("New Line : Click at first corner");
 	//Read 1st corner and store in point P1
 	pUI->GetPointClicked(P1.x, P1.y);
@@ -41,6 +41,7 @@ void opAddLine::Execute()
 
 
 	//Create a Line with the above parameters
+	
 	Line* R = new Line(P1, P2, LineGfxInfo);
 
 	//Get a pointer to the graph

@@ -14,6 +14,7 @@ void opSelect::Execute()
 	Point P1;
 	Graph* pGraph = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
+	pUI->ClearStatusBar();
 	pUI->PrintMessage("Click At The Shape You want to select");
 	pUI->GetPointClicked(P1.x, P1.y);
 	pUI->ClearStatusBar();

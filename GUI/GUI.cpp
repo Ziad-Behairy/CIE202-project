@@ -5,12 +5,12 @@ GUI::GUI()
 	//Initialize user interface parameters
 	InterfaceMode = MODE_DRAW;
 
-	width = 1300;
-	height = 700;
+	width = 1600;
+	height = 795;
 	wx = 5;
 	wy = 5;
 
-
+	
 	StatusBarHeight = 50;
 	ToolBarHeight = 60;
 	MenuIconWidth = 80;
@@ -103,6 +103,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_PLAYMODE: return TO_PLAY;
 			case ICON_SELECT: return SELECT;
 			case ICON_DELETE: return DEL;
+			//case ICON_UNDO: return UNDO;
+			//case ICON_REDO: return REDO;
 
 
 
@@ -238,10 +240,11 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
-	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
-	//MenuIconImages[ICON_palette] = "images\\MenuIcons\\palette.jpg";
+	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\ICON_UNDO.jpg";
+	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\ICON_REDO.jpg";
+	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";	
 	MenuIconImages[ICON_PLAYMODE] = "images\\MenuIcons\\Menu_PlayMode.jpg";
-	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_EXIT] =  "images\\MenuIcons\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
 
@@ -332,113 +335,160 @@ int GUI::Get_Mode() const
 
 void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 {
-	color DrawingClr;
-	if (RectGfxInfo.isSelected)	//shape is selected
-		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	else
-		DrawingClr = RectGfxInfo.DrawClr;
-
-	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
-
-	drawstyle style;
-	if (RectGfxInfo.isFilled)
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && P2.y <  height - StatusBarHeight))
 	{
-		style = FILLED;
-		pWind->SetBrush(RectGfxInfo.FillClr);
+		color DrawingClr;
+		if (RectGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = RectGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (RectGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(RectGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+		ClearStatusBar();
 	}
 	else
-		style = FRAME;
-
-	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
-
+	{
+		PrintMessage("Please select points in limits of drawing area ");
+	}
 }
 void GUI::DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const
 {
-	color DrawingClr;
-	if (LineGfxInfo.isSelected)	//shape is selected
-		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	else
-		DrawingClr = LineGfxInfo.DrawClr;
-
-	pWind->SetPen(DrawingClr, 5);	//Set Drawing color & width
-
-	drawstyle style;
-	if (LineGfxInfo.isFilled)
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && P2.y < height - StatusBarHeight))
 	{
-		style = FILLED;
-		pWind->SetBrush(LineGfxInfo.FillClr);
+		color DrawingClr;
+		if (LineGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = LineGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, 5);	//Set Drawing color & width
+
+		drawstyle style;
+		if (LineGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(LineGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+		ClearStatusBar();
 	}
+
 	else
-		style = FRAME;
-
-	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
-
+	{
+		PrintMessage("Please select points in limits of drawing area ");
+	}
+	
 }
 void GUI::DrawCir(Point P1, Point P2, GfxInfo CirGfxInfo) const
 {
-	color DrawingClr;
-	if (CirGfxInfo.isSelected)	//shape is selected
-		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	else
-		DrawingClr = CirGfxInfo.DrawClr;
-
-	pWind->SetPen(DrawingClr, CirGfxInfo.BorderWdth);	//Set Drawing color & width
-
-	drawstyle style;
-	if (CirGfxInfo.isFilled)
+	const int iRadius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+	const int Max_Raduis_up = sqrt( pow(P1.y - ToolBarHeight, 2)); // raduis from center to toolbar
+	const int Max_Raduis_down = sqrt( pow(P1.y - (height - StatusBarHeight), 2)); // raduis from center to statusbar
+	string s = to_string(Max_Raduis_up), r = to_string(iRadius), d = to_string(P2.x), z = to_string(P2.y);
+	if ((P1.y > ToolBarHeight+2 && P2.y > ToolBarHeight+2)	&& (P1.y <  height - StatusBarHeight && P2.y <  height - StatusBarHeight)&& (iRadius < Max_Raduis_up)&& (iRadius < Max_Raduis_down))
 	{
-		style = FILLED;
-		pWind->SetBrush(CirGfxInfo.FillClr);
+		
+
+		PrintMessage("raduis = "+r+" max= "+s+ "p2= "+d+" " + z);
+		color DrawingClr;
+		if (CirGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = CirGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, CirGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (CirGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(CirGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+		
+		pWind->DrawCircle(P1.x, P1.y, iRadius, style);
+		ClearStatusBar();
 	}
 	else
-		style = FRAME;
-	const int iRadius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
-	pWind->DrawCircle(P1.x, P1.y, iRadius, style);
-
+	{
+		PrintMessage("Please select points in limits of drawing area ");
+	}
+	
 }
 void GUI::DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const
 {
-	color DrawingClr;
-	if (TriGfxInfo.isSelected)	//shape is selected
-		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	else
-		DrawingClr = TriGfxInfo.DrawClr;
-
-	pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth);	//Set Drawing color & width
-
-	drawstyle style;
-	if (TriGfxInfo.isFilled)
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2 && P3.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && P2.y <  height - StatusBarHeight && P3.y <  height - StatusBarHeight))
 	{
-		style = FILLED;
-		pWind->SetBrush(TriGfxInfo.FillClr);
+		color DrawingClr;
+		if (TriGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = TriGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (TriGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(TriGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+		ClearStatusBar();
 	}
 	else
-		style = FRAME;
-
-	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
-
+	{
+		PrintMessage("Please select points in limits of drawing area ");
+	}
 }
 void GUI::DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const
 {
-	color DrawingClr;
-	if (SquGfxInfo.isSelected)	//shape is selected
-		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	else
-		DrawingClr = SquGfxInfo.DrawClr;
-
-	pWind->SetPen(DrawingClr, SquGfxInfo.BorderWdth);	//Set Drawing color & width
-
-	drawstyle style;
-	if (SquGfxInfo.isFilled)
+	int second_corner_y = P1.y + (P2.x - P1.x);
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && second_corner_y <  height - StatusBarHeight))
 	{
-		style = FILLED;
-		pWind->SetBrush(SquGfxInfo.FillClr);
+		color DrawingClr;
+		if (SquGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = SquGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, SquGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (SquGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(SquGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+		
+		const int Squ_length = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+		pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y + (P2.x - P1.x), style);
+		ClearStatusBar();
 	}
 	else
-		style = FRAME;
-	const int Squ_length= sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
-	pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P2.x-P1.x), style);
-
+	{
+		PrintMessage("Please select points in limits of drawing area ");
+	}
 }
 void GUI::DrawIrrPoly(int* x, int* y, int vertices_num, GfxInfo IrrpolyGfxInfo) const
 {
@@ -460,6 +510,7 @@ void GUI::DrawIrrPoly(int* x, int* y, int vertices_num, GfxInfo IrrpolyGfxInfo) 
 		style = FRAME;
 
 	pWind->DrawPolygon(x, y, vertices_num, style);
+	ClearStatusBar();
 
 }
 void GUI::DrawPoly(int* x, int* y, int vertices_num, GfxInfo PolyGfxInfo) const
@@ -482,6 +533,7 @@ void GUI::DrawPoly(int* x, int* y, int vertices_num, GfxInfo PolyGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawPolygon(x, y, vertices_num, style);
+	ClearStatusBar();
 
 }
 

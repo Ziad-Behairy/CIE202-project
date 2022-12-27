@@ -17,6 +17,7 @@ void opAddIrrpoly::Execute()
 	GUI* pUI = pControl->GetUI();
 	//Get data from user to draw 
 	int vertices_num;
+	pUI->ClearStatusBar();
 	pUI->PrintMessage("Add new irregular polygon --> Please enter number of vertices : ");
 	vertices_num = stoi(pUI->GetSrting());
 	pUI->ClearStatusBar();
