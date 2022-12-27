@@ -12,6 +12,7 @@ opExit::~opExit()
 }
 void opExit::Execute() {
 	GUI* pUI = pControl->GetUI();
+	pUI->ClearStatusBar();
 	pUI->ClearDrawArea();
 	Sleep(100);
 	pUI->ClearStatusBar();

@@ -49,12 +49,14 @@ class GUI
 		ICON_REGPOL,	//Regular polygon icon in menu
 		ICON_IRREGPOL,	//Irregular polygon icon in menu
 		ICON_FILL,		//Fill icon in menu
-		ICON_COLORPAL,	//Color palette polygon icon in menu
+		ICON_COLORPAL,	//Color palette  icon in menu
 		//ICON_palette,
 		ICON_PEN,		//Pen  icon in menu
-		ICON_SELECT,	//Select polygon icon in menu
+		ICON_SELECT,	//Select  icon in menu
 		ICON_SAVE,	    //Save  icon in menu
 		ICON_LOAD,	    //Load  icon in menu
+		ICON_UNDO,	    //Undo  icon in menu
+		ICON_REDO,	    //Undo  icon in menu
 		ICON_DELETE,	//Delete  icon in menu
 		ICON_PLAYMODE,	//Play mode  icon in menu
 		ICON_EXIT,		//Exit icon

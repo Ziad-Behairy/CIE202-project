@@ -30,6 +30,7 @@ void OperationSave::Execute()
 {
 	//Get a Pointer to the user Interfaces
 	GUI* pUI = pControl->GetUI();
+	pUI->ClearStatusBar();
 	pUI->PrintMessage("lets Save our drawings .. pleaes enter file name");
 	string FileName = pUI->GetSrting();
 	ofstream SaveFile;
