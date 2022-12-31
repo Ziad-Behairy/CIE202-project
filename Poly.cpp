@@ -61,3 +61,8 @@ bool Poly::isinshape(int x, int y) const
 {
 	return false;
 }
+
+string Poly::printdata() const
+{
+	return string();
+}

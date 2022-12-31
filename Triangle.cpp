@@ -42,6 +42,11 @@ bool Triangle::isinshape(int x, int y) const
 	}
 }
 
+string Triangle::printdata() const
+{
+	return string();
+}
+
 
 void Triangle::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
