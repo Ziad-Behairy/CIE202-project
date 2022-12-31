@@ -24,6 +24,11 @@ bool Square::isinshape(int x, int y) const
 		return false;
 }
 
+string Square::printdata() const
+{
+	return string();
+}
+
 void Square::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
 	SaveFile << "SQUARE " + to_string(ID) + "  " +

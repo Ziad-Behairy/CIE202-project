@@ -26,6 +26,7 @@ void opSelect::Execute()
 			select->SetSelected(true); // setselect in shape class
 			pUI->PrintMessage("Shape Is Selected ");
 			pGraph->setselected(select); // setselect in graph class
+			//pUI->PrintMessage(select->printdata());
 		}
 		else {
 			

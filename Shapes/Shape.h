@@ -24,6 +24,7 @@ public:
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 
 	virtual bool isinshape(int x, int y) const =0;
+	virtual string printdata() const = 0;
 	void setisfilled();
 
 	virtual void SaveDataForShapes(ofstream &SaveFile,int ID) = 0;

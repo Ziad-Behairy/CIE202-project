@@ -13,7 +13,7 @@ void opFill::Execute()
 	GUI* pUI = pControl->GetUI();
 	Graph* pGraph = pControl->getGraph();
 	Point p1;
-	pUI->getwind()->SetPen(BLACK);
+	//pUI->getwind()->SetPen(BLACK);
 	pUI->getwind()->DrawImage("images\\MEnuIcons\\palette.jpg", 1230,70,300, 200);
 	pUI->PrintMessage("select color you want");
 	pUI->GetPointClicked(p1.x, p1.y);

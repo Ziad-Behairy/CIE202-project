@@ -62,3 +62,9 @@ bool Irrpoly::isinshape(int x, int y) const
 {
 	return false;
 }
+
+string Irrpoly::printdata() const
+{
+	
+	return "";
+}

@@ -28,6 +28,13 @@ bool Circle::isinshape(int x, int y) const
 	else
 		return false;
 }
+string Circle::printdata() const
+{
+	string values;
+	double rad = pow(pow(radius.x - center.x, 2) + pow(radius.y - center.y, 2), -1);
+	values = "This is a Circle.The ID: " + to_string(ID) + ". The Point of the center: (" + to_string(center.x) + ", " + to_string(center.y) + "). The Radious is: " + to_string(rad) + ".";
+	return values;
+}
 void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 {
 	SaveFile<< "CIRC " + to_string(ID) + "  " +
