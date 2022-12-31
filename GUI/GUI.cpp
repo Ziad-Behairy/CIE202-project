@@ -240,7 +240,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_IRREGPOL] = "images\\MenuIcons\\Menu_IRRegpol.jpg";
 	MenuIconImages[ICON_FILL] = "images\\MenuIcons\\Menu_Fill.jpg";
 	MenuIconImages[ICON_COLORPAL] = "images\\MenuIcons\\Menu_ColorPal.jpg";
-	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_Pen.jpg";
+	//MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_Pen.jpg";
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_RESIZE.jpg";
 	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\Menu_COPY.jpg";

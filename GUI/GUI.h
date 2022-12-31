@@ -51,7 +51,7 @@ class GUI
 		ICON_FILL,		//Fill icon in menu
 		ICON_COLORPAL,	//Color palette  icon in menu
 		//ICON_palette,
-		ICON_PEN,		//Pen  icon in menu
+		//ICON_PEN,		//Pen  icon in menu
 		ICON_SELECT,	//Select  icon in menu
 		ICON_RESIZE,	//Resize  icon in menu
 		ICON_COPY,	    //Copy  icon in menu
