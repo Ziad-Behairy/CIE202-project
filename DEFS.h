@@ -27,6 +27,11 @@ enum operationType //The operations supported (you can add more if needed)
 	EXIT,			//Exit the application
 	//UNDO,
 	//REDO,
+	/*COPY,
+	CUT,
+	PASTE,
+	SCRAMBEL,
+	RESIZE,*/
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
@@ -34,8 +39,9 @@ enum operationType //The operations supported (you can add more if needed)
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY	,		//Switch interface to Play mode
 	START_PLAY,
-	RESTART_PLAY,
-	STICK_IMAGE
+	STICK_IMAGE,
+	RESTART_PLAY
+	
 	///TODO: Add more operation types (if needed)
 };
 

@@ -13,7 +13,7 @@ GUI::GUI()
 	
 	StatusBarHeight = 50;
 	ToolBarHeight = 60;
-	MenuIconWidth = 80;
+	MenuIconWidth = 65;
 
 	DrawColor = RED;	//default Drawing color
 	FillColor = WHITE;	//default Filling color
@@ -105,7 +105,11 @@ operationType GUI::GetUseroperation() const
 			case ICON_DELETE: return DEL;
 			//case ICON_UNDO: return UNDO;
 			//case ICON_REDO: return REDO;
-
+			//case ICON_COPY: return COPY;
+			//case ICON_CUT: return CUT;
+			//case ICON_PASTE: return PASTE;
+			//case ICON_SCRAMBEL: return SCRAMBEL;				
+			//case ICON_RESIZE: return RESIZE;  
 
 
 
@@ -238,11 +242,16 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_COLORPAL] = "images\\MenuIcons\\Menu_ColorPal.jpg";
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_Pen.jpg";
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
+	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_RESIZE.jpg";
+	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\Menu_COPY.jpg";
+	MenuIconImages[ICON_CUT] = "images\\MenuIcons\\Menu_CUT.jpg";
+	MenuIconImages[ICON_PASTE] = "images\\MenuIcons\\Menu_PASTE.jpg";
+	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\Menu_UNDO.jpg";
+	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\Menu_REDO.jpg";
+	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
+	MenuIconImages[ICON_SCRAMBEL] = "images\\MenuIcons\\Menu_SCRAMBEL.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
-	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\ICON_UNDO.jpg";
-	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\ICON_REDO.jpg";
-	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";	
 	MenuIconImages[ICON_PLAYMODE] = "images\\MenuIcons\\Menu_PlayMode.jpg";
 	MenuIconImages[ICON_EXIT] =  "images\\MenuIcons\\Menu_Exit.jpg";
 
@@ -265,10 +274,9 @@ void GUI::CreatePlayToolBar()
 
 	InterfaceMode = MODE_PLAY;
 	string MenuIconImages[PLAY_ICON_COUNT];
-	MenuIconImages[ICON_START] = "images\\MenuIcons\\ICON_START.jpg";
-	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\ICON_RESTART.jpg";
-	MenuIconImages[ICON_STICK_IMAGE] = "images\\MenuIcons\\ICON_STICK_IMAGE.jpg";
-	//MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_START.jpg";
+	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\Menu_RESTART.jpg";
+	MenuIconImages[ICON_STICK_IMAGE] = "images\\MenuIcons\\Menu_STICK_IMAGE.jpg";
 	///TODO: write code to create Play mode menu
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * 90, 0, 90, ToolBarHeight);
