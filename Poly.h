@@ -19,5 +19,7 @@ public:
 	int* getshapeparamters();
 	virtual bool isinshape(int x, int y) const;
 	virtual string printdata() const;
+	virtual void Resize(int r);
+	virtual void Rotate();
 };
 

@@ -68,3 +68,13 @@ string Irrpoly::printdata() const
 	
 	return "";
 }
+
+void Irrpoly::Resize(int r)
+{
+	cout << "resize";
+}
+
+void Irrpoly::Rotate()
+{
+	cout << "alo";
+}

@@ -19,6 +19,7 @@ public:
 	virtual string printdata() const;
 	void SaveDataForShapes(ofstream &FileName,int ID);
 	int* getshapeparamters();
-
+	virtual void Resize(double r) ;
+	virtual void Rotate();
 };
 

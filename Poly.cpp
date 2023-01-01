@@ -66,3 +66,13 @@ string Poly::printdata() const
 {
 	return string();
 }
+
+void Poly::Resize(int r)
+{
+	cout << "resize";
+}
+
+void Poly::Rotate()
+{
+	cout << "alo";
+}

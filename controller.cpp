@@ -16,7 +16,7 @@
 #include "opAddPlay_Mode.h"
 #include"opStickImage.h"
 #include"OperationLoad.h"
-
+#include"opResize.h"
 
 
 
@@ -82,6 +82,9 @@ operation* controller::createOperation(operationType OpType)
 		pOp = new opStickImage(this);
 		break;
 
+	case RESIZE:
+		pOp = new opResize(this);
+		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
 			//GUI* pUI = pControl->GetUI();

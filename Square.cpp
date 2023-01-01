@@ -58,4 +58,14 @@ int* Square::getshapeparamters()
 	return list;
 }
 
+void Square::Resize(int r)
+{
+	cout << "resize";
+}
+
+void Square::Rotate()
+{
+	cout << "alo";
+}
+
 

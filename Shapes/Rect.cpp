@@ -61,5 +61,15 @@ int * Rect::getshapeparamters()
 	return list;
 }
 
+void Rect::Resize(int r)
+{
+	cout << "resize";
+}
+
+void Rect::Rotate()
+{
+	cout << "alo";
+}
+
 
 
