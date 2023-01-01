@@ -57,7 +57,7 @@ void Square::Move(int& x, int& y)
 	}
 	center.x = x;
 	center.y = y;
-
+}
 string Square::printdata() const
 {
 	return string();

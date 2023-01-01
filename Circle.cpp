@@ -29,11 +29,11 @@ bool Circle::isinshape(int x, int y) const
 		return false;
 }
 
-void Circle::Move(int& x,int& y)
+void Circle::Move(int& x, int& y)
 {
 	center.x = x;
 	center.y = y;
-
+}
 string Circle::printdata() const
 {
 	string values;
