@@ -18,6 +18,7 @@ public:
 	void Move(int&, int&);		//Move the shape
 
 	virtual bool isinshape(int x, int y) const;
+	virtual string printdata() const;
 
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();

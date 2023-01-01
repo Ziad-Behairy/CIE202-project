@@ -26,6 +26,7 @@ bool Square::isinshape(int x, int y) const
 		return false;
 }
 
+
 void Square::Move(int& x, int& y)
 {
 	int dx, dy;
@@ -56,6 +57,10 @@ void Square::Move(int& x, int& y)
 	}
 	center.x = x;
 	center.y = y;
+
+string Square::printdata() const
+{
+	return string();
 
 }
 

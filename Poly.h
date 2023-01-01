@@ -19,5 +19,6 @@ public:
 	int* getshapeparamters();
 	void Move(int&, int&);		//Move the shape
 	virtual bool isinshape(int x, int y) const;
+	virtual string printdata() const;
 };
 

@@ -76,6 +76,11 @@ bool Line::isinshape(int x, int y) const
 		return false;
 }
 
+string Line::printdata() const
+{
+	return string();
+}
+
 void Line::SaveDataForShapes(ofstream &SaveFile, int ID)
 {
 	SaveFile<< "LINE " + to_string(ID) + "  " +

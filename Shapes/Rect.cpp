@@ -68,6 +68,11 @@ bool Rect::isinshape(int x, int y) const
 		return false;
 }
 
+string Rect::printdata() const
+{
+	return string();
+}
+
 
 	
 

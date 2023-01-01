@@ -17,6 +17,7 @@ public:
 	virtual void Draw(GUI* pUI) const;
 	void Move(int&, int&);		//Move the shape
 	virtual bool isinshape(int x, int y) const;
+	virtual string printdata() const;
 	void SaveDataForShapes(ofstream &FileName,int ID);
 	int* getshapeparamters();
 
