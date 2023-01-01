@@ -2,6 +2,7 @@
 #include "Shape.h"
 #include <fstream>
 #include <vector>
+#include<time.h>
 using namespace std;
 
 //forward decl
@@ -13,6 +14,7 @@ class Graph
 private:
 	vector <shape*> shapesList; //a container to hold all shapes							   
 	shape* selectedShape;	//pointer to the currently selected shape
+	
 public:
 	Graph();
 	~Graph();
@@ -27,7 +29,7 @@ public:
 	void bordercolor(shape* psh, color newcoloe);
 	//void Delete(shape* psh);
 	//virtual bool isinshape(int x, int y)const ;
-
+	void Scrambel();
 	void Save(ofstream& SaveFile);	//Save all shapes to a file
 	//void load(ifstream& inputfile);	//Load all shapes from a file
 	vector <shape*> getshapesList();

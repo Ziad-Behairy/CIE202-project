@@ -11,7 +11,7 @@
 #include"..\Poly.h"
 #include "..\Irrpoly.h"
 #include"..\Shapes\Rect.h"
-
+#include<time.h>
 
 Graph::Graph()
 {
@@ -91,6 +91,19 @@ void Graph::setDelete()
 		}
 	}
 
+
+}
+void Graph::Scrambel()
+{
+	srand(time(0));
+int x, y;
+for (unsigned i =0 ;i< shapesList.size();i++)
+{
+	
+	x = rand() % (1100)+100;
+	y = rand() % (501)+95;
+	shapesList[i]->Move(x, y);
+}
 
 }
 void Graph::Save(ofstream& SaveFile)

@@ -16,11 +16,14 @@
 #include "opAddPlay_Mode.h"
 #include"opStickImage.h"
 #include"OperationLoad.h"
+
 #include"opResize.h"
 
 
 
 
+
+#include "opScrambel.h"
 
 #include "opAddPlay_Mode.h"
 #include "opSelect.h"
@@ -78,12 +81,23 @@ operation* controller::createOperation(operationType OpType)
 	case LOAD:
 		pOp = new OperationLoad(this);
 		break;
+	case CHNG_FILL_CLR:
+		pOp = new opFill(this);
+		break;
+	case CHNG_DRAW_CLR:
+		pOp = new opborder(this);
+		break;
 	case STICK_IMAGE:
 		pOp = new opStickImage(this);
 		break;
 
+
 	case RESIZE:
 		pOp = new opResize(this);
+
+	case SCRAMBEL:
+		pOp = new opScrambel(this);
+
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
@@ -94,12 +108,7 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opExit(this);
 			break;
 
-		case CHNG_FILL_CLR:
-			pOp = new opFill(this);
-			break;
-		case CHNG_DRAW_CLR:
-			pOp = new opborder(this);
-			break;
+		
 
 		
 			//need here to do operation save 
