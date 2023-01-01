@@ -108,7 +108,7 @@ operationType GUI::GetUseroperation() const
 			//case ICON_COPY: return COPY;
 			//case ICON_CUT: return CUT;
 			//case ICON_PASTE: return PASTE;
-			//case ICON_SCRAMBEL: return SCRAMBEL;				
+			case ICON_SCRAMBEL: return SCRAMBEL;				
 			//case ICON_RESIZE: return RESIZE;  
 
 
@@ -301,7 +301,7 @@ void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 	ClearStatusBar();	//First clear the status bar
 
 	pWind->SetPen(MsgColor, 50);
-	pWind->SetFont(24, BOLD, BY_NAME, "Arial");
+	pWind->SetFont(24, BOLD, BY_NAME, "SWISS");
 	pWind->DrawString(10, height - (int)(0.75 * StatusBarHeight), msg);
 }
 //////////////////////////////////////////////////////////////////////////////////////////

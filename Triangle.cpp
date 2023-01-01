@@ -43,6 +43,10 @@ bool Triangle::isinshape(int x, int y) const
 }
 
 
+void Triangle::Move(int&, int&)
+{
+}
+
 void Triangle::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
 	SaveFile << "TRIANGLE " + to_string(ID) + "  " +

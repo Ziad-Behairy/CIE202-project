@@ -58,6 +58,10 @@ int* Irrpoly::getshapeparamters()
 	return list;
 }
 
+void Irrpoly::Move(int&, int&)
+{
+}
+
 bool Irrpoly::isinshape(int x, int y) const
 {
 	return false;

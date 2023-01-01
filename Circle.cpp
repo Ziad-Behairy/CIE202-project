@@ -4,7 +4,7 @@ Circle::Circle(Point center, Point radius, GfxInfo shapeGfxInfo) :shape(shapeGfx
 {
 	this->center = center;
 	this->radius = radius;
-
+	
 }
 
 Circle::~Circle()
@@ -27,6 +27,11 @@ bool Circle::isinshape(int x, int y) const
 
 	else
 		return false;
+}
+void Circle::Move(int& x,int& y)
+{
+	center.x = x;
+	center.y = y;
 }
 void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 {
