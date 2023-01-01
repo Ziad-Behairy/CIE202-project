@@ -48,6 +48,10 @@ string Triangle::printdata() const
 }
 
 
+void Triangle::Move(int&, int&)
+{
+}
+
 void Triangle::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
 	SaveFile << "TRIANGLE " + to_string(ID) + "  " +

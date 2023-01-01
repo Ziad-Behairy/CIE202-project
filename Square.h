@@ -8,12 +8,16 @@ class Square:public shape
 private:
 	Point Corner1;
 	Point Corner2;
+	Point center;
 public:
 	Square(Point p1, Point p2, GfxInfo shapeGfxInfo);
 	virtual ~Square();
 	virtual void Draw(GUI* pUI) const;
 
 	virtual bool isinshape(int x, int y) const;
+
+	void Move(int&, int&);		//Move the shape
+
 	virtual string printdata() const;
 
 	void SaveDataForShapes(ofstream& SaveFile, int ID);

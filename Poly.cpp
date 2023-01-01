@@ -57,6 +57,10 @@ int* Poly::getshapeparamters()
 	return list;
 }
 
+void Poly::Move(int&, int&)
+{
+}
+
 bool Poly::isinshape(int x, int y) const
 {
 	return false;

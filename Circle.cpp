@@ -4,7 +4,7 @@ Circle::Circle(Point center, Point radius, GfxInfo shapeGfxInfo) :shape(shapeGfx
 {
 	this->center = center;
 	this->radius = radius;
-
+	
 }
 
 Circle::~Circle()
@@ -28,12 +28,19 @@ bool Circle::isinshape(int x, int y) const
 	else
 		return false;
 }
+
+void Circle::Move(int& x,int& y)
+{
+	center.x = x;
+	center.y = y;
+
 string Circle::printdata() const
 {
 	string values;
 	double rad = pow(pow(radius.x - center.x, 2) + pow(radius.y - center.y, 2), -1);
 	values = "This is a Circle.The ID: " + to_string(ID) + ". The Point of the center: (" + to_string(center.x) + ", " + to_string(center.y) + "). The Radious is: " + to_string(rad) + ".";
 	return values;
+
 }
 void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 {

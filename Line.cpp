@@ -4,6 +4,8 @@ Line::Line(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	Corner1 = P1;
 	Corner2 = P2;
+	center.x = (P1.x + P2.x) / 2;
+	center.x = (P1.y + P2.y) / 2;
 }
 
 Line::~Line()
@@ -13,6 +15,49 @@ void Line::Draw(GUI* pUI) const
 {
 	//Call Output::DrawRect to draw a rectangle on the screen	
 	pUI->DrawLin(Corner1, Corner2, ShpGfxInfo);
+}
+
+void Line::Move(int& x, int& y)
+{
+	int dx;
+	int dy;
+
+
+
+
+	dx = abs(center.x - x);
+	dy = abs(center.y - y);
+
+
+	if (x > center.x) {
+		Corner1.x += dx;
+		Corner2.x += dx;
+	}
+	else
+	{
+		Corner1.x -= dx;
+		Corner2.x -= dx;
+
+
+	}
+
+	if (y > center.y) {
+		Corner1.y += dy;
+		Corner2.y += dy;
+	}
+	else
+	{
+		Corner1.y -= dy;
+		Corner2.y -= dy;
+
+
+	}
+
+	center.x = (Corner1.x + Corner2.x) / 2;
+	center.y = (Corner1.y + Corner2.y) / 2;
+
+
+
 }
 
 

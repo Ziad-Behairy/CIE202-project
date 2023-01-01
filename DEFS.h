@@ -27,11 +27,11 @@ enum operationType //The operations supported (you can add more if needed)
 	EXIT,			//Exit the application
 	//UNDO,
 	//REDO,
-	/*COPY,
-	CUT,
-	PASTE,
+	//COPY,
+	//CUT,
+	//PASTE,
 	SCRAMBEL,
-	RESIZE,*/
+	//RESIZE,
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar

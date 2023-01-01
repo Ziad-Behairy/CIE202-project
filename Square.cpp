@@ -4,6 +4,8 @@ Square::Square(Point p1, Point p2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 {
 	Corner1 = p1;
 	Corner2 = p2;
+	center.x = (p1.x + p2.x) / 2;
+	center.y = (p1.y + p2.y) / 2;
 }
 
 Square::~Square()
@@ -24,9 +26,42 @@ bool Square::isinshape(int x, int y) const
 		return false;
 }
 
+
+void Square::Move(int& x, int& y)
+{
+	int dx, dy;
+	dx = abs(center.x - x);
+	dy = abs(center.y - y);
+	if (x >= center.x) {
+		Corner1.x += dx;
+		Corner2.x += dx;
+
+	}                                                    //changing vertices x coocrdinates
+	else {
+		Corner1.x -= dx;
+		Corner2.x -= dx;
+
+
+	}
+	if (y >= center.y) {
+		Corner1.y += dy;
+		Corner2.y += dy;
+
+	}
+	//changing vertices y coordinates
+	else {
+		Corner1.y -= dy;
+		Corner2.y -= dy;
+
+
+	}
+	center.x = x;
+	center.y = y;
+
 string Square::printdata() const
 {
 	return string();
+
 }
 
 void Square::SaveDataForShapes(ofstream& SaveFile, int ID)
