@@ -78,6 +78,15 @@ void Graph::setselected(shape* s)
 	}
 }
 
+void Graph::duplicateShape()
+{;
+	for (auto shapepointer : shapesList)
+		
+	{
+		shapesList.push_back(shapepointer);
+	}
+}
+
 void Graph::setDelete()
 {
 	int c = -1;

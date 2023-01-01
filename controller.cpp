@@ -16,16 +16,11 @@
 #include "opAddPlay_Mode.h"
 #include"opStickImage.h"
 #include"OperationLoad.h"
-
-
-
-
-
-
 #include "opAddPlay_Mode.h"
 #include "opSelect.h"
 #include"Shapes/Graph.h"
 #include"opDelete.h"
+#include"opduplicate.h"
 //Constructor
 controller::controller()
 {
@@ -125,10 +120,13 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case TO_PLAY:
 			pOp = new opAddPlay_Mode(this);
-			
 			break;
 
-		
+		/*
+		case DUPLICATE:
+		 //pOp = new opduplicate(this);
+			break;
+		*/
 
 		case STATUS:	//a click on the status bar ==> no operation
 			break;

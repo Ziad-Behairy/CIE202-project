@@ -22,6 +22,7 @@ public:
 
 	shape* GetSelected();
 	void setselected(shape* s);
+	void duplicateShape();
 	void setDelete();
 	void changefillcolor(shape* psh, color newcolor);
 	void bordercolor(shape* psh, color newcoloe);
