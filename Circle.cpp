@@ -71,3 +71,15 @@ int* Circle::getshapeparamters()
 	return list;
 
 }
+
+void Circle::Resize(double r)
+{
+	//double radiusLen = sqrt(pow(radius.x - center.x, 2) + pow(radius.y - center.y, 2));
+	radius.x *=r;
+	radius.y *= r;
+}
+
+void Circle::Rotate()
+{
+	cout << "alo";
+}

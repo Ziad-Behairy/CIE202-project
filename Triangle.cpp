@@ -85,4 +85,14 @@ int * Triangle::getshapeparamters()
 	return list;
 }
 
+void Triangle::Resize(int r)
+{
+	cout << "resize";
+}
+
+void Triangle::Rotate()
+{
+	cout << "alo";
+}
+
 
