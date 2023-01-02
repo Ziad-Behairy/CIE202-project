@@ -32,7 +32,7 @@ void OperationLoad::Execute()
 	ifstream loadingfile;
 	string color1, color2;
 	GfxInfo Info;
-	int id;
+	int id,raduis_dif;
 	Point corner1, corner2, corner3;
 	string shapeName, DrawColor, FillCol, BkGrndColor;
 	int NumOfDrawnShapes;
@@ -90,7 +90,7 @@ void OperationLoad::Execute()
 			Info.isSelected = false;
 
 		  pshape = new Circle(corner1, corner1, Info);
-		  pUI->DrawCir(corner1, corner1, Info);
+		  pUI->DrawCir(corner1, corner1, raduis_dif,Info);
 			pGraph->Addshape(pshape);
 		}
 		else if (shapeName == "LINE"|| shapeName == "\nLINE") {

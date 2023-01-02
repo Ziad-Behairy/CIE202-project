@@ -1,10 +1,10 @@
 #include "Circle.h"
 #include"controller.h"
-Circle::Circle(Point center, Point radius, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
+Circle::Circle(Point center, Point radius_p, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	this->center = center;
-	this->radius = radius;
-	
+	this->radius_p = radius_p;
+	raduis_dff= sqrt(pow((radius_p.x - center.x), 2) + pow((radius_p.y - center.y), 2)); 
 }
 
 Circle::~Circle()
@@ -13,15 +13,15 @@ Circle::~Circle()
 void Circle::Draw(GUI* pUI) const
 {
 	//Call Output::DrawCir to draw a Circle on the screen	
-	pUI->DrawCir(center, radius, ShpGfxInfo);//wait drawing function 
+	pUI->DrawCir(center, radius_p, raduis_dff,ShpGfxInfo);//wait drawing function 
 }
 
 
 bool Circle::isinshape(int x, int y) const
 {
-	int Lradius = sqrt(pow((radius.x - center.x), 2) + pow((radius.y - center.y), 2));
+	//int Lradius = sqrt(pow((radius_p.x - center.x), 2) + pow((radius_p.y - center.y), 2));
 	int distance = sqrt(pow((x - center.x), 2) + pow((y - center.y), 2));
-	if (distance <= Lradius)
+	if (distance <= raduis_dff)
 
 		return true;
 
@@ -34,21 +34,19 @@ void Circle::Move(int& x, int& y)
 	center.x = x;
 	center.y = y;
 }
+
 string Circle::printdata() const
 {
-	string values;
-	double rad = pow(pow(radius.x - center.x, 2) + pow(radius.y - center.y, 2), -1);
-	values = "This is a Circle.The ID: " + to_string(ID) + ". The Point of the center: (" + to_string(center.x) + ", " + to_string(center.y) + "). The Radious is: " + to_string(rad) + ".";
-	return values;
-
+	return string();
 }
+
 void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 {
 	SaveFile<< "CIRC " + to_string(ID) + "  " +
 	
 		+ "  " +
-		to_string(radius.x) + "  " +
-		to_string(radius.y) + "  ";
+		to_string(radius_p.x) + "  " +
+		to_string(radius_p.y) + "  ";
 	SaveFile << ConvertCoulourToString2(ShpGfxInfo.DrawClr) + " ";
 	if (ShpGfxInfo.isFilled)
 	{
@@ -66,8 +64,8 @@ int* Circle::getshapeparamters()
 	int list[4];
 	list[0] = center.x;
 	list[1] = center.y;
-	list[2] = 2 * sqrt(pow((radius.x - center.x), 2)+ (pow((radius.y - center.y), 2)));
-	list[3] =2*sqrt(pow((radius.x - center.x), 2) + (pow((radius.y - center.y), 2)));
+	list[2] = 2 * sqrt(pow((radius_p.x - center.x), 2)+ (pow((radius_p.y - center.y), 2)));
+	list[3] =2*sqrt(pow((radius_p.x - center.x), 2) + (pow((radius_p.y - center.y), 2)));
 	return list;
 
 }
