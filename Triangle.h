@@ -23,7 +23,8 @@ public:
 	void Move(int&, int&);		//Move the shape
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
-
+	virtual void Resize(int r);
+	virtual void Rotate();
 };
 
 

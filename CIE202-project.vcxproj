@@ -180,7 +180,11 @@
     <ClCompile Include="opDelete.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opFill.cpp" />
+
+    <ClCompile Include="opResize.cpp" />
+
     <ClCompile Include="opScrambel.cpp" />
+
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="OperationLoad.cpp" />
     <ClCompile Include="OperationSave.cpp" />
@@ -233,6 +237,8 @@
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opFill.h" />
+    <ClInclude Include="opResize.h" />
+
     <ClInclude Include="opScrambel.h" />
     <ClInclude Include="opSelect.h" />
     <ClInclude Include="OperationLoad.h" />
