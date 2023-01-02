@@ -12,7 +12,7 @@ private:
 	Point center;
 	Point radius_p;
 	int raduis_dff;
-	
+
 public:
 	Circle(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Circle();
@@ -20,13 +20,13 @@ public:
 
 	virtual bool isinshape(int x, int y) const;
 
-	void Move(int&,int&) ;		//Move the shape
+	void Move(int&, int&);		//Move the shape
 
 	string printdata() const;
 
 
-	void SaveDataForShapes(ofstream &SaveFile, int ID);
+	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
-	virtual void Resize(double r);
-	virtual void Rotate();
+
+
 };

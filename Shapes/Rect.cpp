@@ -1,6 +1,6 @@
 #include "Rect.h"
 
-Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
+Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	Corner1 = P1;
 	Corner2 = P2;
@@ -56,7 +56,7 @@ void Rect::Move(int& x, int& y)
 
 
 	center.x = x;
-	center.y = y;                       
+	center.y = y;
 }
 
 
@@ -74,7 +74,7 @@ string Rect::printdata() const
 }
 
 
-	
+
 
 void Rect::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
@@ -95,7 +95,7 @@ void Rect::SaveDataForShapes(ofstream& SaveFile, int ID)
 	SaveFile << "\n";
 }
 
-int * Rect::getshapeparamters()
+int* Rect::getshapeparamters()
 {
 	int list[4];
 	list[0] = Corner1.x;
@@ -103,16 +103,6 @@ int * Rect::getshapeparamters()
 	list[2] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
 	list[3] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
 	return list;
-}
-
-void Rect::Resize(int r)
-{
-	cout << "resize";
-}
-
-void Rect::Rotate()
-{
-	cout << "alo";
 }
 
 

@@ -30,7 +30,7 @@ Graph::~Graph()
 void Graph::Addshape(shape* pShp)
 {
 	//Add a new shape to the shapes vector
-	shapesList.push_back(pShp);	
+	shapesList.push_back(pShp);
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Draw all shapes on the user interface
@@ -51,8 +51,8 @@ void Graph::bordercolor(shape* psh, color newcolor) {
 
 shape* Graph::Getshape(int x, int y) const
 {
-	
-	for (auto& shapePointer:shapesList)
+
+	for (auto& shapePointer : shapesList)
 		if (shapePointer->isinshape(x, y)) {
 			return shapePointer;
 		}
@@ -69,7 +69,7 @@ shape* Graph::GetSelected()
 }
 
 void Graph::setselected(shape* s)
-{ 
+{
 	if (!selectedShape)
 		selectedShape = s;
 	else {
@@ -96,14 +96,14 @@ void Graph::setDelete()
 void Graph::Scrambel()
 {
 	srand(time(0));
-int x, y;
-for (unsigned i =0 ;i< shapesList.size();i++)
-{
-	
-	x = rand() % (1100)+100;
-	y = rand() % (501)+95;
-	shapesList[i]->Move(x, y);
-}
+	int x, y;
+	for (unsigned i = 0; i < shapesList.size(); i++)
+	{
+
+		x = rand() % (1100) + 100;
+		y = rand() % (501) + 95;
+		shapesList[i]->Move(x, y);
+	}
 
 }
 void Graph::Save(ofstream& SaveFile)
@@ -134,7 +134,7 @@ vector<shape*> Graph::getshapesList()
 //	shapesList.erase(find(shapesList.begin(), shapesList.end(), psh));
 //}
 
-void Graph::drawstickimage(GUI*pUI)
+void Graph::drawstickimage(GUI* pUI)
 {
 	for (int i = 0; i < shapesList.size(); i++)
 	{

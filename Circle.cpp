@@ -4,7 +4,7 @@ Circle::Circle(Point center, Point radius_p, GfxInfo shapeGfxInfo) :shape(shapeG
 {
 	this->center = center;
 	this->radius_p = radius_p;
-	raduis_dff= sqrt(pow((radius_p.x - center.x), 2) + pow((radius_p.y - center.y), 2)); 
+	raduis_dff = sqrt(pow((radius_p.x - center.x), 2) + pow((radius_p.y - center.y), 2));
 }
 
 Circle::~Circle()
@@ -13,7 +13,7 @@ Circle::~Circle()
 void Circle::Draw(GUI* pUI) const
 {
 	//Call Output::DrawCir to draw a Circle on the screen	
-	pUI->DrawCir(center, radius_p, raduis_dff,ShpGfxInfo);//wait drawing function 
+	pUI->DrawCir(center, radius_p, raduis_dff, ShpGfxInfo);//wait drawing function 
 }
 
 
@@ -40,11 +40,11 @@ string Circle::printdata() const
 	return string();
 }
 
-void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
+void Circle::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
-	SaveFile<< "CIRC " + to_string(ID) + "  " +
-	
-		+ "  " +
+	SaveFile << "CIRC " + to_string(ID) + "  " +
+
+		+"  " +
 		to_string(radius_p.x) + "  " +
 		to_string(radius_p.y) + "  ";
 	SaveFile << ConvertCoulourToString2(ShpGfxInfo.DrawClr) + " ";
@@ -56,7 +56,7 @@ void Circle::SaveDataForShapes(ofstream &SaveFile,int ID)
 	{
 		SaveFile << "NO_FILL";
 	}
-	SaveFile <<"\n";
+	SaveFile << "\n";
 }
 
 int* Circle::getshapeparamters()
@@ -64,20 +64,8 @@ int* Circle::getshapeparamters()
 	int list[4];
 	list[0] = center.x;
 	list[1] = center.y;
-	list[2] = 2 * sqrt(pow((radius_p.x - center.x), 2)+ (pow((radius_p.y - center.y), 2)));
-	list[3] =2*sqrt(pow((radius_p.x - center.x), 2) + (pow((radius_p.y - center.y), 2)));
+	list[2] = 2 * sqrt(pow((radius_p.x - center.x), 2) + (pow((radius_p.y - center.y), 2)));
+	list[3] = 2 * sqrt(pow((radius_p.x - center.x), 2) + (pow((radius_p.y - center.y), 2)));
 	return list;
 
-}
-
-void Circle::Resize(double r)
-{
-	//double radiusLen = sqrt(pow(radius.x - center.x, 2) + pow(radius.y - center.y, 2));
-	radius.x *=r;
-	radius.y *= r;
-}
-
-void Circle::Rotate()
-{
-	cout << "alo";
 }

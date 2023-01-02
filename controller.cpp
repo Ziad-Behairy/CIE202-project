@@ -16,7 +16,6 @@
 #include "opAddPlay_Mode.h"
 #include"opStickImage.h"
 #include"OperationLoad.h"
-#include"opResize.h"
 #include "opScrambel.h"
 #include "opAddPlay_Mode.h"
 #include "opSelect.h"
@@ -36,7 +35,7 @@ controller::controller()
 operationType controller::GetUseroperation() const
 {
 	//Ask the input to get the operation from the user.
-	return pGUI->GetUseroperation();		
+	return pGUI->GetUseroperation();
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Creates an operation and executes it
@@ -83,12 +82,8 @@ operation* controller::createOperation(operationType OpType)
 	case STICK_IMAGE:
 		pOp = new opStickImage(this);
 		break;
-	case RESIZE:
-		pOp = new opResize(this);
-		break;
 	case SCRAMBEL:
 		pOp = new opScrambel(this);
-
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
@@ -99,9 +94,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opExit(this);
 			break;
 
-		
 
-		
+
+
 			//need here to do operation save 
 		}
 		else
@@ -125,23 +120,23 @@ operation* controller::createOperation(operationType OpType)
 		}
 
 
-			break;
-		case TO_PLAY:
-			pOp = new opAddPlay_Mode(this);
-			
-			break;
+		break;
+	case TO_PLAY:
+		pOp = new opAddPlay_Mode(this);
 
-		
+		break;
 
-		case STATUS:	//a click on the status bar ==> no operation
-			break;
-		case SELECT:
-			pOp = new opSelect(this);
 
-			break;
-		case DEL:
-			pOp = new opDelete(this);
-			break;
+
+	case STATUS:	//a click on the status bar ==> no operation
+		break;
+	case SELECT:
+		pOp = new opSelect(this);
+
+		break;
+	case DEL:
+		pOp = new opDelete(this);
+		break;
 
 		break;
 
@@ -168,7 +163,7 @@ bool operator==(color c1, color c2)
 
 }
 void controller::UpdateInterface() const
-{	
+{
 	pGraph->Draw(pGUI);
 }
 string controller::ConvertCoulourToString(color anycolour)
@@ -212,30 +207,32 @@ int controller::GetNumOfDrawnShapesCount()
 color controller::ConvertStringToCoulour(string colorstring)
 {
 
-		if (colorstring == "BLACK")
-			return BLACK;
-		if (colorstring == "WHITE")
-			return WHITE;
-		if (colorstring == "BLUE")
-			return BLUE;
-		if (colorstring == "YELLOW")
-			return YELLOW;
-		if (colorstring == "RED")
-			return RED;
-		if (colorstring == "GREEN")
-			return GREEN;
-		if (colorstring == "LIGHTGOLDENRODYELLOW")
-			return LIGHTGOLDENRODYELLOW;
+	if (colorstring == "BLACK")
+		return BLACK;
+	if (colorstring == "WHITE")
+		return WHITE;
+	if (colorstring == "BLUE")
+		return BLUE;
+	if (colorstring == "YELLOW")
+		return YELLOW;
+	if (colorstring == "RED")
 		return RED;
+	if (colorstring == "GREEN")
+		return GREEN;
+	if (colorstring == "LIGHTGOLDENRODYELLOW")
+		return LIGHTGOLDENRODYELLOW;
+	return RED;
 }
 
 
-	
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the UI
-GUI *controller::GetUI() const
-{	return pGUI; }
+GUI* controller::GetUI() const
+{
+	return pGUI;
+}
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the Graph
 Graph* controller::getGraph() const
@@ -250,7 +247,7 @@ controller::~controller()
 {
 	delete pGUI;
 	delete pGraph;
-	
+
 }
 
 //==================================================================================//
@@ -266,7 +263,7 @@ void controller::Run()
 
 		//2. Create an operation coresspondingly
 		operation* pOpr = createOperation(OpType);
-		 
+
 		//3. Execute the created operation
 		if (pOpr)
 		{
@@ -275,10 +272,10 @@ void controller::Run()
 			pOpr = nullptr;
 		}
 
-		
-		
-		if(!(pGUI->Get_Mode())) //check if in play mode then it will not update the interface 
-		UpdateInterface(); 
+
+
+		if (!(pGUI->Get_Mode())) //check if in play mode then it will not update the interface 
+			UpdateInterface();
 
 	} while (OpType != EXIT);
 

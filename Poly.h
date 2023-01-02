@@ -7,12 +7,12 @@
 class Poly : public shape
 {
 private:
-	Point p,center;
+	Point p, center;
 	int  vertices_num;
 	int* x = nullptr;
 	int* y = nullptr;
 public:
-	Poly(Point,Point,int, GfxInfo shapeGfxInfo);
+	Poly(Point, Point, int, GfxInfo shapeGfxInfo);
 	virtual ~Poly();
 	virtual void Draw(GUI* pUI) const;
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
@@ -20,7 +20,5 @@ public:
 	void Move(int&, int&);		//Move the shape
 	virtual bool isinshape(int x, int y) const;
 	virtual string printdata() const;
-	virtual void Resize(int r);
-	virtual void Rotate();
 };
 

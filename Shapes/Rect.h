@@ -8,11 +8,11 @@
 class Rect : public shape
 {
 private:
-	Point Corner1;	
+	Point Corner1;
 	Point Corner2;
 	Point center;
 public:
-	Rect(Point , Point, GfxInfo shapeGfxInfo );
+	Rect(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Rect();
 	virtual void Draw(GUI* pUI) const;
 	void Move(int&, int&);		//Move the shape
@@ -22,7 +22,6 @@ public:
 
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
-	virtual void Resize(int r);
-	virtual void Rotate();
+
 };
 

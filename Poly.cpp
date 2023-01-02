@@ -1,7 +1,7 @@
 #include "Poly.h"
 #include<math.h>
 #include <corecrt_math_defines.h>
-Poly::Poly(Point p1, Point center,int vertices_num, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
+Poly::Poly(Point p1, Point center, int vertices_num, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	p = p1;
 	this->center = center;
@@ -69,14 +69,4 @@ bool Poly::isinshape(int x, int y) const
 string Poly::printdata() const
 {
 	return string();
-}
-
-void Poly::Resize(int r)
-{
-	cout << "resize";
-}
-
-void Poly::Rotate()
-{
-	cout << "alo";
 }

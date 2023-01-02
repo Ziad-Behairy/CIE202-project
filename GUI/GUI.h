@@ -40,7 +40,7 @@ class GUI
 		//If you want to change the menu icons order, change the order here
 		ICON_RECT,		//Recangle icon in menu
 		ICON_CIRC,		//Circle icon in menu
-		
+
 		//TODO: Add more icons names here
 		ICON_SQU,		//Square icon in menu
 		//ICON_OVAL,		//Oval icon in menu
@@ -127,13 +127,13 @@ public:
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
 	void DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const; //Draw a line 
-	void DrawCir(Point P1, Point P2,int raduis_dif,GfxInfo CirGfxInfo) const; //Draw a Circle 
+	void DrawCir(Point P1, Point P2, int raduis_dif, GfxInfo CirGfxInfo) const; //Draw a Circle 
 	void DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const; //Draw a triangle 
 	void DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const;//Draw a square
 
-	void DrawIrrPoly(int* x, int* y, int vertices_num,GfxInfo IrrpolyGfxInfo) const;//Draw a Irrpolygon
+	void DrawIrrPoly(int* x, int* y, int vertices_num, GfxInfo IrrpolyGfxInfo) const;//Draw a Irrpolygon
 	void DrawPoly(int* x, int* y, int vertices_num, GfxInfo PolyGfxInfo) const;//Draw a polygon
-	void StickImage(string photo, int x, int y,int width, int hight) const;//Draw a square
+	void StickImage(string photo, int x, int y, int width, int hight) const;//Draw a square
 
 	///Make similar functions for drawing all other shapes.
 

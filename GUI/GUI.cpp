@@ -10,7 +10,7 @@ GUI::GUI()
 	wx = 5;
 	wy = 5;
 
-	
+
 	StatusBarHeight = 50;
 	ToolBarHeight = 60;
 	MenuIconWidth = 65;
@@ -53,15 +53,15 @@ string GUI::GetSrting() const
 	while (1)
 	{
 		ktype = pWind->WaitKeyPress(Key);
-		if (ktype == ESCAPE )	//ESCAPE key is pressed
+		if (ktype == ESCAPE)	//ESCAPE key is pressed
 			return "";	//returns nothing as user has cancelled label
 		if (Key == 13)	//ENTER key is pressed
 			return Label;
 		if (Key == 8)	//BackSpace is pressed
-			if( Label.size() > 0)	
+			if (Label.size() > 0)
 				Label.resize(Label.size() - 1);
 			else
-				Key = '\0';		
+				Key = '\0';
 		else
 			Label += Key;
 		PrintMessage(Label);
@@ -92,7 +92,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_SQU: return DRAW_SQU;
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_TRI: return DRAW_TRI;
-			//case ICON_OVAL: return DRAW_OVAL;
+				//case ICON_OVAL: return DRAW_OVAL;
 			case ICON_REGPOL: return DRAW_REGPOL;
 			case ICON_IRREGPOL: return DRAW_IRREGPOL;
 			case ICON_EXIT: return EXIT;
@@ -103,14 +103,13 @@ operationType GUI::GetUseroperation() const
 			case ICON_PLAYMODE: return TO_PLAY;
 			case ICON_SELECT: return SELECT;
 			case ICON_DELETE: return DEL;
-			case ICON_RESIZE: return RESIZE;
-			//case ICON_UNDO: return UNDO;
-			//case ICON_REDO: return REDO;
-			//case ICON_COPY: return COPY;
-			//case ICON_CUT: return CUT;
-			//case ICON_PASTE: return PASTE;
-			case ICON_SCRAMBEL: return SCRAMBEL;				
-			//case ICON_RESIZE: return RESIZE;  
+				//case ICON_UNDO: return UNDO;
+				//case ICON_REDO: return REDO;
+				//case ICON_COPY: return COPY;
+				//case ICON_CUT: return CUT;
+				//case ICON_PASTE: return PASTE;
+			case ICON_SCRAMBEL: return SCRAMBEL;
+				//case ICON_RESIZE: return RESIZE;  
 
 
 
@@ -149,7 +148,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_START: return START_PLAY;
 			case ICON_RESTART: return RESTART_PLAY;
 			case ICON_STICK_IMAGE: return STICK_IMAGE;
-			
+
 
 
 
@@ -168,10 +167,10 @@ operationType GUI::GetUseroperation() const
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
-		
-		
-		return TO_PLAY;	//just for now. This should be updated
-	}
+
+
+	return TO_PLAY;	//just for now. This should be updated
+}
 
 
 ////////////////////////////////////////////////////
@@ -182,7 +181,7 @@ operationType GUI::GetUseroperation() const
 //								Output Functions										//
 //======================================================================================//
 
-	window* GUI::CreateWind(int w, int h, int x, int y) const
+window* GUI::CreateWind(int w, int h, int x, int y) const
 {
 	window* pW = new window(w, h, x, y);
 	pW->SetBrush(BkGrndColor);
@@ -220,7 +219,7 @@ void GUI::ClearStatusBar() const
 	pWind->DrawRectangle(0, height - StatusBarHeight, width, height);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-void GUI::CreateDrawToolBar() 
+void GUI::CreateDrawToolBar()
 {
 	InterfaceMode = MODE_DRAW;
 
@@ -254,7 +253,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	MenuIconImages[ICON_PLAYMODE] = "images\\MenuIcons\\Menu_PlayMode.jpg";
-	MenuIconImages[ICON_EXIT] =  "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
 
@@ -269,7 +268,7 @@ void GUI::CreateDrawToolBar()
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void GUI::CreatePlayToolBar() 
+void GUI::CreatePlayToolBar()
 {
 	pWind->ChangeTitle("- - - - - - - - - - PLAY MODE - - - - - - - - - -");
 
@@ -344,7 +343,7 @@ int GUI::Get_Mode() const
 
 void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 {
-	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && P2.y <  height - StatusBarHeight))
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y < height - StatusBarHeight && P2.y < height - StatusBarHeight))
 	{
 		color DrawingClr;
 		if (RectGfxInfo.isSelected)	//shape is selected
@@ -373,7 +372,7 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 }
 void GUI::DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const
 {
-	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && P2.y < height - StatusBarHeight))
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y < height - StatusBarHeight && P2.y < height - StatusBarHeight))
 	{
 		color DrawingClr;
 		if (LineGfxInfo.isSelected)	//shape is selected
@@ -400,19 +399,19 @@ void GUI::DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	{
 		PrintMessage("Please select points in limits of drawing area ");
 	}
-	
-}
-void GUI::DrawCir(Point P1, Point P2, int raduis_dif,GfxInfo CirGfxInfo) const
-{
-	 int iRadius = raduis_dif;
-	const int Max_Raduis_up = sqrt( pow(P1.y - ToolBarHeight, 2)); // raduis from center to toolbar
-	const int Max_Raduis_down = sqrt( pow(P1.y - (height - StatusBarHeight), 2)); // raduis from center to statusbar
-	string s = to_string(Max_Raduis_up), r = to_string(iRadius), d = to_string(P2.x), z = to_string(P2.y);
-	if ((P1.y > ToolBarHeight+2 && P2.y > ToolBarHeight+2)	&& (P1.y <  height - StatusBarHeight && P2.y <  height - StatusBarHeight)&& (iRadius < Max_Raduis_up)&& (iRadius < Max_Raduis_down))
-	{
-		
 
-		PrintMessage("raduis = "+r+" max= "+s+ "p2= "+d+" " + z);
+}
+void GUI::DrawCir(Point P1, Point P2, int raduis_dif, GfxInfo CirGfxInfo) const
+{
+	int iRadius = raduis_dif;
+	const int Max_Raduis_up = sqrt(pow(P1.y - ToolBarHeight, 2)); // raduis from center to toolbar
+	const int Max_Raduis_down = sqrt(pow(P1.y - (height - StatusBarHeight), 2)); // raduis from center to statusbar
+	string s = to_string(Max_Raduis_up), r = to_string(iRadius), d = to_string(P2.x), z = to_string(P2.y);
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y < height - StatusBarHeight && P2.y < height - StatusBarHeight) && (iRadius < Max_Raduis_up) && (iRadius < Max_Raduis_down))
+	{
+
+
+		PrintMessage("raduis = " + r + " max= " + s + "p2= " + d + " " + z);
 		color DrawingClr;
 		if (CirGfxInfo.isSelected)	//shape is selected
 			DrawingClr = HighlightColor; //shape should be drawn highlighted
@@ -429,7 +428,7 @@ void GUI::DrawCir(Point P1, Point P2, int raduis_dif,GfxInfo CirGfxInfo) const
 		}
 		else
 			style = FRAME;
-		
+
 		pWind->DrawCircle(P1.x, P1.y, raduis_dif, style);
 		ClearStatusBar();
 	}
@@ -437,11 +436,11 @@ void GUI::DrawCir(Point P1, Point P2, int raduis_dif,GfxInfo CirGfxInfo) const
 	{
 		PrintMessage("Please select points in limits of drawing area ");
 	}
-	
+
 }
 void GUI::DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const
 {
-	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2 && P3.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && P2.y <  height - StatusBarHeight && P3.y <  height - StatusBarHeight))
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2 && P3.y > ToolBarHeight + 2) && (P1.y < height - StatusBarHeight && P2.y < height - StatusBarHeight && P3.y < height - StatusBarHeight))
 	{
 		color DrawingClr;
 		if (TriGfxInfo.isSelected)	//shape is selected
@@ -471,7 +470,7 @@ void GUI::DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo) const
 void GUI::DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const
 {
 	int second_corner_y = P1.y + (P2.x - P1.x);
-	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y <  height - StatusBarHeight && second_corner_y <  height - StatusBarHeight))
+	if ((P1.y > ToolBarHeight + 2 && P2.y > ToolBarHeight + 2) && (P1.y < height - StatusBarHeight && second_corner_y < height - StatusBarHeight))
 	{
 		color DrawingClr;
 		if (SquGfxInfo.isSelected)	//shape is selected
@@ -489,7 +488,7 @@ void GUI::DrawSqu(Point P1, Point P2, GfxInfo SquGfxInfo) const
 		}
 		else
 			style = FRAME;
-		
+
 		const int Squ_length = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
 		pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y + (P2.x - P1.x), style);
 		ClearStatusBar();

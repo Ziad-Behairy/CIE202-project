@@ -10,26 +10,26 @@ class operation; //forward declaration
 class controller
 {
 
-public:	
+public:
 	Graph* pGraph;	//pointe to the grapg
 	GUI* pGUI;		//Pointer to UI class
 	int NumOfDrawnShapes;//Actual number of drawing shapes
 	shape* DrawnShapelist[MaxDrawnShapes];
 	shape* Temp_DrawnShapelist[MaxDrawnShapes];
 	int Temp_NumOfDrawnShapes;
-	controller(); 
+	controller();
 	~controller();
-	
+
 	// -- operation-Related Functions
 	//Reads the input command from the user and returns the corresponding operation type
 	operationType GetUseroperation() const;
-	operation* createOperation(operationType) ; //Creates an operation
+	operation* createOperation(operationType); //Creates an operation
 	void Run();
-	
+
 	Graph* getGraph() const;
-	
+
 	// -- Interface Management Functions
-	GUI *GetUI() const; //Return pointer to the UI
+	GUI* GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	
 	string ConvertCoulourToString(color anycolour);
 	void CreateTempData(); // create temp data of current app 

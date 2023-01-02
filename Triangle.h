@@ -13,7 +13,7 @@ private:
 	Point Corner3;
 	Point center;
 public:
-	Triangle(Point, Point,Point, GfxInfo shapeGfxInfo);
+	Triangle(Point, Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Triangle();
 	virtual void Draw(GUI* pUI) const;
 
@@ -23,8 +23,7 @@ public:
 	void Move(int&, int&);		//Move the shape
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
-	virtual void Resize(int r);
-	virtual void Rotate();
+
 };
 
 

@@ -3,7 +3,7 @@
 #include <fstream>
 #include <ostream>
 #include <iostream>
-class Square:public shape
+class Square :public shape
 {
 private:
 	Point Corner1;
@@ -22,7 +22,6 @@ public:
 
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
-	virtual void Resize(int r);
-	virtual void Rotate();
+
 };
 

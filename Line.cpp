@@ -68,9 +68,9 @@ bool Line::isinshape(int x, int y) const
 	//int slope = (Corner2.y - Corner1.y) / (Corner2.x - Corner1.x);
 	//int c = Corner1.y - slope * Corner1.x; // intercept
 	int ab = sqrt(pow(Corner2.x - Corner1.x, 2) + pow(Corner2.y - Corner1.y, 2));
-	int pa= sqrt(pow(x - Corner1.x, 2) + pow(y - Corner1.y, 2));
+	int pa = sqrt(pow(x - Corner1.x, 2) + pow(y - Corner1.y, 2));
 	int pb = sqrt(pow(x - Corner2.x, 2) + pow(y - Corner2.y, 2));
-	if (ab == (pa+pb))
+	if (ab == (pa + pb))
 		return true;
 	else
 		return false;
@@ -81,9 +81,9 @@ string Line::printdata() const
 	return string();
 }
 
-void Line::SaveDataForShapes(ofstream &SaveFile, int ID)
+void Line::SaveDataForShapes(ofstream& SaveFile, int ID)
 {
-	SaveFile<< "LINE " + to_string(ID) + "  " +
+	SaveFile << "LINE " + to_string(ID) + "  " +
 		to_string(Corner1.x) + "  " +
 		to_string(Corner1.y) + "  " +
 		to_string(Corner2.x) + "  " +
@@ -105,33 +105,9 @@ int* Line::getshapeparamters()
 	int list[4];
 	list[0] = Corner1.x;// get x
 	list[1] = Corner2.y;//get y
-	list[2] =  sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));//get width
-	list[3] =  sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));// get height
+	list[2] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));//get width
+	list[3] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));// get height
 	return list;
-}
-
-void Line::Resize(double r)
-{
-	double midx = (Corner1.x + Corner2.x) / 2;		
-	double midy= (Corner1.y + Corner2.y) / 2;
-	int dx1 = Corner1.x - midx;
-	int dy1 = Corner1.y - midy;
-	int dx2 = Corner2.x - midx;
-	int dy2 = Corner2.y - midy;
-	Corner1.x = midx + (dx1 * r);
-	Corner1.y = midy + (dy1 * r);
-	Corner2.x = midx + (dx2 * r);
-	Corner2.y = midy + (dy2 * r);
-
-	/*Corner1.x = Corner1.x*r;
-	Corner1.y = Corner1.y*r;
-	Corner2.x = Corner2.x*r;
-	Corner2.y = Corner2.y*r;*/
-}
-
-void Line::Rotate()
-{
-	cout << "alo";
 }
 
 

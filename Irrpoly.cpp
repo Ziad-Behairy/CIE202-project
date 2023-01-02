@@ -1,6 +1,6 @@
 #include "Irrpoly.h"
 
-Irrpoly::Irrpoly(Point* arr, int vertices_num, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
+Irrpoly::Irrpoly(Point* arr, int vertices_num, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	points_arr = arr;
 	this->vertices_num = vertices_num;
@@ -69,16 +69,6 @@ bool Irrpoly::isinshape(int x, int y) const
 
 string Irrpoly::printdata() const
 {
-	
+
 	return "";
-}
-
-void Irrpoly::Resize(int r)
-{
-	cout << "resize";
-}
-
-void Irrpoly::Rotate()
-{
-	cout << "alo";
 }

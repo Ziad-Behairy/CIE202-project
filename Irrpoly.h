@@ -9,8 +9,8 @@ class Irrpoly : public shape
 private:
 	Point* points_arr;
 	int  vertices_num;
-	int* x =nullptr;
-	int* y=nullptr ;
+	int* x = nullptr;
+	int* y = nullptr;
 public:
 	Irrpoly(Point*, int, GfxInfo shapeGfxInfo);
 	virtual ~Irrpoly();
@@ -20,7 +20,5 @@ public:
 	void Move(int&, int&);		//Move the shape
 	virtual bool isinshape(int x, int y) const;
 	virtual string printdata() const;
-	virtual void Resize(int r);
-	virtual void Rotate();
 };
 
