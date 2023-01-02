@@ -11,6 +11,7 @@ private:
 	Point Corner1;
 	Point Corner2;
 	Point Corner3;
+	Point center;
 public:
 	Triangle(Point, Point,Point, GfxInfo shapeGfxInfo);
 	virtual ~Triangle();

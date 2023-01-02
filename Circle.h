@@ -10,7 +10,8 @@ class Circle : public shape
 {
 private:
 	Point center;
-	Point radius;
+	Point radius_p;
+	int raduis_dff;
 	
 public:
 	Circle(Point, Point, GfxInfo shapeGfxInfo);
@@ -21,7 +22,7 @@ public:
 
 	void Move(int&,int&) ;		//Move the shape
 
-	virtual string printdata() const;
+	string printdata() const;
 
 
 	void SaveDataForShapes(ofstream &SaveFile, int ID);

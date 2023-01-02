@@ -4,7 +4,8 @@ Triangle::Triangle(Point P1, Point P2,Point P3,GfxInfo shapeGfxInfo):shape(shape
 	Corner1 = P1;
 	Corner2 = P2;
 	Corner3 = P3;
-	
+	center.x = (P1.x + P2.x + P3.x) / 3;
+	center.y = (P1.y + P2.y + P3.y) / 3;
 }
 
 Triangle::~Triangle()
@@ -48,8 +49,35 @@ string Triangle::printdata() const
 }
 
 
-void Triangle::Move(int&, int&)
+void Triangle::Move(int& x, int& y)
 {
+	int dx, dy;
+	dx = abs(center.x - x);
+	dy = abs(center.y - y);
+	if (x > center.x) {
+		Corner1.x += dx;
+		Corner2.x += dx;
+		Corner3.x += dx;
+	}
+	else
+	{
+		Corner1.x -= dx;
+		Corner2.x -= dx;
+		Corner3.x -= dx;
+	}
+	if (y > center.y) {
+		Corner1.y += dy;
+		Corner2.y += dy;
+		Corner3.y += dy;
+	}
+	else
+	{
+		Corner1.y -= dy;
+		Corner2.y -= dy;
+		Corner3.y -= dy;
+	}
+	center.x = (Corner1.x + Corner2.x+ Corner3.x) / 3;
+	center.y = (Corner1.y + Corner2.y+ Corner3.y) / 3;
 }
 
 void Triangle::SaveDataForShapes(ofstream& SaveFile, int ID)

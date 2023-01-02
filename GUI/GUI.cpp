@@ -401,9 +401,9 @@ void GUI::DrawLin(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	}
 	
 }
-void GUI::DrawCir(Point P1, Point P2, GfxInfo CirGfxInfo) const
+void GUI::DrawCir(Point P1, Point P2, int raduis_dif,GfxInfo CirGfxInfo) const
 {
-	const int iRadius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+	 int iRadius = raduis_dif;
 	const int Max_Raduis_up = sqrt( pow(P1.y - ToolBarHeight, 2)); // raduis from center to toolbar
 	const int Max_Raduis_down = sqrt( pow(P1.y - (height - StatusBarHeight), 2)); // raduis from center to statusbar
 	string s = to_string(Max_Raduis_up), r = to_string(iRadius), d = to_string(P2.x), z = to_string(P2.y);
@@ -429,7 +429,7 @@ void GUI::DrawCir(Point P1, Point P2, GfxInfo CirGfxInfo) const
 		else
 			style = FRAME;
 		
-		pWind->DrawCircle(P1.x, P1.y, iRadius, style);
+		pWind->DrawCircle(P1.x, P1.y, raduis_dif, style);
 		ClearStatusBar();
 	}
 	else
