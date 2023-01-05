@@ -54,13 +54,17 @@ class GUI
 		//ICON_PEN,		//Pen  icon in menu
 		ICON_SELECT,	//Select  icon in menu
 		ICON_RESIZE,	//Resize  icon in menu
+		ICON_ROTATE,	//Rotate  icon in menu
+		ICON_ZOOM_IN,	//Zoom in  icon in menu
+		ICON_ZOOM_OUT,	//Zoom out  icon in menu
 		ICON_COPY,	    //Copy  icon in menu
-		ICON_CUT,	    //Cut  icon in menu
+		//ICON_CUT,	    //Cut  icon in menu
 		ICON_PASTE,	    //Paste  icon in menu
 		ICON_UNDO,	    //Undo  icon in menu
 		ICON_REDO,	    //Undo  icon in menu
 		ICON_DELETE,	//Delete  icon in menu
 		ICON_SCRAMBEL,	//Scrambel  icon in menu
+		ICON_DUPLICATE, // Duplicate icon in menu
 		ICON_SAVE,	    //Save  icon in menu
 		ICON_LOAD,	    //Load  icon in menu
 		ICON_PLAYMODE,	//Play mode  icon in menu

@@ -61,6 +61,10 @@ void Poly::Move(int&, int&)
 {
 }
 
+void Poly::Zoom(float&)
+{
+}
+
 bool Poly::isinshape(int x, int y) const
 {
 	return false;

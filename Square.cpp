@@ -58,6 +58,15 @@ void Square::Move(int& x, int& y)
 	center.x = x;
 	center.y = y;
 }
+void Square::Zoom(float& scale)
+{
+
+	// to keep the center fixed and not change it after scaling the shape first we transalte the shape to the origin then scale the shape then translate the shape again to the original postion 
+	Corner1.x = (Corner1.x - center.x) * scale + center.x;
+	Corner1.y = (Corner1.y - center.y) * scale + center.y;
+	Corner2.x = (Corner2.x - center.x) * scale + center.x;
+	Corner2.y = (Corner2.y - center.y) * scale + center.y;
+}
 string Square::printdata() const
 {
 	return string();
