@@ -17,10 +17,10 @@ public:
 	virtual void Draw(GUI* pUI) const;
 	void Move(int&, int&);		//Move the shape
 	void Zoom(float&);	//Zoom the shape
-	virtual bool isinshape(int x, int y) const;
+	bool isinshape(int x, int y) const;
 	virtual string printdata() const;
 	void SaveDataForShapes(ofstream& FileName, int ID);
 	int* getshapeparamters();
-
+	void Resize(double r);
 };
 

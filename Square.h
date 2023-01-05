@@ -13,8 +13,8 @@ public:
 	Square(Point p1, Point p2, GfxInfo shapeGfxInfo);
 	virtual ~Square();
 	virtual void Draw(GUI* pUI) const;
-
-	virtual bool isinshape(int x, int y) const;
+	void Resize(double r);
+	bool isinshape(int x, int y) const;
 
 	void Move(int&, int&);		//Move the shape
 	void Zoom(float&);

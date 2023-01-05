@@ -19,7 +19,8 @@ public:
 	int* getshapeparamters();
 	void Move(int&, int&);		//Move the shape
 	void Zoom( float&);	//Zoom the shape
-	virtual bool isinshape(int x, int y) const;
+	bool isinshape(int x, int y) const;
 	virtual string printdata() const;
+	void Resize(double r);
 };
 

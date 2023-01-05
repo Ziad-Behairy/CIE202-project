@@ -17,6 +17,14 @@ void Square::Draw(GUI* pUI) const
 	pUI->DrawSqu(Corner1, Corner2, ShpGfxInfo);
 }
 
+void Square::Resize(double r)
+{
+	Corner1.x = (Corner1.x - center.x) * r + center.x;
+	Corner1.y = (Corner1.y - center.y) * r + center.y;
+	Corner2.x = (Corner2.x - center.x) * r + center.x;
+	Corner2.y = (Corner2.y - center.y) * r + center.y;
+}
+
 
 bool Square::isinshape(int x, int y) const
 {

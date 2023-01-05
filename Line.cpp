@@ -133,4 +133,18 @@ int* Line::getshapeparamters()
 	return list;
 }
 
+void Line::Resize(double r)
+{
+	double midx = (Corner1.x + Corner2.x) / 2;
+	double midy = (Corner1.y + Corner2.y) / 2;
+	int dx1 = Corner1.x - midx;
+	int dy1 = Corner1.y - midy;
+	int dx2 = Corner2.x - midx;
+	int dy2 = Corner2.y - midy;
+	Corner1.x = midx + (dx1 * r);
+	Corner1.y = midy + (dy1 * r);
+	Corner2.x = midx + (dx2 * r);
+	Corner2.y = midy + (dy2 * r);
+}
+
 

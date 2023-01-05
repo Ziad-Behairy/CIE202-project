@@ -83,6 +83,14 @@ string Rect::printdata() const
 	return string();
 }
 
+void Rect::Resize(double r)
+{
+	Corner1.x = (Corner1.x - center.x) * r + center.x;
+	Corner1.y = (Corner1.y - center.y) * r + center.y;
+	Corner2.x = (Corner2.x - center.x) * r + center.x;
+	Corner2.y = (Corner2.y - center.y) * r + center.y;
+}
+
 
 
 
