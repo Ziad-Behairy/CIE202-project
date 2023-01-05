@@ -63,6 +63,7 @@ class GUI
 		ICON_UNDO,	    //Undo  icon in menu
 		ICON_REDO,	    //Undo  icon in menu
 		ICON_DELETE,	//Delete  icon in menu
+		ICON_HIDE,
 		ICON_SCRAMBEL,	//Scrambel  icon in menu
 		ICON_DUPLICATE, // Duplicate icon in menu
 		ICON_SAVE,	    //Save  icon in menu

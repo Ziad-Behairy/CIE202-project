@@ -12,9 +12,10 @@ class GUI;
 class Graph
 {
 private:
-	vector <shape*> shapesList; //a container to hold all shapes							   
+	vector <shape*> shapesList; //a container to hold all shapes
+	//vector <shape*> imagesList; //a container to hold all shapes
 	shape* selectedShape;	//pointer to the currently selected shape
-
+	int flag = 0;
 public:
 	Graph();
 	~Graph();
@@ -36,5 +37,7 @@ public:
 	//void load(ifstream& inputfile);	//Load all shapes from a file
 	vector <shape*> getshapesList();
 	void drawstickimage(GUI* pUI);
+	void Hide(GUI* pUI); // Hide shapes by drawing a card on each shape 
+	bool isHide();
 
 };
