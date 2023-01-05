@@ -107,11 +107,24 @@ void Rect::SaveDataForShapes(ofstream& SaveFile, int ID)
 
 int* Rect::getshapeparamters()
 {
-	int list[4];
-	list[0] = Corner1.x;
-	list[1] = Corner2.y;
-	list[2] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
-	list[3] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
+	int list[6];
+	if (Corner1.y < Corner2.y) {
+		list[0] = Corner1.x;
+		list[1] = Corner1.y;
+		list[2] = Corner2.x - 1;
+		list[3] = Corner2.y - 1;
+	}
+	else
+	{
+		list[0] = Corner2.x - 1;
+		list[1] = Corner2.y - 1;
+		list[2] = Corner1.x;
+		list[3] = Corner1.y;
+	}
+	list[4] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
+	list[5] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
+	/*list[4] = center.x;
+	list[5] = center.y;*/
 	return list;
 }
 

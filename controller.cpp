@@ -23,6 +23,7 @@
 #include"opDelete.h"
 #include "opZoomIn.h"
 #include "opZoomOut.h"
+#include "opHide.h"
 //Constructor
 controller::controller()
 {
@@ -86,6 +87,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case SCRAMBEL:
 		pOp = new opScrambel(this);
+		break;
+	case HIDE:
+		pOp = new opHide(this);
 		break;
 	case ZOOM_OUT:
 		pOp = new opZoomOut(this);
@@ -281,8 +285,8 @@ void controller::Run()
 		}
 
 
-
-		if (!(pGUI->Get_Mode())) //check if in play mode then it will not update the interface 
+		
+		if (!(pGUI->Get_Mode()) &&!(pGraph->isHide())) //check if in play mode then it will not update the interface 
 			UpdateInterface();
 
 	} while (OpType != EXIT);

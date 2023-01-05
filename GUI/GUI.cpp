@@ -13,7 +13,7 @@ GUI::GUI()
 
 	StatusBarHeight = 50;
 	ToolBarHeight = 60;
-	MenuIconWidth = 60;
+	MenuIconWidth = 58;
 
 	DrawColor = RED;	//default Drawing color
 	FillColor = WHITE;	//default Filling color
@@ -103,6 +103,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_PLAYMODE: return TO_PLAY;
 			case ICON_SELECT: return SELECT;
 			case ICON_DELETE: return DEL;
+			case ICON_HIDE: return HIDE;
 				//case ICON_UNDO: return UNDO;
 				//case ICON_REDO: return REDO;
 				//case ICON_COPY: return COPY;
@@ -256,6 +257,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\Menu_UNDO.jpg";
 	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\Menu_REDO.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
+	MenuIconImages[ICON_HIDE] = "images\\MenuIcons\\Menu_HIDE.jpg";
 	MenuIconImages[ICON_SCRAMBEL] = "images\\MenuIcons\\Menu_SCRAMBEL.jpg";
 	MenuIconImages[ICON_DUPLICATE] = "images\\MenuIcons\\Menu_DUPLICATE.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";

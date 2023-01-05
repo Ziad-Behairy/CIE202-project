@@ -13,6 +13,7 @@
 #include"..\Shapes\Rect.h"
 #include<time.h>
 
+
 Graph::Graph()
 {
 	selectedShape = nullptr;
@@ -39,6 +40,7 @@ void Graph::Draw(GUI* pUI) const
 	pUI->ClearDrawArea();
 	for (auto shapePointer : shapesList)
 		shapePointer->Draw(pUI);
+	
 }
 
 void Graph::changefillcolor(shape* psh, color newcolor) {
@@ -96,13 +98,18 @@ void Graph::setDelete()
 void Graph::Scrambel()
 {
 	srand(time(0));
-	int x, y;
-	for (unsigned i = 0; i < shapesList.size(); i++)
+	for (int i = 0,j=shapesList.size()-1; i < shapesList.size(); i++,j--)
 	{
 
-		x = rand() % (1100) + 100;
-		y = rand() % (501) + 95;
+		int x = rand() % (1100) + 100;
+		int y = rand() % (501) + 95;
+		/*int x1 = shapesList[j]->getshapeparamters()[4];
+		int y1 = shapesList[j]->getshapeparamters()[5];
+		int x2 = shapesList[i]->getshapeparamters()[4];
+		int y2 = shapesList[i]->getshapeparamters()[5];
+		shapesList[j]->Move(x2, y2);*/
 		shapesList[i]->Move(x, y);
+		
 	}
 
 }
@@ -154,8 +161,35 @@ void Graph::drawstickimage(GUI* pUI)
 		int y = shapesList[i]->getshapeparamters()[1];
 		int width = shapesList[i]->getshapeparamters()[2];
 		int height = shapesList[i]->getshapeparamters()[3];
-		pUI->StickImage("images\\MenuIcons\\TEAM.jpg", x, y, width, height);
+		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
 		//pUI->StickImage("images\\MenuIcons\\TEAM.jpg", i*5, i*10, 20,20);
 	}
+}
+
+void Graph::Hide(GUI* pUI)
+{
+	flag++;
+	for (int i = 0; i < shapesList.size(); i++)
+	{ 
+		
+		 int x = shapesList[i]->getshapeparamters()[0];
+		 int y = shapesList[i]->getshapeparamters()[1];
+		 int x2 = shapesList[i]->getshapeparamters()[2];
+		int  y2 = shapesList[i]->getshapeparamters()[3];
+		 int width = shapesList[i]->getshapeparamters()[4];
+		 int height = shapesList[i]->getshapeparamters()[5];
+		//pUI->getwind()->SetBrush(BLACK);
+		//pUI->getwind()->DrawRectangle(x,y,x2,y2);
+		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+	}
+
+}
+
+bool Graph::isHide()
+{
+	if (flag)
+		return true;
+	else
+	return false;
 }
 

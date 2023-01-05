@@ -40,6 +40,7 @@ enum operationType //The operations supported (you can add more if needed)
 	//ROTATE,
 	ZOOM_IN,
 	ZOOM_OUT,
+	HIDE,
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY	,		//Switch interface to Play mode
 	START_PLAY,

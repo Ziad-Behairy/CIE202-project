@@ -50,11 +50,6 @@ int* Irrpoly::getshapeparamters()
 	list[2] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));
 	list[3] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));
 
-	list[0] = x[0];// get x
-	list[1] = y[1];//get y
-	list[2] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));//get width
-	list[3] = sqrt(pow((x[1] - x[0]), 2) + (pow((y[1] - y[0]), 2)));// get height
-
 	return list;
 }
 

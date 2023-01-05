@@ -112,11 +112,24 @@ void Line::SaveDataForShapes(ofstream& SaveFile, int ID)
 
 int* Line::getshapeparamters()
 {
-	int list[4];
-	list[0] = Corner1.x;// get x
-	list[1] = Corner2.y;//get y
-	list[2] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));//get width
-	list[3] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));// get height
+	int list[6];
+	if (Corner1.y < Corner2.y || Corner1.x < Corner2.x) {
+		list[0] = Corner1.x-5;
+		list[1] = Corner1.y-2;
+		list[2] = Corner1.x - 5;
+		list[3] = Corner1.y - 5;
+	}
+	else
+	{
+		list[0] = Corner2.x-5;
+		list[1] = Corner2.y-2;
+		list[2] = Corner1.x-5;
+		list[3] = Corner1.y-5;
+	}
+	list[4] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));//get width
+	list[5] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));// get height
+	/*list[4] = center.x;
+	list[5] = center.y;*/
 	return list;
 }
 
