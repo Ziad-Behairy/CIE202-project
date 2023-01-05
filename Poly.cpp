@@ -74,3 +74,7 @@ string Poly::printdata() const
 {
 	return string();
 }
+
+void Poly::Resize(double r)
+{
+}

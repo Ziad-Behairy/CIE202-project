@@ -71,3 +71,7 @@ string Irrpoly::printdata() const
 
 	return "";
 }
+
+void Irrpoly::Resize(double r)
+{
+}

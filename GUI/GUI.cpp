@@ -114,7 +114,7 @@ operationType GUI::GetUseroperation() const
 			 case ICON_ZOOM_IN: return ZOOM_IN;
 			 case ICON_ZOOM_OUT: return ZOOM_OUT;
             //case ICON_ROTATE: return ROTATE; 
-				//case ICON_RESIZE: return RESIZE;  
+			case ICON_RESIZE: return RESIZE;  
 
 
 

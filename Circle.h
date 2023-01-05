@@ -17,8 +17,8 @@ public:
 	Circle(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
-
-	virtual bool isinshape(int x, int y) const;
+	void Resize(double r);
+	bool isinshape(int x, int y) const;
 
 	void Move(int&, int&);		//Move the shape
 	void Zoom(float&) ;	//Zoom the shape

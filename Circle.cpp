@@ -16,6 +16,11 @@ void Circle::Draw(GUI* pUI) const
 	pUI->DrawCir(center, radius_p, raduis_dff, ShpGfxInfo);//wait drawing function 
 }
 
+void Circle::Resize(double r)
+{
+	raduis_dff *= r;
+}
+
 
 bool Circle::isinshape(int x, int y) const
 {

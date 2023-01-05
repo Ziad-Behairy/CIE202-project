@@ -31,7 +31,6 @@ enum operationType //The operations supported (you can add more if needed)
 	//CUT,
 	//PASTE,
 	SCRAMBEL,
-	//RESIZE,
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
