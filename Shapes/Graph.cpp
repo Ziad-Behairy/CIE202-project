@@ -41,9 +41,9 @@ void Graph::Draw(GUI* pUI)
 	pUI->ClearDrawArea();
 	for (auto shapePointer : shapesList)
 		shapePointer->Draw(pUI);
-	if (flag) {
+	if (isHide()) {
 		Hide(pUI);
-		flag = 0;
+		flag=0;
 	}
 	
 }
