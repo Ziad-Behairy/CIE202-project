@@ -21,6 +21,8 @@
 #include "opSelect.h"
 #include"Shapes/Graph.h"
 #include"opDelete.h"
+#include "opZoomIn.h"
+#include "opZoomOut.h"
 //Constructor
 controller::controller()
 {
@@ -84,6 +86,12 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case SCRAMBEL:
 		pOp = new opScrambel(this);
+		break;
+	case ZOOM_OUT:
+		pOp = new opZoomOut(this);
+		break;
+	case ZOOM_IN:
+		pOp = new opZoomIn(this);
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()

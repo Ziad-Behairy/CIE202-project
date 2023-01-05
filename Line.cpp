@@ -5,7 +5,7 @@ Line::Line(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 	Corner1 = P1;
 	Corner2 = P2;
 	center.x = (P1.x + P2.x) / 2;
-	center.x = (P1.y + P2.y) / 2;
+	center.y = (P1.y + P2.y) / 2;
 }
 
 Line::~Line()
@@ -58,6 +58,16 @@ void Line::Move(int& x, int& y)
 
 
 
+}
+
+void Line::Zoom(float& scale)
+{
+	// to keep the center fixed and not change it after scaling the shape first we transalte the shape to the origin then scale the shape then translate the shape again to the original postion 
+
+	Corner1.x = (Corner1.x - center.x) * scale + center.x;
+	Corner1.y = (Corner1.y - center.y) * scale + center.y;
+	Corner2.x = (Corner2.x - center.x) * scale + center.x;
+	Corner2.y = (Corner2.y - center.y) * scale + center.y;
 }
 
 

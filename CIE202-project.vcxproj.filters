@@ -183,11 +183,11 @@
       <Filter>Operations</Filter>
     </ClCompile>
     <ClCompile Include="operations\opAddRect.cpp" />
-
     <ClCompile Include="opResize.cpp" />
-
     <ClCompile Include="opScrambel.cpp" />
-
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opZoomIn.cpp" />
+    <ClCompile Include="opZoomOut.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -332,11 +332,12 @@
     </ClInclude>
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
-
     <ClInclude Include="opResize.h" />
-
     <ClInclude Include="opScrambel.h" />
-
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opZoomIn.h" />
+    <ClInclude Include="opZoomOut.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

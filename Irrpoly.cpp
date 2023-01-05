@@ -62,6 +62,10 @@ void Irrpoly::Move(int&, int&)
 {
 }
 
+void Irrpoly::Zoom(float&)
+{
+}
+
 bool Irrpoly::isinshape(int x, int y) const
 {
 	return false;

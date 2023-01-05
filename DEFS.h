@@ -36,6 +36,10 @@ enum operationType //The operations supported (you can add more if needed)
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
 	SELECT,
+	//DUPLICTAE,
+	//ROTATE,
+	ZOOM_IN,
+	ZOOM_OUT,
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY	,		//Switch interface to Play mode
 	START_PLAY,

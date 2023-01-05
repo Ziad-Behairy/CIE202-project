@@ -106,6 +106,18 @@ void Graph::Scrambel()
 	}
 
 }
+void Graph::Zoom_In()
+{
+	float Scale=2;
+	for (auto& shapePointer : shapesList)
+		shapePointer->Zoom(Scale);
+}
+void Graph::Zoom_Out()
+{
+	float Scale=0.5;
+	for (auto& shapePointer : shapesList)
+		shapePointer->Zoom(Scale);
+}
 void Graph::Save(ofstream& SaveFile)
 {
 	SaveFile << shapesList.size() << "\n";  //and Current Fill Color and in the second line write the number of figures 

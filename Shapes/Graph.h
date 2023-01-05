@@ -30,6 +30,8 @@ public:
 	//void Delete(shape* psh);
 	//virtual bool isinshape(int x, int y)const ;
 	void Scrambel();
+	void Zoom_In();
+	void Zoom_Out();
 	void Save(ofstream& SaveFile);	//Save all shapes to a file
 	//void load(ifstream& inputfile);	//Load all shapes from a file
 	vector <shape*> getshapesList();

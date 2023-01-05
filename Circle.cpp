@@ -35,6 +35,13 @@ void Circle::Move(int& x, int& y)
 	center.y = y;
 }
 
+void Circle::Zoom(float& scale)
+{
+	// to keep the center fixed and not change it after scaling the shape first we transalte the shape to the origin then scale the shape then translate the shape again to the original postion 
+
+	raduis_dff *= scale;
+}
+
 string Circle::printdata() const
 {
 	return string();
