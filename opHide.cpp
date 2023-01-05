@@ -14,7 +14,7 @@ opHide::~opHide()
 void opHide::Execute()
 {
 	GUI* pUI = pControl->GetUI();
-	pUI->PrintMessage(" Hide Shpaes ");
+	pUI->PrintMessage(" Hide Shapes ");
 	Graph* pGraph = pControl->getGraph();
 	pGraph->Hide(pUI);
 

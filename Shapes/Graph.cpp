@@ -12,7 +12,7 @@
 #include "..\Irrpoly.h"
 #include"..\Shapes\Rect.h"
 #include<time.h>
-
+#include "..\opHide.h"
 
 Graph::Graph()
 {
@@ -35,11 +35,16 @@ void Graph::Addshape(shape* pShp)
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Draw all shapes on the user interface
-void Graph::Draw(GUI* pUI) const
+void Graph::Draw(GUI* pUI) 
 {
+	
 	pUI->ClearDrawArea();
 	for (auto shapePointer : shapesList)
 		shapePointer->Draw(pUI);
+	if (flag) {
+		Hide(pUI);
+		flag = 0;
+	}
 	
 }
 
@@ -168,7 +173,7 @@ void Graph::drawstickimage(GUI* pUI)
 
 void Graph::Hide(GUI* pUI)
 {
-	flag++;
+	flag=1;
 	for (int i = 0; i < shapesList.size(); i++)
 	{ 
 		

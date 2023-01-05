@@ -174,7 +174,7 @@ bool operator==(color c1, color c2)
 	else return false;
 
 }
-void controller::UpdateInterface() const
+void controller::UpdateInterface() 
 {
 	pGraph->Draw(pGUI);
 }
@@ -286,7 +286,7 @@ void controller::Run()
 
 
 		
-		if (!(pGUI->Get_Mode()) &&!(pGraph->isHide())) //check if in play mode then it will not update the interface 
+		if (!(pGUI->Get_Mode()) /*&&!(pGraph->isHide())*/) //check if in play mode then it will not update the interface 
 			UpdateInterface();
 
 	} while (OpType != EXIT);

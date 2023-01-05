@@ -30,7 +30,7 @@ public:
 
 	// -- Interface Management Functions
 	GUI* GetUI() const; //Return pointer to the UI
-	void UpdateInterface() const;	//Redraws all the drawing window	
+	void UpdateInterface() ;	//Redraws all the drawing window	
 	string ConvertCoulourToString(color anycolour);
 	void CreateTempData(); // create temp data of current app 
 	void AddAnotherShape(shape* pdraw);
