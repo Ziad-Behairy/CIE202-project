@@ -27,7 +27,7 @@ enum operationType //The operations supported (you can add more if needed)
 	EXIT,			//Exit the application
 	//UNDO,
 	//REDO,
-	//COPY,
+	COPY,
 	//CUT,
 	//PASTE,
 	SCRAMBEL,

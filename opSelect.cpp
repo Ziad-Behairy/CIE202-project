@@ -31,7 +31,9 @@ void opSelect::Execute()
 		else {
 			
 			select->SetSelected(false);
+			
 			pUI->PrintMessage("Shape Is Unselected ");
+			pGraph->setselected(nullptr);
 
 		}
 		

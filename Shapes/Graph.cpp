@@ -17,6 +17,7 @@
 Graph::Graph()
 {
 	selectedShape = nullptr;
+	copiedShape = nullptr;
 }
 
 Graph::~Graph()
@@ -73,6 +74,15 @@ shape* Graph::Getshape(int x, int y) const
 shape* Graph::GetSelected()
 {
 	return selectedShape;
+}
+
+
+shape* Graph::getCopied() {
+	return copiedShape;
+}
+
+void Graph::setCopied(shape* copied) {
+	copiedShape = copied;
 }
 
 void Graph::setselected(shape* s)
