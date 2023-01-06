@@ -123,4 +123,8 @@ int* Square::getshapeparamters()
 	return list;
 }
 
+void Square::Rotate()
+{
+}
+
 

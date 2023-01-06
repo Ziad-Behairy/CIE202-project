@@ -78,3 +78,7 @@ string Poly::printdata() const
 void Poly::Resize(double r)
 {
 }
+
+void Poly::Rotate()
+{
+}

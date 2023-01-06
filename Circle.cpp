@@ -83,3 +83,7 @@ int* Circle::getshapeparamters()
 	return list;
 
 }
+
+void Circle::Rotate()
+{
+}

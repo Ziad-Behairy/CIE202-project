@@ -75,3 +75,7 @@ string Irrpoly::printdata() const
 void Irrpoly::Resize(double r)
 {
 }
+
+void Irrpoly::Rotate()
+{
+}

@@ -139,4 +139,20 @@ void Triangle::Resize(double r)
 	Corner3.y = (Corner3.y - center.y) * r + center.y;
 }
 
+void Triangle::Rotate()
+{
+	int temp1x = Corner1.x;
+	int temp1y = Corner1.y;
+	int temp2x = Corner2.x;
+	int temp2y = Corner2.y;
+	int temp3x = Corner3.x;
+	int temp3y = Corner3.y;
+	Corner1.x = -temp1y + center.y + center.x;
+	Corner1.y = temp1x - center.x + center.y;
+	Corner2.x = -temp2y + center.y + center.x;
+	Corner2.y = temp2x - center.x + center.y;
+	Corner3.x = -temp3y + center.y + center.x;
+	Corner3.y = temp3x - center.x + center.y;
+}
+
 
