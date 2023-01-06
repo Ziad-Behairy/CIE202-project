@@ -37,7 +37,7 @@ public:
 	///Decide the parameters that you should pass to each function	
 
 
-	//virtual void Rotate() = 0;	//Rotate the shape
+	virtual void Rotate() = 0;	//Rotate the shape
 	virtual void Resize(double r) = 0;	//Resize the shape
 	virtual void Zoom(float &) = 0;	//Zoom the shape
 	virtual void Move(int&, int&) = 0;		//Move the shape

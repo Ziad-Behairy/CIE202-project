@@ -147,4 +147,16 @@ void Line::Resize(double r)
 	Corner2.y = midy + (dy2 * r);
 }
 
+void Line::Rotate()
+{
+	int temp1x = Corner1.x;
+	int temp1y = Corner1.y;
+	int temp2x = Corner2.x;
+	int temp2y = Corner2.y;
+	Corner1.x = -temp1y + center.y + center.x;
+	Corner1.y = temp1x - center.x + center.y;
+	Corner2.x = -temp2y + center.y + center.x;
+	Corner2.y = temp2x - center.x + center.y;
+}
+
 

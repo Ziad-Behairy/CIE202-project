@@ -22,5 +22,6 @@ public:
 	void SaveDataForShapes(ofstream& FileName, int ID);
 	int* getshapeparamters();
 	void Resize(double r);
+	void Rotate();
 };
 
