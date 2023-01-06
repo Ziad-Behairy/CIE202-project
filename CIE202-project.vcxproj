@@ -177,6 +177,7 @@
     <ClCompile Include="opAddSqu.cpp" />
     <ClCompile Include="opAddTri.cpp" />
     <ClCompile Include="opborder.cpp" />
+    <ClCompile Include="opCopy.cpp" />
     <ClCompile Include="opDelete.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opFill.cpp" />
@@ -234,6 +235,7 @@
     <ClInclude Include="opAddSqu.h" />
     <ClInclude Include="opAddTri.h" />
     <ClInclude Include="opborder.h" />
+    <ClInclude Include="opCopy.h" />
     <ClInclude Include="opDelete.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
