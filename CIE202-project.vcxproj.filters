@@ -191,6 +191,7 @@
     <ClCompile Include="opHide.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opRotate.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -345,6 +346,8 @@
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opRotate.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">
