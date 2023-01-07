@@ -26,8 +26,6 @@
 #include "opHide.h"
 #include"opResize.h"
 #include"opRotate.h"
-#include "opmultiselection.h"
-#include"iostream"
 //Constructor
 controller::controller()
 {
@@ -106,6 +104,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case ROTATE:
 		pOp = new opRotate(this);
+		break;
+	case COPY:
+		pOp = new opCopy(this);
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
