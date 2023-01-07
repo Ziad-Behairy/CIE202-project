@@ -108,7 +108,7 @@ operationType GUI::GetUseroperation() const
 				//case ICON_REDO: return REDO;
 			case ICON_COPY: return COPY;
 				//case ICON_CUT: return CUT;
-				//case ICON_PASTE: return PASTE;
+			case ICON_PASTE: return PASTE;
 			case ICON_SCRAMBEL: return SCRAMBEL;
 			case ICON_DUPLICATE: return DUPLICTAE;
 			 case ICON_ZOOM_IN: return ZOOM_IN;

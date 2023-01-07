@@ -83,13 +83,16 @@ void Circle::SaveDataForShapes(ofstream& SaveFile, int ID)
 
 int* Circle::getshapeparamters()
 {
-	int list[6];
+	int list[10];
 	list[0] = center.x-raduis_dff;
 	list[1] = center.y- raduis_dff;
 	list[2] = center.x + raduis_dff;
 	list[3] = center.y + raduis_dff;
 	list[4] = raduis_dff*2;
 	list[5] = raduis_dff *2;
+	list[6] = center.x;
+	list[7] = center.y;
+	list[8] = raduis_dff;
 	return list;
 
 }

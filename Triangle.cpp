@@ -129,12 +129,18 @@ void Triangle::SaveDataForShapes(ofstream& SaveFile, int ID)
 
 int* Triangle::getshapeparamters()
 {
-	int list[6];
+	int list[12];
 	int y1= Corner2.y- sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
 	list[0] = Corner2.x-4;
 	list[1] = y1;
 	list[5] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)))+5;
 	list[4] = sqrt(pow((Corner2.x - Corner3.x), 2) + (pow((Corner2.y - Corner3.y), 2)))+5;
+	list[6] = Corner1.x;
+	list[7] = Corner1.y;
+	list[8] = Corner2.x;
+	list[9] = Corner2.y;
+	list[10] = Corner3.x;
+	list[11] = Corner3.y;
 	return list;
 }
 

@@ -194,7 +194,11 @@
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opCopy.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+
+    <ClCompile Include="opPaste.cpp" />
+
     <ClCompile Include="opDuplicate.cpp" />
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -354,7 +358,11 @@
     <ClInclude Include="opCopy.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
+
+    <ClInclude Include="opPaste.h" />
+
     <ClInclude Include="opDuplicate.h" />
+
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

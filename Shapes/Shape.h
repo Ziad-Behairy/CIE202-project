@@ -17,7 +17,7 @@ public:
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
-
+	GfxInfo getGfxInfo();
 	virtual void Draw(GUI* pUI) const = 0;		//Draw the shape
 
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
@@ -36,7 +36,7 @@ public:
 
 	///Decide the parameters that you should pass to each function	
 
-
+	
 	virtual void Rotate() = 0;	//Rotate the shape
 	virtual void Resize(double r) = 0;	//Resize the shape
 	virtual void Zoom(float &) = 0;	//Zoom the shape

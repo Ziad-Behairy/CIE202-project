@@ -110,7 +110,7 @@ void Square::SaveDataForShapes(ofstream& SaveFile, int ID)
 
 int* Square::getshapeparamters()
 {
-	int list[6];
+	int list[10];
 	if (Corner1.y < Corner2.y) {
 		list[0] = Corner1.x;
 		list[1] = Corner1.y;
@@ -126,6 +126,10 @@ int* Square::getshapeparamters()
 	}
 	list[4] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
 	list[5] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
+	list[6] = Corner1.x;
+	list[7] = Corner1.y;
+	list[8] = Corner2.x;
+	list[9] = Corner2.y;
 	/*list[4] = center.x;
 	list[5] = center.y;*/
 	return list;

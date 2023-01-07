@@ -27,7 +27,11 @@
 #include"opResize.h"
 #include"opRotate.h"
 #include "opCopy.h"
+
+#include "opPaste.h"
+
 #include"opDuplicate.h"
+
 //Constructor
 controller::controller()
 {
@@ -112,6 +116,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case COPY:
 		pOp = new opCopy(this);
+		break;
+	case PASTE:
+		pOp = new opPaste(this);
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
