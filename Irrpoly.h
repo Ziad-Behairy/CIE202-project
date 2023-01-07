@@ -11,8 +11,10 @@ private:
 	int  vertices_num;
 	int* x = nullptr;
 	int* y = nullptr;
+	GfxInfo shapeGfxInfo;
 public:
 	Irrpoly(Point*, int, GfxInfo shapeGfxInfo);
+	Irrpoly(const Irrpoly* copy);
 	virtual ~Irrpoly();
 	virtual void Draw(GUI* pUI) const;
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
