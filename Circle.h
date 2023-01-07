@@ -19,12 +19,9 @@ public:
 	virtual void Draw(GUI* pUI) const;
 	void Resize(double r);
 	bool isinshape(int x, int y) const;
-
 	void Move(int&, int&);		//Move the shape
 	void Zoom(float&) ;	//Zoom the shape
 	string printdata() const;
-
-
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
 	void Rotate();

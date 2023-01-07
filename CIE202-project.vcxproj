@@ -182,6 +182,7 @@
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opFill.cpp" />
     <ClCompile Include="opHide.cpp" />
+    <ClCompile Include="opPaste.cpp" />
     <ClCompile Include="opResize.cpp" />
     <ClCompile Include="opRotate.cpp" />
     <ClCompile Include="opScrambel.cpp" />
@@ -241,6 +242,7 @@
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opFill.h" />
     <ClInclude Include="opHide.h" />
+    <ClInclude Include="opPaste.h" />
     <ClInclude Include="opResize.h" />
     <ClInclude Include="opRotate.h" />
     <ClInclude Include="opScrambel.h" />
