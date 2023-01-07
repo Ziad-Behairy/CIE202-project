@@ -26,7 +26,6 @@
 #include "opHide.h"
 #include"opResize.h"
 #include"opRotate.h"
-#include"opCopy.h"
 //Constructor
 controller::controller()
 {
@@ -156,7 +155,6 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case SELECT:
 		pOp = new opSelect(this);
-
 		break;
 	case DEL:
 		pOp = new opDelete(this);

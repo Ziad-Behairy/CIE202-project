@@ -19,17 +19,15 @@ void opSelect::Execute()
 	pUI->GetPointClicked(P1.x, P1.y);
 	pUI->ClearStatusBar();
 	shape* select = pGraph->Getshape(P1.x, P1.y);
+	pGraph->setselected(false);
 	if (select) {
 		if (!(select->IsSelected())) {
-			
-			
 			select->SetSelected(true); // setselect in shape class
 			pUI->PrintMessage("Shape Is Selected ");
 			pGraph->setselected(select); // setselect in graph class
 			//pUI->PrintMessage(select->printdata());
 		}
 		else {
-			
 			select->SetSelected(false);
 			
 			pUI->PrintMessage("Shape Is Unselected ");
@@ -40,20 +38,6 @@ void opSelect::Execute()
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -117,7 +101,7 @@ void opSelect::Execute()
 //		if (pGraph->GetSelected()) {
 //			select->SetSelected(true);
 //			pUI->PrintMessage(msg);
-//			pGraph->GetSelected()->SetSelected(false);
+//	
 //			pGraph->SetSelected(select);
 //		}
 //		else {

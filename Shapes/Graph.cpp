@@ -89,10 +89,10 @@ void Graph::setselected(shape* s)
 {
 	if (!selectedShape)
 		selectedShape = s;
-	else {
+	/*else {
 		selectedShape->SetSelected(0);
 		selectedShape = s;
-	}
+	}*/
 }
 
 void Graph::setDelete()
