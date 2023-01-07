@@ -8,6 +8,15 @@ Triangle::Triangle(Point P1, Point P2, Point P3, GfxInfo shapeGfxInfo) :shape(sh
 	center.y = (P1.y + P2.y + P3.y) / 3;
 }
 
+Triangle::Triangle(const Triangle* copy):shape(copy->ShpGfxInfo)
+{
+	this->Corner1 = copy->Corner1;
+	this->Corner2 = copy->Corner2;
+	this->Corner3 = copy->Corner3;
+	this->ID = copy->ID;
+	this->center = copy->center;
+}
+
 Triangle::~Triangle()
 {}
 

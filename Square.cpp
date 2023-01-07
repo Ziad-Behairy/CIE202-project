@@ -8,6 +8,14 @@ Square::Square(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 	center.y = (p1.y + p2.y) / 2;
 }
 
+Square::Square(const Square* copy):shape(copy->ShpGfxInfo)
+{
+	this->Corner1 = copy->Corner1;
+	this->Corner2 = copy->Corner2;
+	this->ID = copy->ID;
+	this->center = copy->center;
+}
+
 Square::~Square()
 {
 }

@@ -179,6 +179,7 @@
     <ClCompile Include="opborder.cpp" />
     <ClCompile Include="opCopy.cpp" />
     <ClCompile Include="opDelete.cpp" />
+    <ClCompile Include="opDuplicate.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opFill.cpp" />
     <ClCompile Include="opHide.cpp" />
@@ -238,6 +239,7 @@
     <ClInclude Include="opborder.h" />
     <ClInclude Include="opCopy.h" />
     <ClInclude Include="opDelete.h" />
+    <ClInclude Include="opDuplicate.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opFill.h" />

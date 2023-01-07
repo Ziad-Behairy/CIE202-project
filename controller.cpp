@@ -27,7 +27,11 @@
 #include"opResize.h"
 #include"opRotate.h"
 #include "opCopy.h"
+
 #include "opPaste.h"
+
+#include"opDuplicate.h"
+
 //Constructor
 controller::controller()
 {
@@ -91,6 +95,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case SCRAMBEL:
 		pOp = new opScrambel(this);
+		break;
+	case DUPLICTAE:
+		pOp = new opDuplicate(this);
 		break;
 	case HIDE:
 		pOp = new opHide(this);

@@ -12,9 +12,10 @@ private:
 	Point center;
 	Point radius_p;
 	int raduis_dff;
-
+	GfxInfo shapeGfxInfo;
 public:
 	Circle(Point, Point, GfxInfo shapeGfxInfo);
+	Circle(const Circle * copy);
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
 	void Resize(double r);

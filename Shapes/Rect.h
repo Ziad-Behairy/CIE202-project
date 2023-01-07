@@ -11,8 +11,10 @@ private:
 	Point Corner1;
 	Point Corner2;
 	Point center;
+	GfxInfo shapeGfxInfo;
 public:
 	Rect(Point, Point, GfxInfo shapeGfxInfo);
+	Rect(const Rect* copy);
 	virtual ~Rect();
 	virtual void Draw(GUI* pUI) const;
 	void Move(int&, int&);		//Move the shape

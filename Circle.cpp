@@ -4,7 +4,17 @@ Circle::Circle(Point center, Point radius_p, GfxInfo shapeGfxInfo) :shape(shapeG
 {
 	this->center = center;
 	this->radius_p = radius_p;
+	this->shapeGfxInfo = shapeGfxInfo;
 	raduis_dff = sqrt(pow((radius_p.x - center.x), 2) + pow((radius_p.y - center.y), 2));
+}
+
+Circle::Circle(const Circle* copy):shape(copy->ShpGfxInfo)
+{
+	this->center = copy->center;
+	this->radius_p = copy->radius_p;
+	this->raduis_dff = copy->raduis_dff;
+	this->ID = copy->ID;
+
 }
 
 Circle::~Circle()
