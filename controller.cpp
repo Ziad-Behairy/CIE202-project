@@ -26,6 +26,7 @@
 #include "opHide.h"
 #include"opResize.h"
 #include"opRotate.h"
+#include "opCopy.h"
 //Constructor
 controller::controller()
 {
