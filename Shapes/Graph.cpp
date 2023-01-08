@@ -40,7 +40,6 @@ void Graph::Draw(GUI* pUI)
 {
 	
 	pUI->ClearDrawArea();
-	for (auto shapePointer : shapesList)
 		for (int i = 0; i < shapesList.size(); i++) {
 			shapesList[i]->Draw(pUI);
 			if (shapesList[i]->IsHiden()) {
