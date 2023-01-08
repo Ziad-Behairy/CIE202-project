@@ -13,6 +13,7 @@ protected:
 	/// Add more parameters if needed.
 
 public:
+	int getid();
 	shape(GfxInfo shapeGfxInfo);
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape

@@ -309,8 +309,8 @@ void controller::Run()
 
 
 		
-		if (!(pGUI->Get_Mode()) /*&&!(pGraph->isHide())*/) //check if in play mode then it will not update the interface 
-			UpdateInterface();
+		//if (!(pGUI->Get_Mode()) /*&&!(pGraph->isHide())*/) //check if in play mode then it will not update the interface 
+		UpdateInterface();
 
 	} while (OpType != EXIT);
 
