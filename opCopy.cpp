@@ -26,3 +26,10 @@ void opCopy::Execute()
 	}
 
 }
+void opCopy::Undo()
+{
+}
+
+void opCopy::Redo()
+{
+}

@@ -55,3 +55,14 @@ void opAddRect::Execute()
 	pGr->Addshape(R);
 
 }
+void opAddRect::Undo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->moveshapetobin(); // move the shape from shape list to bin list 
+}
+
+void opAddRect::Redo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->returntoshapelist();// return the shape from bin list  to shape list
+}

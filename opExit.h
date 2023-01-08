@@ -6,5 +6,7 @@ public:
 	opExit(controller* pcont);
 	virtual ~ opExit();
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 ;
 };

@@ -19,3 +19,12 @@ void opHide::Execute()
 	pGraph->Hide(pUI);
 
 }
+
+
+void opHide::Undo()
+{
+}
+
+void opHide::Redo()
+{
+}

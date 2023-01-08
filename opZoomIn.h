@@ -7,5 +7,7 @@ public:
 	virtual ~opZoomIn();
 
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 };
 

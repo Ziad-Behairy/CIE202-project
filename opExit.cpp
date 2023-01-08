@@ -24,3 +24,13 @@ void opExit::Execute() {
 	pUI-> PrintMessage("Exiting the program...");
 	Sleep(100);
 }
+
+void opExit::Undo()
+{
+}
+
+void opExit::Redo()
+{
+}
+
+

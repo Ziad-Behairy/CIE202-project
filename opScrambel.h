@@ -9,6 +9,8 @@ public:
 	virtual ~opScrambel();
 
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 
 };
 

@@ -10,5 +10,7 @@ public:
     opDelete(controller* pcont);
 	
 	 virtual void Execute();
+	 void Undo() ;
+	 void Redo() ;
 };
 
