@@ -30,7 +30,7 @@
 #include "opCopy.h"
 #include"opMove.h"
 #include "opPaste.h"
-
+#include"opStart.h"
 #include"opDuplicate.h"
 
 //Constructor
@@ -173,8 +173,13 @@ operation* controller::createOperation(operationType OpType)
 		pOp = new opSelect(this);
 		break;
 	case DEL:
-		//pOp = new opDelete(this);
+		pOp = new opDelete(this);
+		break;
+	case MOVE:
 		pOp = new opMove(this);
+		break;
+	case START_PLAY:
+		pOp = new opStart(this);
 		break;
 
 		break;

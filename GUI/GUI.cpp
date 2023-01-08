@@ -116,6 +116,7 @@ operationType GUI::GetUseroperation() const
             case ICON_ROTATE: return ROTATE; 
 			case ICON_RESIZE: return RESIZE;  
 			case ICON_UNHIDE: return UNHIDE;
+			case ICON_MOVE: return MOVE;
 
 
 
