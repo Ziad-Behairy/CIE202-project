@@ -10,6 +10,17 @@ Poly::Poly(Point p1, Point center, int vertices_num, GfxInfo shapeGfxInfo) :shap
 	y = new int[vertices_num];
 }
 
+Poly::Poly(const Poly* copy):shape(copy->ShpGfxInfo)
+{
+	this->center = copy->center;
+	this->p = copy->p;
+	this->vertices_num = copy->vertices_num;
+	this->vertices_num = copy->vertices_num;
+	this->x = copy->x;
+	this->y = copy->y;
+	this->ID = copy->ID;
+}
+
 Poly::~Poly()
 {
 }
@@ -90,4 +101,8 @@ void Poly::HideShape(GUI* pUI)
 		int height = getshapeparamters()[3];
 		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
 	}*/
+}
+
+void Poly::Rotate()
+{
 }

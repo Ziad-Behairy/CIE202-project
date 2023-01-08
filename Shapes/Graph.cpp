@@ -17,6 +17,7 @@
 Graph::Graph()
 {
 	selectedShape = nullptr;
+	copiedShape = nullptr;
 }
 
 Graph::~Graph()
@@ -69,20 +70,82 @@ shape* Graph::Getshape(int x, int y) const
 	return nullptr;
 }
 
+void Graph::Duplicate()
+{
+	shape* deplicate;
+	int num = shapesList.size();
+	for (int i = 0; i < num; i++)
+	{
+		if (dynamic_cast<Rect*>(shapesList[i]))
+		{
+			Rect* copy = dynamic_cast<Rect*>(shapesList[i]);
+			deplicate = new Rect(copy);
+			Addshape(deplicate);
+			cout << "rect";
+		}
+		if (dynamic_cast<Circle*>(shapesList[i]))
+		{
+			Circle* copy = dynamic_cast<Circle*>(shapesList[i]);
+			deplicate = new Circle(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Irrpoly*>(shapesList[i]))
+		{
+			Irrpoly* copy = dynamic_cast<Irrpoly*>(shapesList[i]);
+			deplicate = new Irrpoly(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Line*>(shapesList[i]))
+		{
+			Line* copy = dynamic_cast<Line*>(shapesList[i]);
+			deplicate = new Line(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Poly*>(shapesList[i]))
+		{
+			Poly* copy = dynamic_cast<Poly*>(shapesList[i]);
+			deplicate = new Poly(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Square*>(shapesList[i]))
+		{
+			Square* copy = dynamic_cast<Square*>(shapesList[i]);
+			deplicate = new Square(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Triangle*>(shapesList[i]))
+		{
+			Triangle* copy = dynamic_cast<Triangle*>(shapesList[i]);
+			deplicate = new Triangle(copy);
+			Addshape(deplicate);
+		}
+
+	}
+}
+
 
 shape* Graph::GetSelected()
 {
 	return selectedShape;
 }
 
+
+shape* Graph::getCopied() {
+	return copiedShape;
+}
+
+void Graph::setCopied(shape* copied) {
+	copiedShape = copied;
+}
+
 void Graph::setselected(shape* s)
 {
 	if (!selectedShape)
 		selectedShape = s;
-	else {
+	/*else {
 		selectedShape->SetSelected(0);
 		selectedShape = s;
-	}
+	}*/
 }
 
 void Graph::setDelete()

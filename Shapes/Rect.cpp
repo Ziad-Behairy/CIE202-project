@@ -8,6 +8,14 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 	center.y = (P1.y + P2.y) / 2;
 }
 
+Rect::Rect(const Rect* copy):shape(copy->ShpGfxInfo)
+{
+	this->Corner1 = copy->Corner1;
+	this->Corner2 = copy->Corner2;
+	this->ID = copy->ID;
+	this->center = copy->center;
+}
+
 Rect::~Rect()
 {}
 
@@ -134,6 +142,18 @@ int* Rect::getshapeparamters()
 	/*list[4] = center.x;
 	list[5] = center.y;*/
 	return list;
+}
+
+void Rect::Rotate()
+{
+	int temp1x = Corner1.x;
+	int temp1y = Corner1.y;
+	int temp2x = Corner2.x;
+	int temp2y = Corner2.y;
+	Corner1.x = -temp1y + center.y + center.x;
+	Corner1.y = temp1x - center.x + center.y;
+	Corner2.x = -temp2y + center.y + center.x;
+	Corner2.y = temp2x - center.x + center.y;
 }
 
 void Rect::HideShape(GUI* pUI)

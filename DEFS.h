@@ -27,15 +27,15 @@ enum operationType //The operations supported (you can add more if needed)
 	EXIT,			//Exit the application
 	//UNDO,
 	//REDO,
-	//COPY,
+	COPY,
 	//CUT,
-	//PASTE,
+	PASTE,
 	SCRAMBEL,
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
 	SELECT,
-	//DUPLICTAE,
+	DUPLICTAE,
 	//ROTATE,
 	ZOOM_IN,
 	ZOOM_OUT,

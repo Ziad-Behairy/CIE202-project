@@ -28,20 +28,23 @@ void opAddCir::Execute()
 	pUI->ClearStatusBar();
 
 	//Preapre all Line parameters
-	GfxInfo LineGfxInfo;
+	GfxInfo CircleGfxInfo;
 
 	//get drawing, filling colors and pen width from the interface
-	LineGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	LineGfxInfo.FillClr = pUI->getCrntFillColor();
-	LineGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	CircleGfxInfo.DrawClr = pUI->getCrntDrawColor();
+	CircleGfxInfo.FillClr = pUI->getCrntFillColor();
+	CircleGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
 	LineGfxInfo.isFilled = false;	//default is not filled
 	LineGfxInfo.isSelected = false;	//defualt is not selected
 	LineGfxInfo.IsHiden = false;
+	CircleGfxInfo.isFilled = false;	//default is not filled
+	CircleGfxInfo.isSelected = false;	//defualt is not selected
+
 
 	//Create a Line with the above parameters
-	Circle* R = new Circle(P1, P2, LineGfxInfo);
+	Circle* R = new Circle(P1, P2, CircleGfxInfo);
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();

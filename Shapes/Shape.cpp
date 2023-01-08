@@ -23,6 +23,11 @@ void shape::SetHiden(bool s)
 	ShpGfxInfo.IsHiden = s;
 }
 
+GfxInfo shape::getGfxInfo()
+{
+	return ShpGfxInfo;
+}
+
 void shape::ChngDrawClr(color Dclr)
 {
 	ShpGfxInfo.DrawClr = Dclr;

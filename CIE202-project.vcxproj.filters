@@ -188,6 +188,16 @@
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opZoomIn.cpp" />
     <ClCompile Include="opZoomOut.cpp" />
+    <ClCompile Include="opHide.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opRotate.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opCopy.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opPaste.cpp" />
+    <ClCompile Include="opDuplicate.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opMove.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -338,6 +348,20 @@
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opZoomIn.h" />
     <ClInclude Include="opZoomOut.h" />
+    <ClInclude Include="opHide.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opRotate.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opCopy.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opPaste.h" />
+    <ClInclude Include="opDuplicate.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opMove.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

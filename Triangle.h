@@ -12,11 +12,12 @@ private:
 	Point Corner2;
 	Point Corner3;
 	Point center;
+	GfxInfo shapeGfxInfo;
 public:
 	Triangle(Point, Point, Point, GfxInfo shapeGfxInfo);
+	Triangle(const Triangle* copy);
 	virtual ~Triangle();
 	virtual void Draw(GUI* pUI) const;
-
 	bool isinshape(int x, int y) const;
 	virtual string printdata() const;
 	void Zoom(float&);
@@ -25,6 +26,7 @@ public:
 	int* getshapeparamters();
 	void Resize(double r);
 	void HideShape(GUI* pUI);
+	void Rotate();
 };
 
 

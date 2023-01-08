@@ -26,6 +26,13 @@
 #include "opHide.h"
 #include"opResize.h"
 #include "opUnhide.h"
+#include"opRotate.h"
+#include "opCopy.h"
+#include"opMove.h"
+#include "opPaste.h"
+
+#include"opDuplicate.h"
+
 //Constructor
 controller::controller()
 {
@@ -90,6 +97,9 @@ operation* controller::createOperation(operationType OpType)
 	case SCRAMBEL:
 		pOp = new opScrambel(this);
 		break;
+	case DUPLICTAE:
+		pOp = new opDuplicate(this);
+		break;
 	case HIDE:
 		pOp = new opHide(this);
 		break;
@@ -104,6 +114,15 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case UNHIDE:
 		pOp = new opUnhide(this);
+		break;
+	case ROTATE:
+		pOp = new opRotate(this);
+		break;
+	case COPY:
+		pOp = new opCopy(this);
+		break;
+	case PASTE:
+		pOp = new opPaste(this);
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
@@ -152,10 +171,10 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case SELECT:
 		pOp = new opSelect(this);
-
 		break;
 	case DEL:
-		pOp = new opDelete(this);
+		//pOp = new opDelete(this);
+		pOp = new opMove(this);
 		break;
 
 		break;

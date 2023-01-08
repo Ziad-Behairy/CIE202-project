@@ -8,7 +8,7 @@
 #include <string>
 #include"Shapes/Shape.h"
 #include <fstream>
-#include "..\CIE202-project\Shapes\Graph.h"
+#include "Shapes\Graph.h"
 #include"opExit.h"
 OperationSave::~OperationSave()
 {
@@ -59,6 +59,7 @@ void OperationSave::Execute()
 	pGraph->Save(SaveFile);
 	SaveFile.close(); //close the file 
 	//Print Action Message'
+	Sleep(1000);
 	pUI->PrintMessage("Drawing SAVED");  //Done
 	pControl->savethis = true;
 }

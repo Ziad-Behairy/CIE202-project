@@ -4,7 +4,17 @@ Circle::Circle(Point center, Point radius_p, GfxInfo shapeGfxInfo) :shape(shapeG
 {
 	this->center = center;
 	this->radius_p = radius_p;
+	this->shapeGfxInfo = shapeGfxInfo;
 	raduis_dff = sqrt(pow((radius_p.x - center.x), 2) + pow((radius_p.y - center.y), 2));
+}
+
+Circle::Circle(const Circle* copy):shape(copy->ShpGfxInfo)
+{
+	this->center = copy->center;
+	this->radius_p = copy->radius_p;
+	this->raduis_dff = copy->raduis_dff;
+	this->ID = copy->ID;
+
 }
 
 Circle::~Circle()
@@ -73,15 +83,22 @@ void Circle::SaveDataForShapes(ofstream& SaveFile, int ID)
 
 int* Circle::getshapeparamters()
 {
-	int list[6];
+	int list[10];
 	list[0] = center.x-raduis_dff;
 	list[1] = center.y- raduis_dff;
 	list[2] = center.x + raduis_dff;
 	list[3] = center.y + raduis_dff;
 	list[4] = raduis_dff*2;
 	list[5] = raduis_dff *2;
+	list[6] = center.x;
+	list[7] = center.y;
+	list[8] = raduis_dff;
 	return list;
 
+}
+
+void Circle::Rotate()
+{
 }
 
 void Circle::HideShape(GUI* pUI)
