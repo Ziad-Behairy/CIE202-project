@@ -25,6 +25,8 @@ public:
 	string printdata() const;
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
+	void HideShape(GUI* pUI);
+
 	void Rotate();
 
 };

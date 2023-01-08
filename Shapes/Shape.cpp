@@ -19,6 +19,14 @@ bool shape::IsSelected() const
 {
 	return ShpGfxInfo.isSelected;
 }
+bool shape::IsHiden()
+{
+	return ShpGfxInfo.IsHiden;
+}
+void shape::SetHiden(bool s)
+{
+	ShpGfxInfo.IsHiden = s;
+}
 
 GfxInfo shape::getGfxInfo()
 {

@@ -86,6 +86,10 @@ void Irrpoly::Resize(double r)
 {
 }
 
+void Irrpoly::HideShape(GUI* pUI)
+{
+}
+
 void Irrpoly::Rotate()
 {
 }

@@ -45,5 +45,6 @@ public:
 	bool isHide();
 	void start(GUI* pUI);
 	vector<shape*> selectedshapes();
-
+	void Unhide(Point* p); 
+	//bool isHide();
 };

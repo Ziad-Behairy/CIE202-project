@@ -25,6 +25,7 @@
 #include "opZoomOut.h"
 #include "opHide.h"
 #include"opResize.h"
+#include "opUnhide.h"
 #include"opRotate.h"
 #include "opCopy.h"
 #include"opMove.h"
@@ -110,6 +111,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case RESIZE:
 		pOp = new opResize(this);
+		break;
+	case UNHIDE:
+		pOp = new opUnhide(this);
 		break;
 	case ROTATE:
 		pOp = new opRotate(this);

@@ -24,6 +24,7 @@ public:
 	bool isinshape(int x, int y) const;
 	virtual string printdata() const;
 	void Resize(double r);
+	void HideShape(GUI* pUI);
 	void Rotate();
 };
 

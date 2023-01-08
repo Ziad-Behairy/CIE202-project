@@ -39,6 +39,7 @@ void opAddpoly::Execute()
 	PolyGfxInfo.FillClr = pUI->getCrntFillColor();
 	PolyGfxInfo.isFilled = false; // detault isn't filled 
 	PolyGfxInfo.isSelected = false; // detault isn't selected 
+	PolyGfxInfo.IsHiden = false;
 	// Create  a new Irrpoly with this parameters and properties
 	Poly* polygon = new Poly(p, center,vertices_num, PolyGfxInfo);
 	//Get a pointer to the graph

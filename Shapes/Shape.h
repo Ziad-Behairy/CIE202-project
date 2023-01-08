@@ -18,6 +18,8 @@ public:
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
+	bool IsHiden();
+	void SetHiden(bool s);
 	GfxInfo getGfxInfo();
 	virtual void Draw(GUI* pUI) const = 0;		//Draw the shape
 
@@ -42,7 +44,7 @@ public:
 	virtual void Resize(double r) = 0;	//Resize the shape
 	virtual void Zoom(float &) = 0;	//Zoom the shape
 	virtual void Move(int&, int&) = 0;		//Move the shape
-
+	virtual void HideShape(GUI* pUI) = 0;
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the shape parameters to the file
 	//virtual void Load(ifstream &Infile) = 0;	//Load the shape parameters to the file
 

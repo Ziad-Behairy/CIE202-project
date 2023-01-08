@@ -20,6 +20,7 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 	bool isFilled;	//shape Filled or not
 	int BorderWdth;	//Width of shape borders
 	bool isSelected;	//true if the shape is selected.
+	bool IsHiden;
 };
 
 
@@ -55,6 +56,7 @@ class GUI
 		ICON_SELECT,	//Select  icon in menu
 		ICON_RESIZE,	//Resize  icon in menu
 		ICON_ROTATE,	//Rotate  icon in menu
+		ICON_MOVE,
 		ICON_ZOOM_IN,	//Zoom in  icon in menu
 		ICON_ZOOM_OUT,	//Zoom out  icon in menu
 		ICON_COPY,	    //Copy  icon in menu
@@ -64,6 +66,7 @@ class GUI
 		ICON_REDO,	    //Undo  icon in menu
 		ICON_DELETE,	//Delete  icon in menu
 		ICON_HIDE,
+		ICON_UNHIDE,
 		ICON_SCRAMBEL,	//Scrambel  icon in menu
 		ICON_DUPLICATE, // Duplicate icon in menu
 		ICON_SAVE,	    //Save  icon in menu
