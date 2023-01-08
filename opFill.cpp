@@ -27,3 +27,10 @@ void opFill::Execute()
 		pUI->PrintMessage("draw shape firs...oR...select shape ");
 }
 
+void opFill::Undo()
+{
+}
+
+void opFill::Redo()
+{
+}

@@ -98,6 +98,7 @@ void Graph::setselected(shape* s)
 void Graph::setDelete()
 {
 	int c = -1;
+	
 	for (auto shapepointer : shapesList)
 	{
 		c++;
@@ -206,5 +207,28 @@ bool Graph::isHide()
 		return true;
 	else
 	return false;
+}
+
+void Graph::moveshapetobin()
+{
+	int iend = shapesList.size()-1;
+	if (shapesList[shapesList.size() - 1])
+	{
+		BinedList.push_back(shapesList[shapesList.size() - 1]);
+		shapesList.erase(shapesList.end() - 1);
+		cout << "Shape moved from shapes_list to Undone_shapes_list!";
+	}
+}
+
+void Graph::returntoshapelist()
+{
+	int iend = BinedList.size() - 1;
+	cout << "\nreturntoshapelist done";
+	if (BinedList[shapesList.size() - 1])
+	{
+		shapesList.push_back(BinedList[shapesList.size() - 1]);
+		BinedList.erase(BinedList.end() - 1);
+		cout << "Shape moved from Undone_shapes_list to shapes_list!";
+	}
 }
 

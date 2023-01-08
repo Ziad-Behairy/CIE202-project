@@ -41,3 +41,10 @@ void opResize::Execute()
 	}
 
 }
+
+void opResize::Undo()
+{
+}
+void opResize::Redo()
+{
+}

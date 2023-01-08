@@ -6,4 +6,6 @@ public:
 	opCopy(controller* pcont);
 	~opCopy();
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 };

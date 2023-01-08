@@ -12,8 +12,10 @@ class GUI;
 class Graph
 {
 private:
-	vector <shape*> shapesList; //a container to hold all shapes
+	vector<shape*>::iterator iter;
+	vector <shape*> shapesList; //a container to hold all shapes 
 	//vector <shape*> imagesList; //a container to hold all shapes
+	vector <shape*> BinedList; //a container to hold all shapes undoed
 	shape* selectedShape;	//pointer to the currently selected shape
 	shape* copiedShape;
 	int flag = 0;
@@ -42,5 +44,7 @@ public:
 	void drawstickimage(GUI* pUI);
 	void Hide(GUI* pUI); // Hide shapes by drawing a card on each shape 
 	bool isHide();
+	void moveshapetobin();
+	void returntoshapelist();
 
 };

@@ -6,5 +6,7 @@ class opborder: public operation
 public:
 	opborder(controller* pCont);
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 };
 

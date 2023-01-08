@@ -18,3 +18,10 @@ void opStickImage::Execute()
 	Graph* pGraph = pControl->getGraph();
 	pGraph->drawstickimage(pUI);
 }
+
+void opStickImage::Undo()
+{
+}
+void opStickImage::Redo()
+{
+}

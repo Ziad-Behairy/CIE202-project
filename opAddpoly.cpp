@@ -46,3 +46,11 @@ void opAddpoly::Execute()
 	//Add the Line to the list of shapes
 	pGr->Addshape(polygon);
 }
+
+void opAddpoly::Undo()
+{
+}
+
+void opAddpoly::Redo()
+{
+}

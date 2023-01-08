@@ -10,5 +10,7 @@ public:
 
 	//Add Line to the controller
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 
 };

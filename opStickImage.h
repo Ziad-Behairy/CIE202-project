@@ -6,6 +6,8 @@ public:
 	opStickImage(controller* pCont);
 	virtual ~opStickImage();
 	void Execute();
+	void Undo() ;
+	void Redo() ;
 
 };
 

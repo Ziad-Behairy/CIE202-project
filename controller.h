@@ -3,13 +3,12 @@
 #include "DEFS.h"
 #include "Shapes\Graph.h"
 #include "GUI\GUI.h"
+#include <stack>
 
 class operation; //forward declaration
-
 //Main class that manages everything in the application.
 class controller
 {
-
 public:
 	Graph* pGraph;	//pointe to the grapg
 	GUI* pGUI;		//Pointer to UI class
@@ -17,6 +16,8 @@ public:
 	shape* DrawnShapelist[MaxDrawnShapes];
 	shape* Temp_DrawnShapelist[MaxDrawnShapes];
 	int Temp_NumOfDrawnShapes;
+	stack<operation*> UndoStack;
+	stack<operation*> RedoStack;
 	controller();
 	~controller();
 
@@ -39,8 +40,14 @@ public:
 	int GetNumOfDrawnShapesCount();
 	color ConvertStringToCoulour(string colorstring);
 	bool savethis;
-
-
+	
+	//UNDO & REDO FUNCTIONS
+	operation* GetLastOp();
+	operation* GetLastBinedOp();
+	void Undo();
+	void Redo();
+	void SaveOpToStack(operation* op );
+	//void MakeShapeNull(shape* s);
 
 };
 

@@ -45,10 +45,23 @@ void opAddCir::Execute()
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
-
+	CirclePointer = R;
 	//Add the Line to the list of shapes
 	pGr->Addshape(R);
+	
 
 }
 
 
+void opAddCir::Undo()
+{
+	cout << "undo cir";
+	Graph* pGr = pControl->getGraph();
+	pGr->moveshapetobin(); // move the shape from shape list to bin list 
+}
+
+void opAddCir::Redo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->returntoshapelist();// return the shape from bin list  to shape list
+}

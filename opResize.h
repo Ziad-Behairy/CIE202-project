@@ -6,4 +6,6 @@ public:
 	opResize(controller* pcont);
 	~opResize();
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 };

@@ -41,7 +41,13 @@ void opSelect::Execute()
 
 
 
+void opSelect::Undo()
+{
+}
 
+void opSelect::Redo()
+{
+}
 
 
 

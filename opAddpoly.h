@@ -10,6 +10,8 @@ public:
 
 	//Add Irrpoly to the controller
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 
 };
 

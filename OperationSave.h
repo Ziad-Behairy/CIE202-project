@@ -14,6 +14,8 @@ public:
 	string GetFileName();
 	void Execute();
 	virtual	~OperationSave();
+	void Undo() ;
+	void Redo() ;
 
 };
 
