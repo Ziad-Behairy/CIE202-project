@@ -17,3 +17,11 @@ void opDuplicate::Execute()
 	pUI->PrintMessage("Duplicate all shapes");
 	pGr->Duplicate();
 }
+
+void opDuplicate::Undo()
+{
+}
+
+void opDuplicate::Redo()
+{
+}

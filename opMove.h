@@ -6,4 +6,6 @@ public:
 	opMove(controller* pCont);
 	virtual ~opMove();
 	void Execute();
+	void Undo();
+	void Redo();
 };

@@ -41,3 +41,11 @@ void opMove::Execute()
 		
 	}
 }
+
+void opMove::Undo()
+{
+}
+
+void opMove::Redo()
+{
+}

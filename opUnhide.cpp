@@ -17,3 +17,11 @@ void opUnhide::Execute()
 	pControl->getGraph()->Unhide(&p1);
 
 }
+
+void opUnhide::Undo()
+{
+}
+
+void opUnhide::Redo()
+{
+}
