@@ -15,7 +15,7 @@ private:
 	vector <shape*> shapesList; //a container to hold all shapes
 	//vector <shape*> imagesList; //a container to hold all shapes
 	shape* selectedShape;	//pointer to the currently selected shape
-	int flag = 0;
+	int flag = 1;
 public:
 	Graph();
 	~Graph();
@@ -38,6 +38,7 @@ public:
 	vector <shape*> getshapesList();
 	void drawstickimage(GUI* pUI);
 	void Hide(GUI* pUI); // Hide shapes by drawing a card on each shape 
-	bool isHide();
+	void Unhide(Point* p); 
+	//bool isHide();
 
 };

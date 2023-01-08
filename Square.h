@@ -23,6 +23,7 @@ public:
 
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
+	void HideShape(GUI* pUI);
 
 };
 

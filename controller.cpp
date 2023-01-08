@@ -25,6 +25,7 @@
 #include "opZoomOut.h"
 #include "opHide.h"
 #include"opResize.h"
+#include "opUnhide.h"
 //Constructor
 controller::controller()
 {
@@ -100,6 +101,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case RESIZE:
 		pOp = new opResize(this);
+		break;
+	case UNHIDE:
+		pOp = new opUnhide(this);
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()

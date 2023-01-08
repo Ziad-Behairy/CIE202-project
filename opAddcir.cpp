@@ -38,7 +38,7 @@ void opAddCir::Execute()
 
 	LineGfxInfo.isFilled = false;	//default is not filled
 	LineGfxInfo.isSelected = false;	//defualt is not selected
-
+	LineGfxInfo.IsHiden = false;
 
 	//Create a Line with the above parameters
 	Circle* R = new Circle(P1, P2, LineGfxInfo);

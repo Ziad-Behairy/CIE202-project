@@ -40,12 +40,12 @@ void Graph::Draw(GUI* pUI)
 	
 	pUI->ClearDrawArea();
 	for (auto shapePointer : shapesList)
-		shapePointer->Draw(pUI);
-	if (isHide()) {
-		Hide(pUI);
-		flag=0;
-	}
-	
+		for (int i = 0; i < shapesList.size(); i++) {
+			shapesList[i]->Draw(pUI);
+			if (shapesList[i]->IsHiden()) {
+				shapesList[i]->HideShape(pUI);
+			}
+		}
 }
 
 void Graph::changefillcolor(shape* psh, color newcolor) {
@@ -173,28 +173,30 @@ void Graph::drawstickimage(GUI* pUI)
 
 void Graph::Hide(GUI* pUI)
 {
-	flag=1;
-	for (int i = 0; i < shapesList.size(); i++)
-	{ 
-		
-		 int x = shapesList[i]->getshapeparamters()[0];
-		 int y = shapesList[i]->getshapeparamters()[1];
-		 int x2 = shapesList[i]->getshapeparamters()[2];
-		int  y2 = shapesList[i]->getshapeparamters()[3];
-		 int width = shapesList[i]->getshapeparamters()[4];
-		 int height = shapesList[i]->getshapeparamters()[5];
-		//pUI->getwind()->SetBrush(BLACK);
-		//pUI->getwind()->DrawRectangle(x,y,x2,y2);
-		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+		for (int i = 0; i < shapesList.size(); i++)
+		{
+			shapesList[i]->SetHiden(1);
+		}
+	
+	
+
+}
+
+void Graph::Unhide(Point* p)
+{
+	for (int i = 0; i < shapesList.size(); i++) {
+		if (shapesList[i]->isinshape(p->x, p->y))
+			shapesList[i]->SetHiden(0);
+
 	}
 
 }
 
-bool Graph::isHide()
-{
-	if (flag)
-		return true;
-	else
-	return false;
-}
+//bool Graph::isHide()
+//{
+//	if (flag)
+//		return true;
+//	else
+//	return false;
+//}
 

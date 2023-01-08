@@ -123,4 +123,17 @@ int* Square::getshapeparamters()
 	return list;
 }
 
+void Square::HideShape(GUI* pUI)
+{
+	if (IsHiden()) {
+		int x = getshapeparamters()[0];
+		int y = getshapeparamters()[1];
+		int x2 = getshapeparamters()[2];
+		int  y2 = getshapeparamters()[3];
+		int width = getshapeparamters()[4];
+		int height = getshapeparamters()[5];
+		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+	}
+}
+
 
