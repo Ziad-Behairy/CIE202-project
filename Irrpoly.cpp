@@ -8,6 +8,16 @@ Irrpoly::Irrpoly(Point* arr, int vertices_num, GfxInfo shapeGfxInfo) :shape(shap
 	y = new int[vertices_num];
 }
 
+Irrpoly::Irrpoly(const Irrpoly* copy):shape(copy->ShpGfxInfo)
+{
+	this->points_arr = copy->points_arr;
+	this->vertices_num = copy->vertices_num;
+	this->x = copy->x;
+	this->y = copy->y;
+	this->ID = copy->ID;
+
+}
+
 Irrpoly::~Irrpoly()
 {
 }
@@ -73,6 +83,10 @@ string Irrpoly::printdata() const
 }
 
 void Irrpoly::Resize(double r)
+{
+}
+
+void Irrpoly::HideShape(GUI* pUI)
 {
 }
 

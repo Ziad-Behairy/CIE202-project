@@ -8,6 +8,15 @@ Triangle::Triangle(Point P1, Point P2, Point P3, GfxInfo shapeGfxInfo) :shape(sh
 	center.y = (P1.y + P2.y + P3.y) / 3;
 }
 
+Triangle::Triangle(const Triangle* copy):shape(copy->ShpGfxInfo)
+{
+	this->Corner1 = copy->Corner1;
+	this->Corner2 = copy->Corner2;
+	this->Corner3 = copy->Corner3;
+	this->ID = copy->ID;
+	this->center = copy->center;
+}
+
 Triangle::~Triangle()
 {}
 
@@ -120,12 +129,18 @@ void Triangle::SaveDataForShapes(ofstream& SaveFile, int ID)
 
 int* Triangle::getshapeparamters()
 {
-	int list[6];
+	int list[12];
 	int y1= Corner2.y- sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)));
 	list[0] = Corner2.x-4;
 	list[1] = y1;
 	list[5] = sqrt(pow((Corner2.x - Corner1.x), 2) + (pow((Corner2.y - Corner1.y), 2)))+5;
 	list[4] = sqrt(pow((Corner2.x - Corner3.x), 2) + (pow((Corner2.y - Corner3.y), 2)))+5;
+	list[6] = Corner1.x;
+	list[7] = Corner1.y;
+	list[8] = Corner2.x;
+	list[9] = Corner2.y;
+	list[10] = Corner3.x;
+	list[11] = Corner3.y;
 	return list;
 }
 
@@ -137,6 +152,19 @@ void Triangle::Resize(double r)
 	Corner2.y = (Corner2.y - center.y) * r + center.y;
 	Corner3.x = (Corner3.x - center.x) * r + center.x;
 	Corner3.y = (Corner3.y - center.y) * r + center.y;
+}
+
+void Triangle::HideShape(GUI* pUI)
+{
+	if (IsHiden()) {
+		int x = getshapeparamters()[0];
+		int y = getshapeparamters()[1];
+		int x2 = getshapeparamters()[2];
+		int  y2 = getshapeparamters()[3];
+		int width = getshapeparamters()[4];
+		int height = getshapeparamters()[5];
+		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+	}
 }
 
 void Triangle::Rotate()

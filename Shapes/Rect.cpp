@@ -8,6 +8,14 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 	center.y = (P1.y + P2.y) / 2;
 }
 
+Rect::Rect(const Rect* copy):shape(copy->ShpGfxInfo)
+{
+	this->Corner1 = copy->Corner1;
+	this->Corner2 = copy->Corner2;
+	this->ID = copy->ID;
+	this->center = copy->center;
+}
+
 Rect::~Rect()
 {}
 
@@ -146,6 +154,19 @@ void Rect::Rotate()
 	Corner1.y = temp1x - center.x + center.y;
 	Corner2.x = -temp2y + center.y + center.x;
 	Corner2.y = temp2x - center.x + center.y;
+}
+
+void Rect::HideShape(GUI* pUI)
+{
+	if (IsHiden()) {
+		int x = getshapeparamters()[0];
+		int y = getshapeparamters()[1];
+		int x2 = getshapeparamters()[2];
+		int  y2 = getshapeparamters()[3];
+		int width = getshapeparamters()[4];
+		int height = getshapeparamters()[5];
+		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+	}
 }
 
 

@@ -11,8 +11,10 @@ private:
 	int  vertices_num;
 	int* x = nullptr;
 	int* y = nullptr;
+	GfxInfo shapeGfxInfo;
 public:
 	Poly(Point, Point, int, GfxInfo shapeGfxInfo);
+	Poly(const Poly* copy);
 	virtual ~Poly();
 	virtual void Draw(GUI* pUI) const;
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
@@ -22,6 +24,7 @@ public:
 	bool isinshape(int x, int y) const;
 	virtual string printdata() const;
 	void Resize(double r);
+	void HideShape(GUI* pUI);
 	void Rotate();
 };
 

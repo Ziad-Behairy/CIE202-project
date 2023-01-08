@@ -179,10 +179,14 @@
     <ClCompile Include="opborder.cpp" />
     <ClCompile Include="opCopy.cpp" />
     <ClCompile Include="opDelete.cpp" />
+    <ClCompile Include="opDuplicate.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opFill.cpp" />
     <ClCompile Include="opHide.cpp" />
     <ClCompile Include="opRedo.cpp" />
+    <ClCompile Include="opMove.cpp" />
+    <ClCompile Include="opPaste.cpp" />
+
     <ClCompile Include="opResize.cpp" />
     <ClCompile Include="opRotate.cpp" />
     <ClCompile Include="opScrambel.cpp" />
@@ -191,8 +195,13 @@
     <ClCompile Include="OperationSave.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opExit.cpp" />
+    <ClCompile Include="opStart.cpp" />
     <ClCompile Include="opStickImage.cpp" />
+
     <ClCompile Include="opUndo.cpp" />
+
+    <ClCompile Include="opUnhide.cpp" />
+
     <ClCompile Include="opZoomIn.cpp" />
     <ClCompile Include="opZoomOut.cpp" />
     <ClCompile Include="Poly.cpp" />
@@ -239,11 +248,16 @@
     <ClInclude Include="opborder.h" />
     <ClInclude Include="opCopy.h" />
     <ClInclude Include="opDelete.h" />
+    <ClInclude Include="opDuplicate.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opFill.h" />
     <ClInclude Include="opHide.h" />
     <ClInclude Include="opRedo.h" />
+
+    <ClInclude Include="opMove.h" />
+    <ClInclude Include="opPaste.h" />
+
     <ClInclude Include="opResize.h" />
     <ClInclude Include="opRotate.h" />
     <ClInclude Include="opScrambel.h" />
@@ -253,8 +267,12 @@
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opExit.h" />
+    <ClInclude Include="opStart.h" />
     <ClInclude Include="opStickImage.h" />
     <ClInclude Include="opUndo.h" />
+
+    <ClInclude Include="opUnhide.h" />
+
     <ClInclude Include="opZoomIn.h" />
     <ClInclude Include="opZoomOut.h" />
     <ClInclude Include="Poly.h" />

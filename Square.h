@@ -9,8 +9,10 @@ private:
 	Point Corner1;
 	Point Corner2;
 	Point center;
+	GfxInfo shapeGfxInfo;
 public:
 	Square(Point p1, Point p2, GfxInfo shapeGfxInfo);
+	Square(const Square* copy);
 	virtual ~Square();
 	virtual void Draw(GUI* pUI) const;
 	void Resize(double r);
@@ -24,5 +26,7 @@ public:
 	void SaveDataForShapes(ofstream& SaveFile, int ID);
 	int* getshapeparamters();
 	void Rotate();
+	void HideShape(GUI* pUI);
+
 };
 

@@ -13,7 +13,7 @@ GUI::GUI()
 
 	StatusBarHeight = 50;
 	ToolBarHeight = 60;
-	MenuIconWidth = 58;
+	MenuIconWidth = 54;
 
 	DrawColor = RED;	//default Drawing color
 	FillColor = WHITE;	//default Filling color
@@ -108,13 +108,14 @@ operationType GUI::GetUseroperation() const
 			case ICON_REDO: return REDO;
 			case ICON_COPY: return COPY;
 				//case ICON_CUT: return CUT;
-				//case ICON_PASTE: return PASTE;
+			case ICON_PASTE: return PASTE;
 			case ICON_SCRAMBEL: return SCRAMBEL;
-			//case ICON_DUPLICATE: return DUPLICATE;
+			case ICON_DUPLICATE: return DUPLICTAE;
 			 case ICON_ZOOM_IN: return ZOOM_IN;
 			 case ICON_ZOOM_OUT: return ZOOM_OUT;
             case ICON_ROTATE: return ROTATE; 
 			case ICON_RESIZE: return RESIZE;  
+			case ICON_UNHIDE: return UNHIDE;
 
 
 
@@ -249,6 +250,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_RESIZE.jpg";
 	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_ROTATE.jpg";
+	MenuIconImages[ICON_MOVE] = "images\\MenuIcons\\Menu_MOVE.jpg";
 	MenuIconImages[ICON_ZOOM_IN] = "images\\MenuIcons\\Menu_ZOOMIN.jpg";
 	MenuIconImages[ICON_ZOOM_OUT] = "images\\MenuIcons\\Menu_ZOOMOUT.jpg";
 	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\Menu_COPY.jpg";
@@ -258,6 +260,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\Menu_REDO.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_HIDE] = "images\\MenuIcons\\Menu_HIDE.jpg";
+	MenuIconImages[ICON_UNHIDE] = "images\\MenuIcons\\Menu_UNHIDE.jpg";
 	MenuIconImages[ICON_SCRAMBEL] = "images\\MenuIcons\\Menu_SCRAMBEL.jpg";
 	MenuIconImages[ICON_DUPLICATE] = "images\\MenuIcons\\Menu_DUPLICATE.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";

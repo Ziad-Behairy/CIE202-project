@@ -40,13 +40,12 @@ void Graph::Draw(GUI* pUI)
 {
 	
 	pUI->ClearDrawArea();
-	for (auto shapePointer : shapesList)
-		shapePointer->Draw(pUI);
-	if (isHide()) {
-		Hide(pUI);
-		flag=0;
-	}
-	
+		for (int i = 0; i < shapesList.size(); i++) {
+			shapesList[i]->Draw(pUI);
+			if (shapesList[i]->IsHiden()) {
+				shapesList[i]->HideShape(pUI);
+			}
+		}
 }
 
 void Graph::changefillcolor(shape* psh, color newcolor) {
@@ -68,6 +67,59 @@ shape* Graph::Getshape(int x, int y) const
 	///Add your code here to search for a shape given a point x,y	
 
 	return nullptr;
+}
+
+void Graph::Duplicate()
+{
+	shape* deplicate;
+	int num = shapesList.size();
+	for (int i = 0; i < num; i++)
+	{
+		if (dynamic_cast<Rect*>(shapesList[i]))
+		{
+			Rect* copy = dynamic_cast<Rect*>(shapesList[i]);
+			deplicate = new Rect(copy);
+			Addshape(deplicate);
+			cout << "rect";
+		}
+		if (dynamic_cast<Circle*>(shapesList[i]))
+		{
+			Circle* copy = dynamic_cast<Circle*>(shapesList[i]);
+			deplicate = new Circle(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Irrpoly*>(shapesList[i]))
+		{
+			Irrpoly* copy = dynamic_cast<Irrpoly*>(shapesList[i]);
+			deplicate = new Irrpoly(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Line*>(shapesList[i]))
+		{
+			Line* copy = dynamic_cast<Line*>(shapesList[i]);
+			deplicate = new Line(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Poly*>(shapesList[i]))
+		{
+			Poly* copy = dynamic_cast<Poly*>(shapesList[i]);
+			deplicate = new Poly(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Square*>(shapesList[i]))
+		{
+			Square* copy = dynamic_cast<Square*>(shapesList[i]);
+			deplicate = new Square(copy);
+			Addshape(deplicate);
+		}
+		if (dynamic_cast<Triangle*>(shapesList[i]))
+		{
+			Triangle* copy = dynamic_cast<Triangle*>(shapesList[i]);
+			deplicate = new Triangle(copy);
+			Addshape(deplicate);
+		}
+
+	}
 }
 
 
@@ -141,6 +193,38 @@ void Graph::Zoom_Out()
 	for (auto& shapePointer : shapesList)
 		shapePointer->Zoom(Scale);
 }
+void Graph::match(GUI* pUI)
+{
+	Point firstclick;
+	Point secondclick;
+	while (shapesList.size() != 0)
+	{
+		Hide(pUI);
+		pUI->GetPointClicked(firstclick.x, firstclick.y);
+		shape* selectcard1 = Getshape(firstclick.x, firstclick.y);
+		pUI->GetPointClicked(secondclick.x, secondclick.y);
+		shape* selectcard2 = Getshape(secondclick.x, secondclick.y);
+		//selectcard1->unhide
+		//selectcard2->unhide
+		if (selectcard1->getid() == selectcard2->getid())
+		{
+			selectcard1->SetSelected(true);
+			selectcard2->SetSelected(true);
+			setDelete();
+			//selectcard1->unhide
+			//selectcard2->unhide
+		}
+		else
+		{
+			Hide(pUI);
+			pUI->ClearStatusBar();
+			pUI->PrintMessage("False , please try again ");
+		}
+		pUI->ClearStatusBar();
+		pUI->PrintMessage("Finsih the game ");
+	}
+
+}
 void Graph::Save(ofstream& SaveFile)
 {
 	SaveFile << shapesList.size() << "\n";  //and Current Fill Color and in the second line write the number of figures 
@@ -173,40 +257,72 @@ void Graph::drawstickimage(GUI* pUI)
 {
 	for (int i = 0; i < shapesList.size(); i++)
 	{
-		int x = shapesList[i]->getshapeparamters()[0];
-		int y = shapesList[i]->getshapeparamters()[1];
-		int width = shapesList[i]->getshapeparamters()[2];
-		int height = shapesList[i]->getshapeparamters()[3];
-		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
-		//pUI->StickImage("images\\MenuIcons\\TEAM.jpg", i*5, i*10, 20,20);
+		if (shapesList[i]->IsSelected())
+		{
+			int x = shapesList[i]->getshapeparamters()[0];
+			int y = shapesList[i]->getshapeparamters()[1];
+			int width = shapesList[i]->getshapeparamters()[2];
+			int height = shapesList[i]->getshapeparamters()[3];
+			pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+			//pUI->StickImage("images\\MenuIcons\\TEAM.jpg", i*5, i*10, 20,20);
+		}
 	}
 }
 
 void Graph::Hide(GUI* pUI)
 {
-	flag=1;
-	for (int i = 0; i < shapesList.size(); i++)
-	{ 
-		
-		 int x = shapesList[i]->getshapeparamters()[0];
-		 int y = shapesList[i]->getshapeparamters()[1];
-		 int x2 = shapesList[i]->getshapeparamters()[2];
-		int  y2 = shapesList[i]->getshapeparamters()[3];
-		 int width = shapesList[i]->getshapeparamters()[4];
-		 int height = shapesList[i]->getshapeparamters()[5];
-		//pUI->getwind()->SetBrush(BLACK);
-		//pUI->getwind()->DrawRectangle(x,y,x2,y2);
-		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+		for (int i = 0; i < shapesList.size(); i++)
+		{
+			shapesList[i]->SetHiden(1);
+		}
+	
+	
+
+}
+
+void Graph::Unhide(Point* p)
+{
+	for (int i = 0; i < shapesList.size(); i++) {
+		if (shapesList[i]->isinshape(p->x, p->y))
+			shapesList[i]->SetHiden(0);
+
 	}
 
 }
 
-bool Graph::isHide()
+//bool Graph::isHide()
+//{
+//	if (flag)
+//		return true;
+//	else
+//	return false;
+//}
+
+void Graph::start(GUI* pUI)
 {
-	if (flag)
-		return true;
-	else
-	return false;
+	Duplicate();
+	Hide(pUI);
+	Scrambel();
+	//resize()
+	//unhide(pUI)
+	match(pUI);
+	//unhide();
+	match(pUI);
+	
+
+}
+
+vector<shape*>  Graph::selectedshapes()
+{
+	vector<shape*> selectedshapes;
+	for (int i = 0; i < shapesList.size(); i++)
+	{
+		if (shapesList[i]->IsSelected())
+		{
+			selectedshapes.push_back(shapesList[i]);
+		}
+	}
+	return selectedshapes;
 }
 
 void Graph::moveshapetobin()

@@ -25,10 +25,19 @@
 #include "opZoomOut.h"
 #include "opHide.h"
 #include"opResize.h"
+#include "opUnhide.h"
 #include"opRotate.h"
 #include "opCopy.h"
+
 #include "opUndo.h"
 #include "opRedo.h"
+
+#include"opMove.h"
+#include "opPaste.h"
+
+#include"opDuplicate.h"
+
+
 //Constructor
 controller::controller()
 {
@@ -101,6 +110,9 @@ operation* controller::createOperation(operationType OpType)
 	case SCRAMBEL:
 		pOp = new opScrambel(this);
 		break;
+	case DUPLICTAE:
+		pOp = new opDuplicate(this);
+		break;
 	case HIDE:
 		pOp = new opHide(this);
 		break;
@@ -114,6 +126,9 @@ operation* controller::createOperation(operationType OpType)
 		pOp = new opResize(this);
 		this->SaveOpToStack(pOp);
 		break;
+	case UNHIDE:
+		pOp = new opUnhide(this);
+		break;
 	case ROTATE:
 		pOp = new opRotate(this);
 		
@@ -123,6 +138,9 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case REDO:
 		pOp = new opRedo(this);
+		break;
+	case PASTE:
+		pOp = new opPaste(this);
 		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
@@ -172,8 +190,13 @@ operation* controller::createOperation(operationType OpType)
 		pOp = new opSelect(this);
 		break;
 	case DEL:
+
 		pOp = new opDelete(this);
 		this->SaveOpToStack(pOp);
+
+		//pOp = new opDelete(this);
+		pOp = new opMove(this);
+
 		break;
 
 	}
@@ -372,8 +395,8 @@ void controller::Run()
 
 
 		
-		if (!(pGUI->Get_Mode()) /*&&!(pGraph->isHide())*/) //check if in play mode then it will not update the interface 
-			UpdateInterface();
+		//if (!(pGUI->Get_Mode()) /*&&!(pGraph->isHide())*/) //check if in play mode then it will not update the interface 
+		UpdateInterface();
 
 	} while (OpType != EXIT);
 

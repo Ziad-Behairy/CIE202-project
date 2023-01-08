@@ -1,5 +1,10 @@
 #include "shape.h"
 
+int shape::getid()
+{
+	return ID;
+}
+
 shape::shape(GfxInfo shapeGfxInfo)
 {
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.
@@ -13,6 +18,19 @@ void shape::SetSelected(bool s)
 bool shape::IsSelected() const
 {
 	return ShpGfxInfo.isSelected;
+}
+bool shape::IsHiden()
+{
+	return ShpGfxInfo.IsHiden;
+}
+void shape::SetHiden(bool s)
+{
+	ShpGfxInfo.IsHiden = s;
+}
+
+GfxInfo shape::getGfxInfo()
+{
+	return ShpGfxInfo;
 }
 
 void shape::ChngDrawClr(color Dclr)

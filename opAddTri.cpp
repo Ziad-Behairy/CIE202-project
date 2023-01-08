@@ -49,7 +49,7 @@ void opAddTri::Execute()
 
 	RectGfxInfo.isFilled = false;	//default is not filled
 	RectGfxInfo.isSelected = false;	//defualt is not selected
-
+	RectGfxInfo.IsHiden = false;
 
 	//Create a rectangle with the above parameters
 	Triangle* R = new Triangle(P1, P2,P3, RectGfxInfo);

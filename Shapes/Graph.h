@@ -27,7 +27,7 @@ public:
 	void Addshape(shape* pFig); //Adds a new shape to the shapesList
 	void Draw(GUI* pUI) ;			//Draw the graph (draw all shapes)
 	shape* Getshape(int x, int y) const; //Search for a shape given a point inside the shape
-
+	void Duplicate();
 	shape* GetSelected();
 	void setselected(shape* s);
 	void setDelete();
@@ -38,13 +38,21 @@ public:
 	void Scrambel();
 	void Zoom_In();
 	void Zoom_Out();
+	void match(GUI* pUI);
 	void Save(ofstream& SaveFile);	//Save all shapes to a file
 	//void load(ifstream& inputfile);	//Load all shapes from a file
 	vector <shape*> getshapesList();
 	void drawstickimage(GUI* pUI);
 	void Hide(GUI* pUI); // Hide shapes by drawing a card on each shape 
 	bool isHide();
+
 	void moveshapetobin();
 	void returntoshapelist();
+
+
+	void start(GUI* pUI);
+	vector<shape*> selectedshapes();
+	void Unhide(Point* p); 
+	//bool isHide();
 
 };

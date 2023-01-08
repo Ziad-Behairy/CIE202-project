@@ -38,7 +38,7 @@ void opAddLine::Execute()
 
 	LineGfxInfo.isFilled = false;	//default is not filled
 	LineGfxInfo.isSelected = false;	//defualt is not selected
-
+	LineGfxInfo.IsHiden = false;
 
 	//Create a Line with the above parameters
 	

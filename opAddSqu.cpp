@@ -37,7 +37,7 @@ void opAddSqu::Execute()
 
 	SquGfxInfo.isFilled = false;	//default is not filled
 	SquGfxInfo.isSelected = false;	//defualt is not selected
-
+	SquGfxInfo.IsHiden = false;
 
 	//Create a square with the above parameters
 	Square* R = new Square(P1, P2, SquGfxInfo);

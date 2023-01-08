@@ -11,8 +11,10 @@ private:
 	Point Corner1;
 	Point Corner2;
 	Point center;
+	GfxInfo shapeGfxInfo;
 public:
 	Line(Point, Point, GfxInfo shapeGfxInfo);
+	Line(const Line* copy);
 	virtual ~Line();
 	virtual void Draw(GUI* pUI) const;
 	void Move(int&, int&);		//Move the shape
@@ -22,6 +24,7 @@ public:
 	void SaveDataForShapes(ofstream& FileName, int ID);
 	int* getshapeparamters();
 	void Resize(double r);
+	void HideShape(GUI* pUI);
 	void Rotate();
 };
 
