@@ -16,3 +16,15 @@ void opStart::Execute()
 	pControl->getGraph()->start(pUI);
 
 }
+
+void opStart::Undo()
+{
+}
+
+void opStart::Redo()
+{
+}
+
+
+
+
