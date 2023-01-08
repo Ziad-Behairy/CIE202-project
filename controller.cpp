@@ -198,11 +198,9 @@ operation* controller::createOperation(operationType OpType)
 	case START_PLAY:
 		pOp = new opStart(this);
 		break;
-		pOp = new opDelete(this);
-		this->SaveOpToStack(pOp);
+		/*pOp = new opDelete(this);
+		this->SaveOpToStack(pOp);*/
 
-		//pOp = new opDelete(this);
-		pOp = new opMove(this);
 
 
 		break;

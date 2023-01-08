@@ -6,5 +6,7 @@ public:
 	opStart(controller* pCont);
 	virtual ~opStart();
 	void Execute();
+	void Undo();
+	void Redo();
 };
 
