@@ -209,3 +209,12 @@ void OperationLoad::Execute()
 	//pUI->PrintMessage("Drawing Loaded Successfully");
 	
 }
+
+
+void OperationLoad::Undo()
+{
+}
+
+void OperationLoad::Redo()
+{
+}

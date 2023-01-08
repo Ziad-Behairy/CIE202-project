@@ -42,3 +42,10 @@ void opAddIrrpoly::Execute()
 	//Add the Line to the list of shapes
 	pGr->Addshape(Irrpolygon);
 }
+void opAddIrrpoly::Undo()
+{
+}
+
+void opAddIrrpoly::Redo()
+{
+}

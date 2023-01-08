@@ -6,5 +6,7 @@ public:
 	opDuplicate(controller* pCont);
 	~opDuplicate();
 	void Execute();
+	void Undo();
+	void Redo();
 };
 

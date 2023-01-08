@@ -6,4 +6,6 @@ public:
 	opPaste(controller* pcont);
 	~opPaste();
 	virtual void Execute();
+	void Undo();
+	void Redo();
 };

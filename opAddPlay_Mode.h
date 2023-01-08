@@ -8,6 +8,8 @@ public:
 	opAddPlay_Mode(controller* pCont);
 	virtual ~opAddPlay_Mode();
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 
 };
 

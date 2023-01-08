@@ -19,3 +19,9 @@ void opZoomOut::Execute()
 	pUI->PrintMessage("Zooming out");
 	pGr->Zoom_Out();
 }
+void opZoomOut::Undo()
+{
+}
+void opZoomOut::Redo()
+{
+}

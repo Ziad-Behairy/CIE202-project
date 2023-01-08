@@ -22,3 +22,10 @@ opAddPlay_Mode::opAddPlay_Mode(controller* pCont) :operation(pCont)
 opAddPlay_Mode::~opAddPlay_Mode()
 {
 }
+void opAddPlay_Mode::Undo()
+{
+}
+
+void opAddPlay_Mode::Redo()
+{
+}

@@ -26,3 +26,10 @@ void opRotate::Execute()
 		s->Rotate();
 	}
 }
+
+void opRotate::Undo()
+{
+}
+void opRotate::Redo()
+{
+}

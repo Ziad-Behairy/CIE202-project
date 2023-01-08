@@ -164,3 +164,11 @@ void opPaste::Execute()
 		}
 		
 }
+
+void opPaste::Undo()
+{
+}
+
+void opPaste::Redo()
+{
+}

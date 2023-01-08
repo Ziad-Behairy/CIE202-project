@@ -26,3 +26,11 @@ void opborder::Execute()
 		pUI->PrintMessage("draw shape firs...oR...select shape ");
 	}
 }
+void opborder::Undo()
+{
+}
+
+void opborder::Redo()
+{
+}
+

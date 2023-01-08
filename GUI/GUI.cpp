@@ -104,8 +104,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_SELECT: return SELECT;
 			case ICON_DELETE: return DEL;
 			case ICON_HIDE: return HIDE;
-				//case ICON_UNDO: return UNDO;
-				//case ICON_REDO: return REDO;
+			case ICON_UNDO: return UNDO;
+			case ICON_REDO: return REDO;
 			case ICON_COPY: return COPY;
 				//case ICON_CUT: return CUT;
 			case ICON_PASTE: return PASTE;

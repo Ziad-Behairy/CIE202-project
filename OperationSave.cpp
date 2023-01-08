@@ -63,3 +63,12 @@ void OperationSave::Execute()
 	pUI->PrintMessage("Drawing SAVED");  //Done
 	pControl->savethis = true;
 }
+
+void OperationSave::Undo()
+{
+}
+
+void OperationSave::Redo()
+{
+}
+

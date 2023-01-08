@@ -11,5 +11,7 @@ public:
 
 	//Add rectangle to the controller
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 
 };

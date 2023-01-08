@@ -6,4 +6,6 @@ public:
 	opRotate(controller* pcont);
 	~opRotate();
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 };

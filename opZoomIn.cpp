@@ -17,3 +17,10 @@ void opZoomIn::Execute()
 	pUI->PrintMessage("Zooming in");
 	pGr->Zoom_In();
 }
+
+void opZoomIn::Undo()
+{
+}
+void opZoomIn::Redo()
+{
+}

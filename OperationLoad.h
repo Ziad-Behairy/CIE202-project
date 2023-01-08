@@ -7,5 +7,7 @@ public:
 	OperationLoad(controller* pcont);
 	virtual ~OperationLoad();
 	void Execute();
+	void Undo() ;
+	void Redo() ;
 };
 

@@ -28,10 +28,15 @@
 #include "opUnhide.h"
 #include"opRotate.h"
 #include "opCopy.h"
+
+#include "opUndo.h"
+#include "opRedo.h"
+
 #include"opMove.h"
 #include "opPaste.h"
 #include"opStart.h"
 #include"opDuplicate.h"
+
 
 //Constructor
 controller::controller()
@@ -60,24 +65,30 @@ operation* controller::createOperation(operationType OpType)
 	{
 	case DRAW_RECT:
 		pOp = new opAddRect(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case DRAW_SQU:
 		pOp = new opAddSqu(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case DRAW_LINE:
 		pOp = new opAddLine(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case DRAW_CIRC:
 		pOp = new opAddCir(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case DRAW_TRI:
 		pOp = new opAddTri(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case DRAW_IRREGPOL:
 		pOp = new opAddIrrpoly(this);
 		break;
 	case DRAW_REGPOL:
 		pOp = new opAddpoly(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case SAVE:
 		pOp = new OperationSave(this, NumOfDrawnShapes);
@@ -87,9 +98,11 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case CHNG_FILL_CLR:
 		pOp = new opFill(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case CHNG_DRAW_CLR:
 		pOp = new opborder(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case STICK_IMAGE:
 		pOp = new opStickImage(this);
@@ -111,15 +124,20 @@ operation* controller::createOperation(operationType OpType)
 		break;
 	case RESIZE:
 		pOp = new opResize(this);
+		this->SaveOpToStack(pOp);
 		break;
 	case UNHIDE:
 		pOp = new opUnhide(this);
 		break;
 	case ROTATE:
 		pOp = new opRotate(this);
+		
 		break;
-	case COPY:
-		pOp = new opCopy(this);
+	case UNDO:
+		pOp = new opUndo(this);
+		break;
+	case REDO:
+		pOp = new opRedo(this);
 		break;
 	case PASTE:
 		pOp = new opPaste(this);
@@ -155,7 +173,6 @@ operation* controller::createOperation(operationType OpType)
 				pOp = new opExit(this);
 				break;
 			}
-
 		}
 
 
@@ -181,12 +198,17 @@ operation* controller::createOperation(operationType OpType)
 	case START_PLAY:
 		pOp = new opStart(this);
 		break;
+		pOp = new opDelete(this);
+		this->SaveOpToStack(pOp);
+
+		//pOp = new opDelete(this);
+		pOp = new opMove(this);
+
 
 		break;
 
-
-
 	}
+	
 
 	return pOp;
 }
@@ -267,7 +289,70 @@ color controller::ConvertStringToCoulour(string colorstring)
 		return LIGHTGOLDENRODYELLOW;
 	return RED;
 }
+/*///////////////////////////////////////////
+				UNDO & REDO
+///////////////////////////////////////////*/
+operation* controller::GetLastOp() {
+	if (!UndoStack.empty())  
+	{
+		return this->UndoStack.top();
+		
+	}
+	else  
+	{
 
+		pGUI->ClearStatusBar();
+		pGUI->PrintMessage("Undo Stack is Empty");
+		return nullptr;
+	}
+}
+
+operation* controller::GetLastBinedOp()
+{
+	if (!RedoStack.empty())  
+	{
+		return RedoStack.top();
+		
+		
+	}
+	else  
+	{
+		
+		pGUI->ClearStatusBar();
+		pGUI->PrintMessage("Redo Stack is Empty");
+		return nullptr;
+	}
+}
+
+
+// Function to Undo last made action
+void controller::Undo()
+{
+	if (GetLastOp())
+	{
+		cout << "enter undo in controlker\n";
+		RedoStack.push(GetLastOp());
+		UndoStack.pop();
+	}
+
+}
+// Function to Redo last made action
+void controller::Redo()
+{
+	if (GetLastOp())
+	{
+		UndoStack.push(GetLastBinedOp());
+		RedoStack.pop();
+	}
+}
+
+void controller::SaveOpToStack(operation* op)
+{
+	if (op) {
+		this->UndoStack.emplace(op);
+		cout << "opreation sved to stack"<<" size of redo stack =  " <<RedoStack.size()<< UndoStack.size() << " size of undo stack =  \n";
+	}
+}
 
 
 

@@ -20,3 +20,9 @@ void opScrambel::Execute()
 	pGr->Scrambel();
 
 }
+void opScrambel::Undo()
+{
+}
+void opScrambel::Redo()
+{
+}

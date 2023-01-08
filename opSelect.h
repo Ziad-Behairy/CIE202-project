@@ -11,6 +11,8 @@ public:
 
 	//Add select to the controller
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 
 
 };

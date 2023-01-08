@@ -8,6 +8,8 @@ public:
 	virtual ~opHide();
 
 	virtual void Execute();
+	void Undo() ;
+	void Redo() ;
 
 };
 
