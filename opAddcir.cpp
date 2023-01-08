@@ -36,9 +36,7 @@ void opAddCir::Execute()
 	CircleGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	LineGfxInfo.isFilled = false;	//default is not filled
-	LineGfxInfo.isSelected = false;	//defualt is not selected
-	LineGfxInfo.IsHiden = false;
+	CircleGfxInfo.IsHiden = false;
 	CircleGfxInfo.isFilled = false;	//default is not filled
 	CircleGfxInfo.isSelected = false;	//defualt is not selected
 
