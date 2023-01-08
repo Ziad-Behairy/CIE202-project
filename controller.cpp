@@ -34,7 +34,7 @@
 
 #include"opMove.h"
 #include "opPaste.h"
-
+#include"opStart.h"
 #include"opDuplicate.h"
 
 
@@ -190,12 +190,20 @@ operation* controller::createOperation(operationType OpType)
 		pOp = new opSelect(this);
 		break;
 	case DEL:
-
+		pOp = new opDelete(this);
+		break;
+	case MOVE:
+		pOp = new opMove(this);
+		break;
+	case START_PLAY:
+		pOp = new opStart(this);
+		break;
 		pOp = new opDelete(this);
 		this->SaveOpToStack(pOp);
 
 		//pOp = new opDelete(this);
 		pOp = new opMove(this);
+
 
 		break;
 

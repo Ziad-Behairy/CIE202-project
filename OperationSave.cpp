@@ -59,7 +59,7 @@ void OperationSave::Execute()
 	pGraph->Save(SaveFile);
 	SaveFile.close(); //close the file 
 	//Print Action Message'
-	Sleep(1000);
+	//Sleep(1000);
 	pUI->PrintMessage("Drawing SAVED");  //Done
 	pControl->savethis = true;
 }

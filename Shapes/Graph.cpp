@@ -195,34 +195,83 @@ void Graph::Zoom_Out()
 }
 void Graph::match(GUI* pUI)
 {
-	Point firstclick;
-	Point secondclick;
-	while (shapesList.size() != 0)
+	int score = 0;
+	for (int i = 0; i < shapesList.size(); i++)
 	{
-		Hide(pUI);
-		pUI->GetPointClicked(firstclick.x, firstclick.y);
-		shape* selectcard1 = Getshape(firstclick.x, firstclick.y);
-		pUI->GetPointClicked(secondclick.x, secondclick.y);
-		shape* selectcard2 = Getshape(secondclick.x, secondclick.y);
-		//selectcard1->unhide
-		//selectcard2->unhide
-		if (selectcard1->getid() == selectcard2->getid())
-		{
-			selectcard1->SetSelected(true);
-			selectcard2->SetSelected(true);
-			setDelete();
-			//selectcard1->unhide
-			//selectcard2->unhide
-		}
-		else
-		{
-			Hide(pUI);
-			pUI->ClearStatusBar();
-			pUI->PrintMessage("False , please try again ");
-		}
-		pUI->ClearStatusBar();
-		pUI->PrintMessage("Finsih the game ");
+		if (shapesList[i]->IsHiden() == false)
+			for (int j = i + 1; j < shapesList.size(); j++)
+				if (shapesList[j]->IsHiden() == false) {
+					if (i > j)
+					{
+						shapesList[i]->SetSelected(1);
+						shapesList[j]->SetSelected(1);
+						setDelete();
+						score = score + 3;
+						pUI->ClearStatusBar();
+			            string msg = "new score is " + score;
+			            pUI->PrintMessage(msg);
+					}
+					if (i < j)
+					{
+						shapesList[i]->SetSelected(1);
+						shapesList[j-1]->SetSelected(1);
+						setDelete();
+						score = score + 3;
+						pUI->ClearStatusBar();
+						string msg = "new score is " + score;
+						pUI->PrintMessage(msg);
+					}
+					else
+					{
+						shapesList[i]->SetHiden(1);
+						shapesList[j]->SetHiden(1);
+						score = score + 1;
+						pUI->ClearStatusBar();
+						string msg = "new score is " + score;
+						pUI->PrintMessage(msg);
+					}
+				} 
+					
 	}
+		
+	
+	//Point firstclick;
+	//Point secondclick;
+	//while (shapesList.size() != 0)
+	//{
+	//	int score = 0;
+	//	Hide(pUI);
+	//	pUI->GetPointClicked(firstclick.x, firstclick.y);
+	//	shape* selectcard1 = Getshape(firstclick.x, firstclick.y);
+	//	pUI->GetPointClicked(secondclick.x, secondclick.y);
+	//	shape* selectcard2 = Getshape(secondclick.x, secondclick.y);
+	//	//selectcard1->unhide
+	//	//selectcard2->unhide
+	//	if (selectcard1->getid() == selectcard2->getid())
+	//	{
+	//		selectcard1->SetSelected(true);
+	//		selectcard2->SetSelected(true);
+	//		setDelete();
+	//		//selectcard1->unhide
+	//		//selectcard2->unhide
+	//		score = score + 3;
+	//		pUI->ClearStatusBar();
+	//		string msg = "new score is " + score;
+	//		pUI->PrintMessage(msg);
+	//	}
+	//	else
+	//	{
+	//		selectcard1->SetHiden(1);
+	//		selectcard2->SetHiden(1);
+	//		score = score + 3;
+	//		pUI->ClearStatusBar();
+	//		string msg = "please try again ,new score is " + score;
+	//		pUI->PrintMessage(msg);
+	//	}
+	//	pUI->ClearStatusBar();
+	//	string finalmessage = "you finished the game with score " + score;
+	//	pUI->PrintMessage(finalmessage);
+	//}
 
 }
 void Graph::Save(ofstream& SaveFile)
@@ -300,16 +349,16 @@ void Graph::Unhide(Point* p)
 
 void Graph::start(GUI* pUI)
 {
-	Duplicate();
-	Hide(pUI);
-	Scrambel();
-	//resize()
-	//unhide(pUI)
-	match(pUI);
-	//unhide();
-	match(pUI);
-	
-
+		Duplicate();
+		Hide(pUI);
+		Scrambel();
+		Point point;
+		pUI->GetPointClicked(point.x, point.y);
+		Unhide(&point);
+		Point point2;
+		pUI->GetPointClicked(point2.x, point2.y);
+		Unhide(&point2);
+		match(pUI);
 }
 
 vector<shape*>  Graph::selectedshapes()
