@@ -27,7 +27,7 @@
 #include"opResize.h"
 #include"opRotate.h"
 #include "opCopy.h"
-
+#include"opMove.h"
 #include "opPaste.h"
 
 #include"opDuplicate.h"
@@ -169,7 +169,8 @@ operation* controller::createOperation(operationType OpType)
 		pOp = new opSelect(this);
 		break;
 	case DEL:
-		pOp = new opDelete(this);
+		//pOp = new opDelete(this);
+		pOp = new opMove(this);
 		break;
 
 		break;
