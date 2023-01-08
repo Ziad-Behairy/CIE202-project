@@ -198,6 +198,9 @@
     <ClCompile Include="opDuplicate.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opMove.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opStart.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -362,6 +365,11 @@
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opMove.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opStart.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

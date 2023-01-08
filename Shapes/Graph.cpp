@@ -193,6 +193,38 @@ void Graph::Zoom_Out()
 	for (auto& shapePointer : shapesList)
 		shapePointer->Zoom(Scale);
 }
+void Graph::match(GUI* pUI)
+{
+	Point firstclick;
+	Point secondclick;
+	while (shapesList.size() != 0)
+	{
+		Hide(pUI);
+		pUI->GetPointClicked(firstclick.x, firstclick.y);
+		shape* selectcard1 = Getshape(firstclick.x, firstclick.y);
+		pUI->GetPointClicked(secondclick.x, secondclick.y);
+		shape* selectcard2 = Getshape(secondclick.x, secondclick.y);
+		//selectcard1->unhide
+		//selectcard2->unhide
+		if (selectcard1->getid() == selectcard2->getid())
+		{
+			selectcard1->SetSelected(true);
+			selectcard2->SetSelected(true);
+			setDelete();
+			//selectcard1->unhide
+			//selectcard2->unhide
+		}
+		else
+		{
+			Hide(pUI);
+			pUI->ClearStatusBar();
+			pUI->PrintMessage("False , please try again ");
+		}
+		pUI->ClearStatusBar();
+		pUI->PrintMessage("Finsih the game ");
+	}
+
+}
 void Graph::Save(ofstream& SaveFile)
 {
 	SaveFile << shapesList.size() << "\n";  //and Current Fill Color and in the second line write the number of figures 
@@ -225,12 +257,15 @@ void Graph::drawstickimage(GUI* pUI)
 {
 	for (int i = 0; i < shapesList.size(); i++)
 	{
-		int x = shapesList[i]->getshapeparamters()[0];
-		int y = shapesList[i]->getshapeparamters()[1];
-		int width = shapesList[i]->getshapeparamters()[2];
-		int height = shapesList[i]->getshapeparamters()[3];
-		pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
-		//pUI->StickImage("images\\MenuIcons\\TEAM.jpg", i*5, i*10, 20,20);
+		if (shapesList[i]->IsSelected())
+		{
+			int x = shapesList[i]->getshapeparamters()[0];
+			int y = shapesList[i]->getshapeparamters()[1];
+			int width = shapesList[i]->getshapeparamters()[2];
+			int height = shapesList[i]->getshapeparamters()[3];
+			pUI->StickImage("images\\MenuIcons\\Card.jpg", x, y, width, height);
+			//pUI->StickImage("images\\MenuIcons\\TEAM.jpg", i*5, i*10, 20,20);
+		}
 	}
 }
 
@@ -262,4 +297,31 @@ void Graph::Unhide(Point* p)
 //	else
 //	return false;
 //}
+
+void Graph::start(GUI* pUI)
+{
+	Duplicate();
+	Hide(pUI);
+	Scrambel();
+	//resize()
+	//unhide(pUI)
+	match(pUI);
+	//unhide();
+	match(pUI);
+	
+
+}
+
+vector<shape*>  Graph::selectedshapes()
+{
+	vector<shape*> selectedshapes;
+	for (int i = 0; i < shapesList.size(); i++)
+	{
+		if (shapesList[i]->IsSelected())
+		{
+			selectedshapes.push_back(shapesList[i]);
+		}
+	}
+	return selectedshapes;
+}
 

@@ -1,5 +1,10 @@
 #include "shape.h"
 
+int shape::getid()
+{
+	return ID;
+}
+
 shape::shape(GfxInfo shapeGfxInfo)
 {
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.

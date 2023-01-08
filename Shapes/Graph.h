@@ -36,12 +36,15 @@ public:
 	void Scrambel();
 	void Zoom_In();
 	void Zoom_Out();
+	void match(GUI* pUI);
 	void Save(ofstream& SaveFile);	//Save all shapes to a file
 	//void load(ifstream& inputfile);	//Load all shapes from a file
 	vector <shape*> getshapesList();
 	void drawstickimage(GUI* pUI);
 	void Hide(GUI* pUI); // Hide shapes by drawing a card on each shape 
+	bool isHide();
+	void start(GUI* pUI);
+	vector<shape*> selectedshapes();
 	void Unhide(Point* p); 
 	//bool isHide();
-
 };
