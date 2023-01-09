@@ -115,7 +115,6 @@ operationType GUI::GetUseroperation() const
 			 case ICON_ZOOM_OUT: return ZOOM_OUT;
             case ICON_ROTATE: return ROTATE; 
 			case ICON_RESIZE: return RESIZE;  
-			case ICON_UNHIDE: return UNHIDE;
 			case ICON_MOVE: return MOVE;
 
 
@@ -155,6 +154,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_START: return START_PLAY;
 			case ICON_RESTART: return RESTART_PLAY;
 			case ICON_STICK_IMAGE: return STICK_IMAGE;
+			case ICON_UNHIDE: return UNHIDE;
 
 
 
@@ -261,7 +261,6 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\Menu_REDO.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_HIDE] = "images\\MenuIcons\\Menu_HIDE.jpg";
-	MenuIconImages[ICON_UNHIDE] = "images\\MenuIcons\\Menu_UNHIDE.jpg";
 	MenuIconImages[ICON_SCRAMBEL] = "images\\MenuIcons\\Menu_SCRAMBEL.jpg";
 	MenuIconImages[ICON_DUPLICATE] = "images\\MenuIcons\\Menu_DUPLICATE.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
@@ -289,8 +288,10 @@ void GUI::CreatePlayToolBar()
 	InterfaceMode = MODE_PLAY;
 	string MenuIconImages[PLAY_ICON_COUNT];
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_START.jpg";
-	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\Menu_RESTART.jpg";
+	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\Menu_UNHIDE.jpg";
+	MenuIconImages[ICON_UNHIDE] = "images\\MenuIcons\\Menu_RESTART.jpg";
 	MenuIconImages[ICON_STICK_IMAGE] = "images\\MenuIcons\\Menu_STICK_IMAGE.jpg";
+	
 	///TODO: write code to create Play mode menu
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * 90, 0, 90, ToolBarHeight);

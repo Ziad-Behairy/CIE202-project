@@ -12,9 +12,9 @@ void opUnhide::Execute()
 {
 	Point p1;
 	GUI* pUI = pControl->GetUI();
-	pUI->PrintMessage("Click on the shape you want to unhide ");
-	pUI->GetPointClicked(p1.x, p1.y);
-	pControl->getGraph()->Unhide(&p1);
+	/*pUI->PrintMessage("Click on the shape you want to unhide ");
+	pUI->GetPointClicked(p1.x, p1.y);*/
+	pControl->getGraph()->Unhide(pUI);
 
 }
 

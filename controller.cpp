@@ -202,9 +202,6 @@ operation* controller::createOperation(operationType OpType)
 		this->SaveOpToStack(pOp);*/
 
 
-
-		break;
-
 	}
 	
 

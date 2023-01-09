@@ -1,7 +1,5 @@
 #pragma once
 
-
-
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
 
@@ -66,7 +64,6 @@ class GUI
 		ICON_REDO,	    //Undo  icon in menu
 		ICON_DELETE,	//Delete  icon in menu
 		ICON_HIDE,
-		ICON_UNHIDE,
 		ICON_SCRAMBEL,	//Scrambel  icon in menu
 		ICON_DUPLICATE, // Duplicate icon in menu
 		ICON_SAVE,	    //Save  icon in menu
@@ -86,7 +83,9 @@ class GUI
 		//TODO: Add more icons names here
 		ICON_START,
 		ICON_RESTART,
+		ICON_UNHIDE,
 		ICON_STICK_IMAGE,
+		
 
 		PLAY_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 

@@ -13,6 +13,7 @@
 #include"..\Shapes\Rect.h"
 #include<time.h>
 #include "..\opHide.h"
+#include"..\controller.h"
 
 Graph::Graph()
 {
@@ -329,14 +330,18 @@ void Graph::Hide(GUI* pUI)
 
 }
 
-void Graph::Unhide(Point* p)
+void Graph::Unhide(GUI* pUI)
 {
+
+	Point p1;
+	pUI->PrintMessage("Click on the shape you want to unhide ");
+	pUI->GetPointClicked(p1.x, p1.y);
 	for (int i = 0; i < shapesList.size(); i++) {
-		if (shapesList[i]->isinshape(p->x, p->y))
+		if (shapesList[i]->isinshape(p1.x, p1.y))
 			shapesList[i]->SetHiden(0);
 
 	}
-
+	cout << "Unhide done";
 }
 
 //bool Graph::isHide()
@@ -352,12 +357,8 @@ void Graph::start(GUI* pUI)
 		Duplicate();
 		Hide(pUI);
 		Scrambel();
-		Point point;
-		pUI->GetPointClicked(point.x, point.y);
-		Unhide(&point);
-		Point point2;
-		pUI->GetPointClicked(point2.x, point2.y);
-		Unhide(&point2);
+		/*Unhide(pUI);
+		Unhide(pUI);*/
 		match(pUI);
 }
 

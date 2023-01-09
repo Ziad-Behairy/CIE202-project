@@ -52,7 +52,7 @@ public:
 
 	void start(GUI* pUI);
 	vector<shape*> selectedshapes();
-	void Unhide(Point* p); 
+	void Unhide(GUI* pUI);
 	//bool isHide();
 
 };
