@@ -142,6 +142,9 @@ operation* controller::createOperation(operationType OpType)
 	case PASTE:
 		pOp = new opPaste(this);
 		break;
+	case COPY:
+		pOp = new opCopy(this);
+		break;
 	case EXIT:
 		//GUI* pUI =pControl->GetUI()
 			//GUI* pUI = pControl->GetUI();
